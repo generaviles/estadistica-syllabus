@@ -1,0 +1,5 @@
+book_filename: "Estadística-para-el-Análisis-de-Datos"
+language:
+  ui:
+    chapter_name: "Capítulo "
+output_dir: "docs"
