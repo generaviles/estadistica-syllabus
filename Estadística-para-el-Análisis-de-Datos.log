@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6210 64-bit) (preloaded format=xelatex 2017.2.17)  19 FEB 2017 16:39
+This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6210 64-bit) (preloaded format=xelatex 2017.2.17)  19 FEB 2017 17:05
 entering extended mode
 **./Estadística-para-el-Análisis-de-Datos.tex
 (Estadística-para-el-Análisis-de-Datos.tex
@@ -1012,27 +1012,7 @@ img/2017-02-14 12.57.08 mod.jpg" > [13] [14] [15] [16]
 Chapter 3.
 [17
 
-] [18
-
-]
-Chapter 4.
-[19] [20
-
-]
-Chapter 5.
-[21] [22
-
-]
-Chapter 6.
-[23] [24
-
-]
-Chapter 7.
-[25] [26
-
-]
-Chapter 8.
-[27] [28]
+] [18]
 File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
 mg/venn.png Graphic file (type QTm)
 
@@ -1060,7 +1040,7 @@ mg/venn3.png Graphic file (type QTm)
 img/venn3.png" >
 Underfull \vbox (badness 1077) has occurred while \output is active []
 
-[29] [30] [31] [32]
+[19] [20] [21] [22]
 File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
 mg/2017-02-14 11.40.56.jpg Graphic file (type QTm)
 
@@ -1075,11 +1055,66 @@ File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
 mg/2017-02-14 12.57.08 mod.jpg Graphic file (type QTm)
 
 <use  "D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/
-img/2017-02-14 12.57.08 mod.jpg" > [33] [34]
+img/2017-02-14 12.57.08 mod.jpg" > [23] [24] [25] [26]
+Chapter 4.
+[27
+
+] [28
+
+]
+Chapter 5.
+[29] [30
+
+]
+Chapter 6.
+[31] [32]
+File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
+mg/venn.png Graphic file (type QTm)
+
+<use  "D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/
+img/venn.png" >
+File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
+mg/venn1.png Graphic file (type QTm)
+
+<use  "D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/
+img/venn1.png" >
+File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
+mg/venn2.png Graphic file (type QTm)
+
+<use  "D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/
+img/venn2.png" >
+File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
+mg/venn4.png Graphic file (type QTm)
+
+<use  "D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/
+img/venn4.png" >
+File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
+mg/venn3.png Graphic file (type QTm)
+
+<use  "D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/
+img/venn3.png" >
+Underfull \vbox (badness 1077) has occurred while \output is active []
+
+[33] [34] [35] [36]
+File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
+mg/2017-02-14 11.40.56.jpg Graphic file (type QTm)
+
+<use  "D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/
+img/2017-02-14 11.40.56.jpg" >
+File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
+mg/2017-02-14 12.56.55 mod.jpg Graphic file (type QTm)
+
+<use  "D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/
+img/2017-02-14 12.56.55 mod.jpg" >
+File: D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/i
+mg/2017-02-14 12.57.08 mod.jpg Graphic file (type QTm)
+
+<use  "D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/
+img/2017-02-14 12.57.08 mod.jpg" > [37] [38]
 ! You can't use `macro parameter character #' in restricted horizontal mode.
 <argument> ##
               de experimentos a realizar
-l.1003 \[m = \text{# de experimentos a realizar}
+l.1450 \[m = \text{# de experimentos a realizar}
                                                 \] 
 Here is how much of TeX's memory you used:
  21140 strings out of 427899
@@ -1090,4 +1125,4 @@ Here is how much of TeX's memory you used:
  1328 hyphenation exceptions out of 8191
  41i,8n,68p,10437b,385s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Estadística-para-el-Análisis-de-Datos.pdf (34 pages).
+Output written on Estadística-para-el-Análisis-de-Datos.pdf (38 pages).

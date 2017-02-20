@@ -14,3 +14,7 @@ description: "Notas y ejercicios de clase."
 
 # Introducción
 
+Curso impartido por:
+
+  - [Dr. Juan Iván Nieto Hipólito](https://www.researchgate.net/profile/Juan_Nieto6)
+  - [Dra. María de los Ángeles Cosío León](https://www.researchgate.net/profile/Maria_Cosio_Leon)
