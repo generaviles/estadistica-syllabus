@@ -22,7 +22,10 @@
     - Parcialidades.
   - **Muestreo estratificado por capas/niveles:**Se divide la población por atributos o alguna característica y de ese estracto se realiza el estudio.
   - **Multistage Cluster Sampling/ Muestreo de cluster multiestado:** Estructurado en árbol, las "unidades" son diferente en cada estrato.
-  <!--incertar imagen aqui--> 
+  
+  
+  ![](D:\Dropbox\MsC UABC\2o Semestre\Clases\Estadistica\estadistica-syllabus\img/cluster.jpg)
+  
   
   - **1-in-$k$ systematic sampling/ muestreo sistemático 1-en-$k$:** Consiste en seleccionar cada $k$-ésima unidad. Útil para muestreo de artículos en líneas de producción.<br \>
 
@@ -37,8 +40,10 @@
 
   - **Estudio observacional:**
   
-  <!--incertar imagen aqui--> 
+  ![](D:\Dropbox\MsC UABC\2o Semestre\Clases\Estadistica\estadistica-syllabus\img/observacional.jpg)
   
   - **Estudio experimental:**
-  <!--incertar imagen aqui--> 
-    Recordar el concepto de efecto placebo en éstos estudios, para evitar éste efecto se utilizan grupos control en los estudios.
+  
+  ![](D:\Dropbox\MsC UABC\2o Semestre\Clases\Estadistica\estadistica-syllabus\img/experimental.jpg)
+  
+Recordar el concepto de **efecto placebo**, para evitar éste efecto se utilizan grupos control en los estudios.
