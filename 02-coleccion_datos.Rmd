@@ -47,3 +47,32 @@
   ![](D:\Dropbox\MsC UABC\2o Semestre\Clases\Estadistica\estadistica-syllabus\img/experimental.jpg)
   
 Recordar el concepto de **efecto placebo**, para evitar éste efecto se utilizan grupos control en los estudios.
+
+##Tareas
+
+###Point Chart
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+plot <- ggplot(cars,
+       aes (speed, dist)) +
+  geom_point(aes(color = dist)) +
+  labs(title = "Relación entre la distancia y velocidad alcanzada por carros", x = "Velocidad en millas por hora", y = "Distancia")
+plot
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+ggplot(Indometh,
+       aes (time, conc))+
+  geom_point(aes(color = conc)) +
+  labs(title = "Concentración de Indometacina en Humanos a lo largo del Tiempo", x = "Tiempo", y = "Concentración Sérica")
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+ggplot(airquality,
+       aes (Wind, Ozone))+
+  geom_point(aes(color = Wind)) +
+  labs(title = "Comparación Entre Concentraciones de Ozono y Velocidad de Aire", x = "Velocidad del Aire en Millas por Hora", y = "Concentración de Ozono")
+```

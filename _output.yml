@@ -12,5 +12,5 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Estadística para el Análisis de Datos</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
-    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+        <li><a href="https://github.com/generaviles" target="blank">Biblioteca de Gener Avilés R</a></li>
+    edit: https://github.com/generaviles/estadistica-syllabus%s
