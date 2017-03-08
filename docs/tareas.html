@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Estadística para el Análisis de Datos</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Notas y ejercicios de clase.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Estadística para el Análisis de Datos" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Notas y ejercicios de clase." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Estadística para el Análisis de Datos" />
+  
+  <meta name="twitter:description" content="Notas y ejercicios de clase." />
+  
+
+<meta name="author" content="Gener Avilés R">
+
+
+<meta name="date" content="2017-03-08">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="recoleccion-de-datos.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estadística para el Análisis de Datos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="conceptos-generales.html"><a href="conceptos-generales.html"><i class="fa fa-check"></i><b>2</b> Conceptos Generales</a><ul>
+<li class="chapter" data-level="2.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#terms-comparing-statistics-and-computer-sciences"><i class="fa fa-check"></i><b>2.1</b> Terms comparing statistics and computer sciences</a></li>
+<li class="chapter" data-level="2.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#teoria-de-conjuntos"><i class="fa fa-check"></i><b>2.2</b> Teoria de Conjuntos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#definiciones"><i class="fa fa-check"></i><b>2.2.1</b> Definiciones</a></li>
+<li class="chapter" data-level="2.2.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#conjuntos-disjuntos"><i class="fa fa-check"></i><b>2.2.2</b> Conjuntos Disjuntos</a></li>
+<li class="chapter" data-level="2.2.3" data-path="conceptos-generales.html"><a href="conceptos-generales.html#particion"><i class="fa fa-check"></i><b>2.2.3</b> Partición:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="conceptos-generales.html"><a href="conceptos-generales.html#diagramas-de-venn"><i class="fa fa-check"></i><b>2.3</b> Diagramas de Venn</a></li>
+<li class="chapter" data-level="2.4" data-path="conceptos-generales.html"><a href="conceptos-generales.html#algebra-de-conjuntos"><i class="fa fa-check"></i><b>2.4</b> Algebra de Conjuntos</a></li>
+<li class="chapter" data-level="2.5" data-path="conceptos-generales.html"><a href="conceptos-generales.html#leyes-de-morgan"><i class="fa fa-check"></i><b>2.5</b> Leyes de Morgan</a></li>
+<li class="chapter" data-level="2.6" data-path="conceptos-generales.html"><a href="conceptos-generales.html#modelos-de-probabilidad"><i class="fa fa-check"></i><b>2.6</b> Modelos De Probabilidad</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#elementos-de-un-modelo-de-probabilidad"><i class="fa fa-check"></i><b>2.6.1</b> Elementos de un Modelo de Probabilidad</a></li>
+<li class="chapter" data-level="2.6.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#axiomas-de-probabilidad"><i class="fa fa-check"></i><b>2.6.2</b> Axiomas de Probabilidad</a></li>
+<li class="chapter" data-level="2.6.3" data-path="conceptos-generales.html"><a href="conceptos-generales.html#ley-de-probabilidad-discreta"><i class="fa fa-check"></i><b>2.6.3</b> Ley de Probabilidad Discreta</a></li>
+<li class="chapter" data-level="2.6.4" data-path="conceptos-generales.html"><a href="conceptos-generales.html#ley-de-probabilidad-discreta-uniforme"><i class="fa fa-check"></i><b>2.6.4</b> Ley de Probabilidad Discreta Uniforme</a></li>
+<li class="chapter" data-level="2.6.5" data-path="conceptos-generales.html"><a href="conceptos-generales.html#funcion-densidad-de-probabilidad"><i class="fa fa-check"></i><b>2.6.5</b> Función <em>Densidad de Probabilidad</em></a></li>
+<li class="chapter" data-level="2.6.6" data-path="conceptos-generales.html"><a href="conceptos-generales.html#acumulativa-pdf-comulative-pdf"><i class="fa fa-check"></i><b>2.6.6</b> Acumulativa pdf (<em>Comulative pdf</em>)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="conceptos-generales.html"><a href="conceptos-generales.html#probabilidad-condicional"><i class="fa fa-check"></i><b>2.7</b> Probabilidad Condicional</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#repaso-de-combinaciones-y-permutaciones"><i class="fa fa-check"></i><b>2.7.1</b> Repaso de combinaciones y permutaciones</a></li>
+<li class="chapter" data-level="2.7.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#independencia"><i class="fa fa-check"></i><b>2.7.2</b> Independencia</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html"><i class="fa fa-check"></i><b>3</b> Recolección de Datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#definiciones-1"><i class="fa fa-check"></i><b>3.1</b> Definiciones</a></li>
+<li class="chapter" data-level="3.2" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#tipos-de-muestreo"><i class="fa fa-check"></i><b>3.2</b> Tipos de Muestreo</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#resumen-de-muestreos"><i class="fa fa-check"></i><b>3.2.1</b> Resumen de Muestreos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#tipos-de-estudios"><i class="fa fa-check"></i><b>3.3</b> Tipos de Estudios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tareas.html"><a href="tareas.html"><i class="fa fa-check"></i><b>4</b> Tareas</a><ul>
+<li class="chapter" data-level="4.1" data-path="tareas.html"><a href="tareas.html#point-chart"><i class="fa fa-check"></i><b>4.1</b> Point Chart</a></li>
+<li class="chapter" data-level="4.2" data-path="tareas.html"><a href="tareas.html#stratified-sampling"><i class="fa fa-check"></i><b>4.2</b> Stratified Sampling</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="tareas.html"><a href="tareas.html#what-is-stratified-sampling"><i class="fa fa-check"></i><b>4.2.1</b> What is Stratified Sampling?</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tareas.html"><a href="tareas.html#why-use-stratified-sampling"><i class="fa fa-check"></i><b>4.2.2</b> Why use Stratified Sampling?</a></li>
+<li class="chapter" data-level="4.2.3" data-path="tareas.html"><a href="tareas.html#example"><i class="fa fa-check"></i><b>4.2.3</b> Example</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/generaviles" target="blank">Biblioteca de Gener Avilés R</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística para el Análisis de Datos</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tareas" class="section level1">
+<h1><span class="header-section-number">Capítulo 4</span> Tareas</h1>
+<div id="point-chart" class="section level2">
+<h2><span class="header-section-number">4.1</span> Point Chart</h2>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="stratified-sampling" class="section level2">
+<h2><span class="header-section-number">4.2</span> Stratified Sampling</h2>
+<p>author: Dolores Ojeda, Gener Avilés R date: 2017-03-05</p>
+<div id="what-is-stratified-sampling" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> What is Stratified Sampling?</h3>
+Population is partitioned in non-overlaping groups, called <strong>strata</strong> and a <strong>sample</strong> is collected from each stratum following a determined design. <br \><br \>
+<center>
+<img src="http://image.mathcaptain.com/cms/images/113/stratified-sampling.png" height="400px" />
+</center>
+</div>
+<div id="why-use-stratified-sampling" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Why use Stratified Sampling?</h3>
+<p><br \> - May produce smaller error when estimating than simple random sample. Specially when measurements within strata have realitve small variation. - Cost by observation reduced. - There may be a need to have a subgroup (stratum) with similar estimates of those of the population.</p>
+</div>
+<div id="example" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Example</h3>
+<p>The Titanic Database:</p>
+<pre><code>##      &lt;U+FEFF&gt;pclass            survived         name               sex           
+##  Min.   :1.000      Min.   :0.000   Length:1310        Length:1310       
+##  1st Qu.:2.000      1st Qu.:0.000   Class :character   Class :character  
+##  Median :3.000      Median :0.000   Mode  :character   Mode  :character  
+##  Mean   :2.295      Mean   :0.382                                        
+##  3rd Qu.:3.000      3rd Qu.:1.000                                        
+##  Max.   :3.000      Max.   :1.000                                        
+##  NA&#39;s   :1          NA&#39;s   :1                                            
+##       age              sibsp            parch          ticket         
+##  Min.   : 0.1667   Min.   :0.0000   Min.   :0.000   Length:1310       
+##  1st Qu.:21.0000   1st Qu.:0.0000   1st Qu.:0.000   Class :character  
+##  Median :28.0000   Median :0.0000   Median :0.000   Mode  :character  
+##  Mean   :29.8811   Mean   :0.4989   Mean   :0.385                     
+##  3rd Qu.:39.0000   3rd Qu.:1.0000   3rd Qu.:0.000                     
+##  Max.   :80.0000   Max.   :8.0000   Max.   :9.000                     
+##  NA&#39;s   :264       NA&#39;s   :1        NA&#39;s   :1                         
+##       fare            cabin             embarked        
+##  Min.   :  0.000   Length:1310        Length:1310       
+##  1st Qu.:  7.896   Class :character   Class :character  
+##  Median : 14.454   Mode  :character   Mode  :character  
+##  Mean   : 33.295                                        
+##  3rd Qu.: 31.275                                        
+##  Max.   :512.329                                        
+##  NA&#39;s   :2                                              
+##      boat                body        home.dest        
+##  Length:1310        Min.   :  1.0   Length:1310       
+##  Class :character   1st Qu.: 72.0   Class :character  
+##  Mode  :character   Median :155.0   Mode  :character  
+##                     Mean   :160.8                     
+##                     3rd Qu.:256.0                     
+##                     Max.   :328.0                     
+##                     NA&#39;s   :1189</code></pre>
+<div id="variable-codes" class="section level4">
+<h4><span class="header-section-number">4.2.3.1</span> Variable Codes</h4>
+<p><br \> - <code>Pclass</code>: 1 = Upper, 2 = Middle, 3 = Lower. - <code>SibSp</code>: Number of Siblings/Spouses aboard. - <code>Parch</code>: Number of Parents/Children Aboard. - <code>Embarked</code>: C = Cherbourg, Q = Queenstown, S = Southampton.</p>
+</div>
+<div id="calculating-probabilities-to-select-people-who-embarked-in-queenstown" class="section level4">
+<h4><span class="header-section-number">4.2.3.2</span> Calculating Probabilities to select people who embarked in Queenstown</h4>
+<p><br \> <span class="math inline">\(P(A) = \frac{\text{Numero de elementos de A}}{n}\)</span></p>
+<p>There are 1310 entries, and 123 of them embarked in <strong>Q</strong>ueenstown, nevertheless the risk of dying was equally present for them as for the passengers from <strong>S</strong>outhampton or <strong>C</strong>herbourg.<br \> If a uniform proability is calculated the numbers are:<br \> - <span class="math inline">\(P(Q) = \frac{123}{1310} =\)</span> 0.0938931 - <span class="math inline">\(P(C) = \frac{270}{1310} =\)</span> 0.2061069 - <span class="math inline">\(P(S)\frac{914}{1310} =\)</span> 0.6977099</p>
+<p>This approximation will hinder the process of data mining and, eventually, the generation of a machine learning model for survival prediction.</p>
+</div>
+<div id="fixing-the-problem" class="section level4">
+<h4><span class="header-section-number">4.2.3.3</span> Fixing the Problem</h4>
+<p>By using <strong>stratified sampling</strong> we can raise the probability for the group that boarded in Queenstown and survived to be selected, therefore, taken in consideration for the generation of a survival prediction model. For this we will use <strong>conditional probability</strong>:</p>
+<p><span class="math inline">\(P(Survived|EmbarkedQ)= \frac{P(Survived\cap EmbarkedQ)}{P(EmbarkedQ)} = \frac{44}{123}=\)</span> 0.3577236</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+Q&lt;-<span class="kw">filter</span>(titanic, embarked ==<span class="st"> &quot;Q&quot;</span> &amp;<span class="st"> </span>survived ==<span class="st"> </span><span class="dv">1</span>)
+<span class="kw">count</span>(Q)</code></pre></div>
+<pre><code>## # A tibble: 1 × 1
+##       n
+##   &lt;int&gt;
+## 1    44</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="recoleccion-de-datos.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/generaviles/estadistica-syllabus03-tareas.Rmd",
+"text": "Edit"
+},
+"download": ["EstadÃ­stica-para-el-AnÃ¡lisis-de-Datos.pdf", "EstadÃ­stica-para-el-AnÃ¡lisis-de-Datos.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

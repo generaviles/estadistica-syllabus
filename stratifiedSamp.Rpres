@@ -1,0 +1,35 @@
+Stratified Sampling
+========================================================
+author: Dolores Ojeda, Gener Avilés R
+date: `r Sys.Date()`
+autosize: true
+
+
+
+What is Stratified Sampling?
+========================================================
+
+Population is partitioned in non-overlaping groups, called **strata** and a **sample** is collected from each stratum following a determined design.
+<br \><br \>
+<center><img src="http://image.mathcaptain.com/cms/images/113/stratified-sampling.png" height="400px" /></center>
+
+
+Why use Stratified Sampling?
+========================================================
+<br \>
+- May produce smaller error when estimating than simple random sample. Specially when measurements within strata have realitve small variation.
+- Cost by observation reduced.
+- There may be a need to have a subgroup (stratum) with similar estimates of those of the population.
+
+
+Math Approach
+========================================================
+
+Assuming that:
+- $L$ = num. of strata.
+- $N_h$ = num. of units in each stratum $h$.
+- $n_h$ = num. of samples taken from stratum $h$.
+- $N$ = total number of units in the population.
+<br \>
+
+<center>$\hat{\tau}_{st} = \sum_{h=1}^{L}\hat{\tau}_{h}$</center>

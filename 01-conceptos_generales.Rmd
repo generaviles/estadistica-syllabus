@@ -10,7 +10,11 @@
   
   - La robustez del modelo la da el **coeficiente de correlacion** ($R^2$), el cual nos habla de que tanto se parece el modelo a los datos. los valores van de $0-1$, un valor $>0.9$ se considera adecuado.
   - Cunado los datos no se parecen a un modelo ya conocido, se utilizan los modelos **no parametricos**.
-  
+
+##Terms comparing statistics and computer sciences
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/comp.png)
+
 ##Teoria de Conjuntos
 
 ### Definiciones
