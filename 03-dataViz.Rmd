@@ -1,0 +1,160 @@
+#Data Visualization
+
+##General Concetps
+
+  - An “outlier” is an extremely high or an extremely low data value when compared with the rest of the data values.
+  - Scott’s rule for the bin width w = 3.5σ/ 3√n, where σ is the standard deviation for the entire data set and n is the number of points.
+  - This rule assumes that the data follows a Gaussian distribution; otherwise, it is likely to give a bin width that is too wide.
+  - Histograms can be either normalized or unnormalized. 
+    - In an unnormalized histogram, the value plotted for each bin is the absolute count of events in that bin. 
+    - In a normalized histogram, we divide each count by the total number of points in the data set, so that the value for each bin becomes the fraction of points in that bin. If we want the percentage of points per bin instead, we simply multiply the fraction by 100.
+    
+###Key points to explore in cuantitative data to begin with:
+
+  - **Shape** (graphs done with data)
+    - Symmetric?
+    - Left or right skewed?
+    - Unimodal?
+    - Bi-modal?
+  - **Center**
+    - Mean
+    - Median
+    - Mode
+  - **Spread**
+    - Range (*max-min* values)
+    - IQR (interquartile range): $Q_3 - Q_1$
+  - Outliers
+    
+
+
+
+##Análisis Univariante
+
+- Estudia la distribución individual de cada variable. Este análisis se centra en dos aspectos: La tendencia central de la distribución y su dispersión. En el primer caso hablamos de un valor característico o medio de la distribución, en el segundo de la variabilidad interna de los datos. Según el tipo de variables proceden los siguientes análisis:
+
+    1. Variables nominales. Para este tipo de variables el análisis se limita a las frecuencias de cada categoría. Se suele expresar en porcentajes.
+    1.  Variables ordinales. La tendencia central se mide con los estadísticos mediana y moda (pero no la media, ya que ésta implica distancias comparables), mientras que para la dispersión podemos utilizar un diagrama de frecuencias (histograma).
+    1. Variables métricas. Para el análisis de la tendencia central se utiliza por lo general la media, si bien es aconsejable utilizar la mediana cuando nos encontramos con unos pocos valores extremos cuya magnitud difiere ampliamente del resto (son mucho mayores o mucho menores que la mayoría). 
+
+  - Para estudiar el grado de dispersión recurrimos a la desviación típica o la varianza. Es posible estudiar además del momento de primer orden de la distribución (tendencia central) y el momento de segundo orden (dispersión), el momento de tercer orden (simetría) y el de cuarto orden (achatamiento).
+
+<br \>
+![Prueba](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/dataViz.png)
+
+##Medidas de Tendencia Central
+Criterios a seguir:<br \>
+
+  1. Calcular la media (entre otras razones porque es el mejor estimador del parámetro poblacional).
+  1. Si no puede calcularse (p.e. variables ordinales, valores extremos) obtener Mediana.
+  1. Si no puede obtenerse Mediana (p.e. datos nominales, intervalos abiertos con más del 50% de sujetos) obtener Moda.
+
+En algunos casos los tres indicadores pueden dar valores similares pero no necesariamente ha de ser así. Mdn = X = Mo, esto solo sucedera sii la distribución es simétrica:
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/simetria.png)
+
+##Medidas de Variabilidad o Dispersión
+
+  - Asimetría positiva.
+  - Asimetría negativa.
+  
+Para conseguir una visión completa y comprensiva de los datos obtenidos hay que complementar las medidas de tendencia central con otros estadísticos que reflejen otras propiedades.
+Por ejemplo, el grado en que los datos se parecen o diferencian entre sí, propiedad que se denomina variabilidad o variación. 
+
+###Varianza
+
+Es el promedio de las distancias al cuadrado desde los valores en $X$ hasta la media de $\overline X$ (es decir, de las puntuaciones diferenciales al cuadrado) en una muestra de $n$ sujetos.
+
+Fórmulas:
+
+$$S^2_x = \frac{\sum(X_i - \overline X)^2}{N}$$
+
+$$S^2_x = \frac{\sum x^2_i}{N}$$
+
+Fórmula alternativa:
+
+$$S^2_x = \frac{\sum X^2_i}{N}-\overline X^2$$
+
+##Desviación Estándar o Típica
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/ds.png)
+
+##Propiedades de la Media y Varianza
+
+  - La media puede tomarse como cualquier valor mientras que $S^2X$ y $SX$ son siempre positivas, siendo su valor mínimo $0$.
+  - Si tenemos una misma variable $X$ que ha sido medida en $k$ grupos y conocemos las medidas y varianzas en cada grupo, entonces podemos calcular los estadísticos globalesÑ
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/meanVar.png)
+
+##Curtosis
+
+Sirve para analizar el grado de concentración que presentan los valores de una variable analizada alrededor de la zona centrla de la distribución de frecuencias, sin necesidad de generar un gráfico.
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/curtosis.png)
+
+##Índice de Asimetría
+
+La asimetría de una distribución hace referencia al grado en que los datos se reparten por encima y por debajo de la tendencia central.
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/asimetria.png)
+
+##Quantile-Quantile Plot (Q-Q plot)
+
+It is a graphical tool to help us assess if a set of data plausibly came from some theoretical distribution such as a *normal* or *exponential*. For example, if we run a statistical analysis that assumes our dependent variable is *normally distributed*, we can use a Normal Q-Q plot to check that assumption.
+
+A Q-Q plot is a scatterplot created by plotting two sets of quantiles against one another. If both sets of quantiles came from the same distribution, we should see the points forming a line that’s roughly straight.
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/qqplot.png)
+
+###Q-Q plot of a uniform distribution
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/qquniform.png)
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/qquniform1.png)
+
+###Q-Q plot of a Poisson distribution
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/qqpoisson.png)
+
+###Understanding type of distribution through Q-Q plots
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/qqexamples.png)
+
+##Boxplots
+
+Officially known as **box-and-whisker plots**, also called **boxplots**, for short, this is a technique for exploratory data analysis devised by Tukey (1977). One can see the spread and symmetry of a distribution at a glance, and the position of any extreme scores.
+
+  - *Hinges*: These are the sides of the box in a boxplot, corresponding approximately to the 25th and 75th percentiles of the distribution.
+  - *H-spread*: The distance between the two hinges (i.e., the width of the box) in a boxplot. 
+  - *Inner fences*: Locations on either side of the box (in a boxplot) that are 1.5 times the H-spread from each hinge. The distance between the upper and lower inner fence is four times the H-spread.
+  - *Adjacent values*: The upper adjacent value is the highest score in the distribution that is not higher than the upper inner fence, and the lower adjacent value is similarly defined in terms of the lower inner fence of a boxplot. 
+  - The *upper whisker* is drawn from the upper hinge to the upper adjacent value, and the lower whisker is drawn from the lower hinge to the lower adjacent value.
+  - *Outlier*: Defined in general as an extreme score standing by itself in a distribution, an outlier is more specifically defined in the context of a boxplot.
+  - In terms of a boxplot, an outlier is any score that is beyond the reach of the whiskers on either side. The outliers are indicated as points in the boxplot.
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/boxplot.png)
+Two or more box plots drawn on the same Y-axis. These are often useful in comparing features of distributions. An example portraying the times it took samples of women and men to do a task is shown below.
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/boxplot1.png)
+
+###More elaborate Boxplots
+
+  - Means indicated in green lines rahter than plus signs.
+  - Mean of all scores indicated by a gray line.
+  - individual scores are represented by dots. Since the scores have been rounded to the nearest second, any given dot might represent more than one score.
+  - One box is **wider** than the other one because the widths of the boxes are proportional to the number of subjects.
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/boxplotfancy.png)
+
+If all the dots want to be seen we need to add some `jitter` to the boxplot:
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/boxplotjitter.png)
+
+##Using different graphics in the same exploration
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/mixedgraph.png)
+
+
+##Other kinds of distributions
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/dist.png)
+
+

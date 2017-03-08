@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Estadística para el Análisis de Datos</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Notas y ejercicios de clase.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Estadística para el Análisis de Datos" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Notas y ejercicios de clase." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Estadística para el Análisis de Datos" />
+  
+  <meta name="twitter:description" content="Notas y ejercicios de clase." />
+  
+
+<meta name="author" content="Gener Avilés R">
+
+
+<meta name="date" content="2017-03-08">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="recoleccion-de-datos.html">
+<link rel="next" href="tareas.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estadística para el Análisis de Datos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="conceptos-generales.html"><a href="conceptos-generales.html"><i class="fa fa-check"></i><b>2</b> Conceptos Generales</a><ul>
+<li class="chapter" data-level="2.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#terms-comparing-statistics-and-computer-sciences"><i class="fa fa-check"></i><b>2.1</b> Terms comparing statistics and computer sciences</a></li>
+<li class="chapter" data-level="2.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#teoria-de-conjuntos"><i class="fa fa-check"></i><b>2.2</b> Teoria de Conjuntos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#definiciones"><i class="fa fa-check"></i><b>2.2.1</b> Definiciones</a></li>
+<li class="chapter" data-level="2.2.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#conjuntos-disjuntos"><i class="fa fa-check"></i><b>2.2.2</b> Conjuntos Disjuntos</a></li>
+<li class="chapter" data-level="2.2.3" data-path="conceptos-generales.html"><a href="conceptos-generales.html#particion"><i class="fa fa-check"></i><b>2.2.3</b> Partición:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="conceptos-generales.html"><a href="conceptos-generales.html#diagramas-de-venn"><i class="fa fa-check"></i><b>2.3</b> Diagramas de Venn</a></li>
+<li class="chapter" data-level="2.4" data-path="conceptos-generales.html"><a href="conceptos-generales.html#algebra-de-conjuntos"><i class="fa fa-check"></i><b>2.4</b> Algebra de Conjuntos</a></li>
+<li class="chapter" data-level="2.5" data-path="conceptos-generales.html"><a href="conceptos-generales.html#leyes-de-morgan"><i class="fa fa-check"></i><b>2.5</b> Leyes de Morgan</a></li>
+<li class="chapter" data-level="2.6" data-path="conceptos-generales.html"><a href="conceptos-generales.html#modelos-de-probabilidad"><i class="fa fa-check"></i><b>2.6</b> Modelos De Probabilidad</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#elementos-de-un-modelo-de-probabilidad"><i class="fa fa-check"></i><b>2.6.1</b> Elementos de un Modelo de Probabilidad</a></li>
+<li class="chapter" data-level="2.6.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#axiomas-de-probabilidad"><i class="fa fa-check"></i><b>2.6.2</b> Axiomas de Probabilidad</a></li>
+<li class="chapter" data-level="2.6.3" data-path="conceptos-generales.html"><a href="conceptos-generales.html#ley-de-probabilidad-discreta"><i class="fa fa-check"></i><b>2.6.3</b> Ley de Probabilidad Discreta</a></li>
+<li class="chapter" data-level="2.6.4" data-path="conceptos-generales.html"><a href="conceptos-generales.html#ley-de-probabilidad-discreta-uniforme"><i class="fa fa-check"></i><b>2.6.4</b> Ley de Probabilidad Discreta Uniforme</a></li>
+<li class="chapter" data-level="2.6.5" data-path="conceptos-generales.html"><a href="conceptos-generales.html#funcion-densidad-de-probabilidad"><i class="fa fa-check"></i><b>2.6.5</b> Función <em>Densidad de Probabilidad</em></a></li>
+<li class="chapter" data-level="2.6.6" data-path="conceptos-generales.html"><a href="conceptos-generales.html#acumulativa-pdf-comulative-pdf"><i class="fa fa-check"></i><b>2.6.6</b> Acumulativa pdf (<em>Comulative pdf</em>)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="conceptos-generales.html"><a href="conceptos-generales.html#probabilidad-condicional"><i class="fa fa-check"></i><b>2.7</b> Probabilidad Condicional</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#repaso-de-combinaciones-y-permutaciones"><i class="fa fa-check"></i><b>2.7.1</b> Repaso de combinaciones y permutaciones</a></li>
+<li class="chapter" data-level="2.7.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#independencia"><i class="fa fa-check"></i><b>2.7.2</b> Independencia</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html"><i class="fa fa-check"></i><b>3</b> Recolección de Datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#definiciones-1"><i class="fa fa-check"></i><b>3.1</b> Definiciones</a></li>
+<li class="chapter" data-level="3.2" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#tipos-de-muestreo"><i class="fa fa-check"></i><b>3.2</b> Tipos de Muestreo</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#resumen-de-muestreos"><i class="fa fa-check"></i><b>3.2.1</b> Resumen de Muestreos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#tipos-de-estudios"><i class="fa fa-check"></i><b>3.3</b> Tipos de Estudios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>4</b> Data Visualization</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-visualization.html"><a href="data-visualization.html#general-concetps"><i class="fa fa-check"></i><b>4.1</b> General Concetps</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-visualization.html"><a href="data-visualization.html#key-points-to-explore-in-cuantitative-data-to-begin-with"><i class="fa fa-check"></i><b>4.1.1</b> Key points to explore in cuantitative data to begin with:</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-visualization.html"><a href="data-visualization.html#analisis-univariante"><i class="fa fa-check"></i><b>4.2</b> Análisis Univariante</a></li>
+<li class="chapter" data-level="4.3" data-path="data-visualization.html"><a href="data-visualization.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>4.3</b> Medidas de Tendencia Central</a></li>
+<li class="chapter" data-level="4.4" data-path="data-visualization.html"><a href="data-visualization.html#medidas-de-variabilidad-o-dispersion"><i class="fa fa-check"></i><b>4.4</b> Medidas de Variabilidad o Dispersión</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="data-visualization.html"><a href="data-visualization.html#varianza"><i class="fa fa-check"></i><b>4.4.1</b> Varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="data-visualization.html"><a href="data-visualization.html#desviacion-estandar-o-tipica"><i class="fa fa-check"></i><b>4.5</b> Desviación Estándar o Típica</a></li>
+<li class="chapter" data-level="4.6" data-path="data-visualization.html"><a href="data-visualization.html#propiedades-de-la-media-y-varianza"><i class="fa fa-check"></i><b>4.6</b> Propiedades de la Media y Varianza</a></li>
+<li class="chapter" data-level="4.7" data-path="data-visualization.html"><a href="data-visualization.html#curtosis"><i class="fa fa-check"></i><b>4.7</b> Curtosis</a></li>
+<li class="chapter" data-level="4.8" data-path="data-visualization.html"><a href="data-visualization.html#indice-de-asimetria"><i class="fa fa-check"></i><b>4.8</b> Índice de Asimetría</a></li>
+<li class="chapter" data-level="4.9" data-path="data-visualization.html"><a href="data-visualization.html#quantile-quantile-plot-q-q-plot"><i class="fa fa-check"></i><b>4.9</b> Quantile-Quantile Plot (Q-Q plot)</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="data-visualization.html"><a href="data-visualization.html#q-q-plot-of-a-uniform-distribution"><i class="fa fa-check"></i><b>4.9.1</b> Q-Q plot of a uniform distribution</a></li>
+<li class="chapter" data-level="4.9.2" data-path="data-visualization.html"><a href="data-visualization.html#q-q-plot-of-a-poisson-distribution"><i class="fa fa-check"></i><b>4.9.2</b> Q-Q plot of a Poisson distribution</a></li>
+<li class="chapter" data-level="4.9.3" data-path="data-visualization.html"><a href="data-visualization.html#understanding-type-of-distribution-through-q-q-plots"><i class="fa fa-check"></i><b>4.9.3</b> Understanding type of distribution through Q-Q plots</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="data-visualization.html"><a href="data-visualization.html#boxplots"><i class="fa fa-check"></i><b>4.10</b> Boxplots</a><ul>
+<li class="chapter" data-level="4.10.1" data-path="data-visualization.html"><a href="data-visualization.html#more-elaborate-boxplots"><i class="fa fa-check"></i><b>4.10.1</b> More elaborate Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="data-visualization.html"><a href="data-visualization.html#using-different-graphics-in-the-same-exploration"><i class="fa fa-check"></i><b>4.11</b> Using different graphics in the same exploration</a></li>
+<li class="chapter" data-level="4.12" data-path="data-visualization.html"><a href="data-visualization.html#other-kinds-of-distributions"><i class="fa fa-check"></i><b>4.12</b> Other kinds of distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tareas.html"><a href="tareas.html"><i class="fa fa-check"></i><b>5</b> Tareas</a><ul>
+<li class="chapter" data-level="5.1" data-path="tareas.html"><a href="tareas.html#point-chart"><i class="fa fa-check"></i><b>5.1</b> Point Chart</a></li>
+<li class="chapter" data-level="5.2" data-path="tareas.html"><a href="tareas.html#stratified-sampling"><i class="fa fa-check"></i><b>5.2</b> Stratified Sampling</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="tareas.html"><a href="tareas.html#what-is-stratified-sampling"><i class="fa fa-check"></i><b>5.2.1</b> What is Stratified Sampling?</a></li>
+<li class="chapter" data-level="5.2.2" data-path="tareas.html"><a href="tareas.html#why-use-stratified-sampling"><i class="fa fa-check"></i><b>5.2.2</b> Why use Stratified Sampling?</a></li>
+<li class="chapter" data-level="5.2.3" data-path="tareas.html"><a href="tareas.html#example"><i class="fa fa-check"></i><b>5.2.3</b> Example</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/generaviles" target="blank">Biblioteca de Gener Avilés R</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística para el Análisis de Datos</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-visualization" class="section level1">
+<h1><span class="header-section-number">Capítulo 4</span> Data Visualization</h1>
+<div id="general-concetps" class="section level2">
+<h2><span class="header-section-number">4.1</span> General Concetps</h2>
+<ul>
+<li>An “outlier” is an extremely high or an extremely low data value when compared with the rest of the data values.</li>
+<li>Scott’s rule for the bin width w = 3.5σ/ 3√n, where σ is the standard deviation for the entire data set and n is the number of points.</li>
+<li>This rule assumes that the data follows a Gaussian distribution; otherwise, it is likely to give a bin width that is too wide.</li>
+<li>Histograms can be either normalized or unnormalized.
+<ul>
+<li>In an unnormalized histogram, the value plotted for each bin is the absolute count of events in that bin.</li>
+<li>In a normalized histogram, we divide each count by the total number of points in the data set, so that the value for each bin becomes the fraction of points in that bin. If we want the percentage of points per bin instead, we simply multiply the fraction by 100.</li>
+</ul></li>
+</ul>
+<div id="key-points-to-explore-in-cuantitative-data-to-begin-with" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Key points to explore in cuantitative data to begin with:</h3>
+<ul>
+<li><strong>Shape</strong> (graphs done with data)
+<ul>
+<li>Symmetric?</li>
+<li>Left or right skewed?</li>
+<li>Unimodal?</li>
+<li>Bi-modal?</li>
+</ul></li>
+<li><strong>Center</strong>
+<ul>
+<li>Mean</li>
+<li>Median</li>
+<li>Mode</li>
+</ul></li>
+<li><strong>Spread</strong>
+<ul>
+<li>Range (<em>max-min</em> values)</li>
+<li>IQR (interquartile range): <span class="math inline">\(Q_3 - Q_1\)</span></li>
+</ul></li>
+<li>Outliers</li>
+</ul>
+</div>
+</div>
+<div id="analisis-univariante" class="section level2">
+<h2><span class="header-section-number">4.2</span> Análisis Univariante</h2>
+<ul>
+<li><p>Estudia la distribución individual de cada variable. Este análisis se centra en dos aspectos: La tendencia central de la distribución y su dispersión. En el primer caso hablamos de un valor característico o medio de la distribución, en el segundo de la variabilidad interna de los datos. Según el tipo de variables proceden los siguientes análisis:</p>
+<ol style="list-style-type: decimal">
+<li>Variables nominales. Para este tipo de variables el análisis se limita a las frecuencias de cada categoría. Se suele expresar en porcentajes.</li>
+<li>Variables ordinales. La tendencia central se mide con los estadísticos mediana y moda (pero no la media, ya que ésta implica distancias comparables), mientras que para la dispersión podemos utilizar un diagrama de frecuencias (histograma).</li>
+<li>Variables métricas. Para el análisis de la tendencia central se utiliza por lo general la media, si bien es aconsejable utilizar la mediana cuando nos encontramos con unos pocos valores extremos cuya magnitud difiere ampliamente del resto (son mucho mayores o mucho menores que la mayoría).</li>
+</ol></li>
+<li><p>Para estudiar el grado de dispersión recurrimos a la desviación típica o la varianza. Es posible estudiar además del momento de primer orden de la distribución (tendencia central) y el momento de segundo orden (dispersión), el momento de tercer orden (simetría) y el de cuarto orden (achatamiento).</p></li>
+</ul>
+<p><br \> <img src="img/dataViz.png" alt="Prueba" /></p>
+</div>
+<div id="medidas-de-tendencia-central" class="section level2">
+<h2><span class="header-section-number">4.3</span> Medidas de Tendencia Central</h2>
+<p>Criterios a seguir:<br \></p>
+<ol style="list-style-type: decimal">
+<li>Calcular la media (entre otras razones porque es el mejor estimador del parámetro poblacional).</li>
+<li>Si no puede calcularse (p.e. variables ordinales, valores extremos) obtener Mediana.</li>
+<li>Si no puede obtenerse Mediana (p.e. datos nominales, intervalos abiertos con más del 50% de sujetos) obtener Moda.</li>
+</ol>
+<p>En algunos casos los tres indicadores pueden dar valores similares pero no necesariamente ha de ser así. Mdn = X = Mo, esto solo sucedera sii la distribución es simétrica:</p>
+<div class="figure">
+<img src="img/simetria.png" />
+
+</div>
+</div>
+<div id="medidas-de-variabilidad-o-dispersion" class="section level2">
+<h2><span class="header-section-number">4.4</span> Medidas de Variabilidad o Dispersión</h2>
+<ul>
+<li>Asimetría positiva.</li>
+<li>Asimetría negativa.</li>
+</ul>
+<p>Para conseguir una visión completa y comprensiva de los datos obtenidos hay que complementar las medidas de tendencia central con otros estadísticos que reflejen otras propiedades. Por ejemplo, el grado en que los datos se parecen o diferencian entre sí, propiedad que se denomina variabilidad o variación.</p>
+<div id="varianza" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Varianza</h3>
+<p>Es el promedio de las distancias al cuadrado desde los valores en <span class="math inline">\(X\)</span> hasta la media de <span class="math inline">\(\overline X\)</span> (es decir, de las puntuaciones diferenciales al cuadrado) en una muestra de <span class="math inline">\(n\)</span> sujetos.</p>
+<p>Fórmulas:</p>
+<p><span class="math display">\[S^2_x = \frac{\sum(X_i - \overline X)^2}{N}\]</span></p>
+<p><span class="math display">\[S^2_x = \frac{\sum x^2_i}{N}\]</span></p>
+<p>Fórmula alternativa:</p>
+<p><span class="math display">\[S^2_x = \frac{\sum X^2_i}{N}-\overline X^2\]</span></p>
+</div>
+</div>
+<div id="desviacion-estandar-o-tipica" class="section level2">
+<h2><span class="header-section-number">4.5</span> Desviación Estándar o Típica</h2>
+<div class="figure">
+<img src="img/ds.png" />
+
+</div>
+</div>
+<div id="propiedades-de-la-media-y-varianza" class="section level2">
+<h2><span class="header-section-number">4.6</span> Propiedades de la Media y Varianza</h2>
+<ul>
+<li>La media puede tomarse como cualquier valor mientras que <span class="math inline">\(S^2X\)</span> y <span class="math inline">\(SX\)</span> son siempre positivas, siendo su valor mínimo <span class="math inline">\(0\)</span>.</li>
+<li>Si tenemos una misma variable <span class="math inline">\(X\)</span> que ha sido medida en <span class="math inline">\(k\)</span> grupos y conocemos las medidas y varianzas en cada grupo, entonces podemos calcular los estadísticos globalesÑ</li>
+</ul>
+<div class="figure">
+<img src="img/meanVar.png" />
+
+</div>
+</div>
+<div id="curtosis" class="section level2">
+<h2><span class="header-section-number">4.7</span> Curtosis</h2>
+<p>Sirve para analizar el grado de concentración que presentan los valores de una variable analizada alrededor de la zona centrla de la distribución de frecuencias, sin necesidad de generar un gráfico.</p>
+<div class="figure">
+<img src="img/curtosis.png" />
+
+</div>
+</div>
+<div id="indice-de-asimetria" class="section level2">
+<h2><span class="header-section-number">4.8</span> Índice de Asimetría</h2>
+<p>La asimetría de una distribución hace referencia al grado en que los datos se reparten por encima y por debajo de la tendencia central.</p>
+<div class="figure">
+<img src="img/asimetria.png" />
+
+</div>
+</div>
+<div id="quantile-quantile-plot-q-q-plot" class="section level2">
+<h2><span class="header-section-number">4.9</span> Quantile-Quantile Plot (Q-Q plot)</h2>
+<p>It is a graphical tool to help us assess if a set of data plausibly came from some theoretical distribution such as a <em>normal</em> or <em>exponential</em>. For example, if we run a statistical analysis that assumes our dependent variable is <em>normally distributed</em>, we can use a Normal Q-Q plot to check that assumption.</p>
+<p>A Q-Q plot is a scatterplot created by plotting two sets of quantiles against one another. If both sets of quantiles came from the same distribution, we should see the points forming a line that’s roughly straight.</p>
+<div class="figure">
+<img src="img/qqplot.png" />
+
+</div>
+<div id="q-q-plot-of-a-uniform-distribution" class="section level3">
+<h3><span class="header-section-number">4.9.1</span> Q-Q plot of a uniform distribution</h3>
+<div class="figure">
+<img src="img/qquniform.png" />
+
+</div>
+<div class="figure">
+<img src="img/qquniform1.png" />
+
+</div>
+</div>
+<div id="q-q-plot-of-a-poisson-distribution" class="section level3">
+<h3><span class="header-section-number">4.9.2</span> Q-Q plot of a Poisson distribution</h3>
+<div class="figure">
+<img src="img/qqpoisson.png" />
+
+</div>
+</div>
+<div id="understanding-type-of-distribution-through-q-q-plots" class="section level3">
+<h3><span class="header-section-number">4.9.3</span> Understanding type of distribution through Q-Q plots</h3>
+<div class="figure">
+<img src="img/qqexamples.png" />
+
+</div>
+</div>
+</div>
+<div id="boxplots" class="section level2">
+<h2><span class="header-section-number">4.10</span> Boxplots</h2>
+<p>Officially known as <strong>box-and-whisker plots</strong>, also called <strong>boxplots</strong>, for short, this is a technique for exploratory data analysis devised by Tukey (1977). One can see the spread and symmetry of a distribution at a glance, and the position of any extreme scores.</p>
+<ul>
+<li><em>Hinges</em>: These are the sides of the box in a boxplot, corresponding approximately to the 25th and 75th percentiles of the distribution.</li>
+<li><em>H-spread</em>: The distance between the two hinges (i.e., the width of the box) in a boxplot.</li>
+<li><em>Inner fences</em>: Locations on either side of the box (in a boxplot) that are 1.5 times the H-spread from each hinge. The distance between the upper and lower inner fence is four times the H-spread.</li>
+<li><em>Adjacent values</em>: The upper adjacent value is the highest score in the distribution that is not higher than the upper inner fence, and the lower adjacent value is similarly defined in terms of the lower inner fence of a boxplot.</li>
+<li>The <em>upper whisker</em> is drawn from the upper hinge to the upper adjacent value, and the lower whisker is drawn from the lower hinge to the lower adjacent value.</li>
+<li><em>Outlier</em>: Defined in general as an extreme score standing by itself in a distribution, an outlier is more specifically defined in the context of a boxplot.</li>
+<li>In terms of a boxplot, an outlier is any score that is beyond the reach of the whiskers on either side. The outliers are indicated as points in the boxplot.</li>
+</ul>
+<p><img src="img/boxplot.png" /> Two or more box plots drawn on the same Y-axis. These are often useful in comparing features of distributions. An example portraying the times it took samples of women and men to do a task is shown below.</p>
+<div class="figure">
+<img src="img/boxplot1.png" />
+
+</div>
+<div id="more-elaborate-boxplots" class="section level3">
+<h3><span class="header-section-number">4.10.1</span> More elaborate Boxplots</h3>
+<ul>
+<li>Means indicated in green lines rahter than plus signs.</li>
+<li>Mean of all scores indicated by a gray line.</li>
+<li>individual scores are represented by dots. Since the scores have been rounded to the nearest second, any given dot might represent more than one score.</li>
+<li>One box is <strong>wider</strong> than the other one because the widths of the boxes are proportional to the number of subjects.</li>
+</ul>
+<div class="figure">
+<img src="img/boxplotfancy.png" />
+
+</div>
+<p>If all the dots want to be seen we need to add some <code>jitter</code> to the boxplot:</p>
+<div class="figure">
+<img src="img/boxplotjitter.png" />
+
+</div>
+</div>
+</div>
+<div id="using-different-graphics-in-the-same-exploration" class="section level2">
+<h2><span class="header-section-number">4.11</span> Using different graphics in the same exploration</h2>
+<div class="figure">
+<img src="img/mixedgraph.png" />
+
+</div>
+</div>
+<div id="other-kinds-of-distributions" class="section level2">
+<h2><span class="header-section-number">4.12</span> Other kinds of distributions</h2>
+<div class="figure">
+<img src="img/dist.png" />
+
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="recoleccion-de-datos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tareas.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/generaviles/estadistica-syllabus03-dataViz.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
