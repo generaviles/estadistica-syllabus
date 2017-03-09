@@ -1,0 +1,23 @@
+#Data Preparation
+
+It is important to remember that one of the first steps in data preparation is exploring the distribution of the values in each considered variable. Generally, a normal distribution is prefered over other distributions because there are more tools available to analize data that behaves in a *normal* way.
+
+##Data Transformation
+
+  - Transactional processes and most metrics that involve time measurements exist with non-normal distributions. Some examples:
+    - Mean time to repair HVAC equipment.
+    - Admissions cycle time for college applicants.
+    - Days sales outstanding.
+    - Waiting times at a bank or physicians office.
+    - Time being treated in a hospital emergency room.
+
+<br \>
+<center>![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/nonnormal.png)</center>
+
+  - Usted puede transformar los datos usando muchas funciones, tales como raíz cuadrada, logaritmo, potencia, recíproca o arcoseno.
+  - La transformación de Box-Cox es fácil de comprender, pero es muy limitada y, con frecuencia, no determina una transformación adecuada. Además, está disponible solo para datos que son positivos.
+  - La transformación de Johnson. La función de transformación de Johnson es más complicada, pero es muy efectiva para determinar una transformación adecuada.
+
+<br \>
+<center>![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/transformacion.png)</center>
+

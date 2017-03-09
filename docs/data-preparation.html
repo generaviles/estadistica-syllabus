@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="conceptos-generales.html">
+<link rel="prev" href="recoleccion-de-datos.html">
+<link rel="next" href="data-visualization.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -190,27 +190,44 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Estadística para el Análisis de Datos</h1>
-<h4 class="author"><em>Gener Avilés R</em></h4>
-<h4 class="date"><em>2017-03-09</em></h4>
-</div>
-<div id="introduccion" class="section level1">
-<h1><span class="header-section-number">Capítulo 1</span> Introducción</h1>
-<p>Curso impartido por:</p>
+<div id="data-preparation" class="section level1">
+<h1><span class="header-section-number">Capítulo 4</span> Data Preparation</h1>
+<p>It is important to remember that one of the first steps in data preparation is exploring the distribution of the values in each considered variable. Generally, a normal distribution is prefered over other distributions because there are more tools available to analize data that behaves in a <em>normal</em> way.</p>
+<div id="data-transformation" class="section level2">
+<h2><span class="header-section-number">4.1</span> Data Transformation</h2>
 <ul>
-<li><a href="https://www.researchgate.net/profile/Juan_Nieto6">Dr. Juan Iván Nieto Hipólito</a></li>
-<li><a href="https://www.researchgate.net/profile/Maria_Cosio_Leon">Dra. María de los Ángeles Cosío León</a></li>
+<li>Transactional processes and most metrics that involve time measurements exist with non-normal distributions. Some examples:
+<ul>
+<li>Mean time to repair HVAC equipment.</li>
+<li>Admissions cycle time for college applicants.</li>
+<li>Days sales outstanding.</li>
+<li>Waiting times at a bank or physicians office.</li>
+<li>Time being treated in a hospital emergency room.</li>
+</ul></li>
 </ul>
+<br \>
+<center>
+<img src="img/nonnormal.png" />
+</center>
+<ul>
+<li>Usted puede transformar los datos usando muchas funciones, tales como raíz cuadrada, logaritmo, potencia, recíproca o arcoseno.</li>
+<li>La transformación de Box-Cox es fácil de comprender, pero es muy limitada y, con frecuencia, no determina una transformación adecuada. Además, está disponible solo para datos que son positivos.</li>
+<li>La transformación de Johnson. La función de transformación de Johnson es más complicada, pero es muy efectiva para determinar una transformación adecuada.</li>
+</ul>
+<br \>
+<center>
+<img src="img/transformacion.png" />
+</center>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="conceptos-generales.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="recoleccion-de-datos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-visualization.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
@@ -238,7 +255,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/generaviles/estadistica-syllabusindex.Rmd",
+"link": "https://github.com/generaviles/estadistica-syllabus03-dataPrep.Rmd",
 "text": "Edit"
 },
 "download": null,
