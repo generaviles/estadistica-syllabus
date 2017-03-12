@@ -1,0 +1,52 @@
+#Curso R
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## ¿Cómo instalar las herramientas?
+###Instalando R
+Las herramientas que utilizaremos será la última versión liberada del software (al momento de hacer éste taller la versión actual es R 3.3.3):
+
+  - [Para usuarios Windows.](https://cran.r-project.org/bin/windows/base/)
+  - [Para usuarios MacOS](https://cran.r-project.org/bin/macosx/)
+  - Para usuarios Linux:
+    - [Debiant](https://cran.r-project.org/bin/linux/debian/)
+    - [Suse](https://cran.r-project.org/bin/linux/suse/)
+    - [Ubuntu](https://cran.r-project.org/bin/linux/ubuntu/)
+
+###Instalando RStudio (**I**ntegrated **D**evelopment **E**nvironment para R)
+
+El utilizar un IDE simplifica considerablemente el trabajo a realizar con R.<br \>
+
+Instalaciones para:
+
+  - [Windows](https://download1.rstudio.org/RStudio-1.0.136.exe)
+  - [MacOS_X](https://download1.rstudio.org/RStudio-1.0.136.dmg)
+  - [Ubuntu_32Bit](https://download1.rstudio.org/rstudio-1.0.136-i386.deb)
+  - [Ubuntu_64Bit](https://download1.rstudio.org/rstudio-1.0.136-amd64.deb)
+  - [Fedora 19+/Redhat7+_32Bit](https://download1.rstudio.org/rstudio-1.0.136-i686.rpm)
+  - [Fedora 19+/Redhat7+_64Bit](https://download1.rstudio.org/rstudio-1.0.136-x86_64.rpm)
+
+
+## ¿Qué es R?
+  - R fué desarrollado a partir de **S**, un lenguaje desarrollado en *Bell Labs* por John Chambers y colaboradores.
+    - **S** inicialmente se corría con librerías de [Fortran](https://en.wikipedia.org/wiki/Fortran).
+    - En 1988 S fué reescrito en **C**, un lenguaje que también fué desarrollado en *Bell Labs*.
+    - En el libro [Statistical Models in S](https://www.amazon.com/Statistical-Models-J-M-Chambers/dp/0412053012/ref=sr_1_1?s=books&ie=UTF8&qid=1489359240&sr=1-1&keywords=Statistical+models+in+S) (conocido como el *white book*) se documentan la funcionalidad para análsis estadísticos a éste nivel de desarrollo de **S**.
+    - La versión 4 de **S** se liberó en 1998 y se parece mucho a los softwares actuales derivados de **S**: [R](https://www.r-project.org) y [S-PLUS](http://www.solutionmetrics.com.au/products/splus/default.html). El libro [Programing with Data](https://www.amazon.com/Programming-Data-Language-Lecture-Economics/dp/0387985034) (conocido como el *green book*) por John Chambers documenta ésta versión del lenguaje.
+  - La filosofía de S:
+    - "Queríamos que los usuarios pudieran empezar en un ambiente interactivo, donde ellos no se pensaran, de forma conciente, como programadores. Posteriormente, mientras sus necesidades se hacían más claras y su sofisticación aumentara, podrían "deslizarse" hacia la programación, cuando el lenguaje y el sistema como realizara los procesos se volvieran más importantes para ellos." [@historyS]
+  - **R** fué desarrollado a partir de S en Nueva Zelanda por Ross Ihaka y Robert Gentleman. Su experiencia en el proceso está documentada en un [paper](https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf) publcado por la Universidad de Auckland, NZ.
+  - En 1993 se libera por primera vez al público.
+  - En 1997 se forma el **R Core Group** con gente asociada a *S-PLUS*. Éste grupo controla el código fuente de R.
+  - En 2000 se libera *R version 1.0.0*
+  - El 7 de Marzo de 2017 se libera *R version 3.3.3*
+    
+##¿Cómo obtener ayuda?  
+
+##Estructuras de datos en R
+
+##¿Cómo compartir datos y análisis con estadísticos o científicos de datos?
+
+##Utilizando R

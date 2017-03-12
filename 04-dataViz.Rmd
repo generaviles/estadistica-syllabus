@@ -68,11 +68,14 @@ Fórmulas:
 
 $$S^2_x = \frac{\sum(X_i - \overline X)^2}{N}$$
 
+
 $$S^2_x = \frac{\sum x^2_i}{N}$$
+
 
 Fórmula alternativa:
 
 $$S^2_x = \frac{\sum X^2_i}{N}-\overline X^2$$
+
 
 ##Desviación Estándar o Típica
 ![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/ds.png)

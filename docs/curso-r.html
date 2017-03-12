@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="conceptos-generales.html">
+<link rel="prev" href="data-visualization.html">
+<link rel="next" href="tareas.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -201,27 +201,86 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Estadística para el Análisis de Datos</h1>
-<h4 class="author"><em>Gener Avilés R</em></h4>
-<h4 class="date"><em>2017-03-12</em></h4>
-</div>
-<div id="introduccion" class="section level1">
-<h1><span class="header-section-number">Capítulo 1</span> Introducción</h1>
-<p>Curso impartido por:</p>
+<div id="curso-r" class="section level1">
+<h1><span class="header-section-number">Capítulo 6</span> Curso R</h1>
+<div id="como-instalar-las-herramientas" class="section level2">
+<h2><span class="header-section-number">6.1</span> ¿Cómo instalar las herramientas?</h2>
+<div id="instalando-r" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Instalando R</h3>
+<p>Las herramientas que utilizaremos será la última versión liberada del software (al momento de hacer éste taller la versión actual es R 3.3.3):</p>
 <ul>
-<li><a href="https://www.researchgate.net/profile/Juan_Nieto6">Dr. Juan Iván Nieto Hipólito</a></li>
-<li><a href="https://www.researchgate.net/profile/Maria_Cosio_Leon">Dra. María de los Ángeles Cosío León</a></li>
+<li><a href="https://cran.r-project.org/bin/windows/base/">Para usuarios Windows.</a></li>
+<li><a href="https://cran.r-project.org/bin/macosx/">Para usuarios MacOS</a></li>
+<li>Para usuarios Linux:
+<ul>
+<li><a href="https://cran.r-project.org/bin/linux/debian/">Debiant</a></li>
+<li><a href="https://cran.r-project.org/bin/linux/suse/">Suse</a></li>
+<li><a href="https://cran.r-project.org/bin/linux/ubuntu/">Ubuntu</a></li>
+</ul></li>
 </ul>
+</div>
+<div id="instalando-rstudio-integrated-development-environment-para-r" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Instalando RStudio (<strong>I</strong>ntegrated <strong>D</strong>evelopment <strong>E</strong>nvironment para R)</h3>
+<p>El utilizar un IDE simplifica considerablemente el trabajo a realizar con R.<br \></p>
+<p>Instalaciones para:</p>
+<ul>
+<li><a href="https://download1.rstudio.org/RStudio-1.0.136.exe">Windows</a></li>
+<li><a href="https://download1.rstudio.org/RStudio-1.0.136.dmg">MacOS_X</a></li>
+<li><a href="https://download1.rstudio.org/rstudio-1.0.136-i386.deb">Ubuntu_32Bit</a></li>
+<li><a href="https://download1.rstudio.org/rstudio-1.0.136-amd64.deb">Ubuntu_64Bit</a></li>
+<li><a href="https://download1.rstudio.org/rstudio-1.0.136-i686.rpm">Fedora 19+/Redhat7+_32Bit</a></li>
+<li><a href="https://download1.rstudio.org/rstudio-1.0.136-x86_64.rpm">Fedora 19+/Redhat7+_64Bit</a></li>
+</ul>
+</div>
+</div>
+<div id="que-es-r" class="section level2">
+<h2><span class="header-section-number">6.2</span> ¿Qué es R?</h2>
+<ul>
+<li>R fué desarrollado a partir de <strong>S</strong>, un lenguaje desarrollado en <em>Bell Labs</em> por John Chambers y colaboradores.
+<ul>
+<li><strong>S</strong> inicialmente se corría con librerías de <a href="https://en.wikipedia.org/wiki/Fortran">Fortran</a>.</li>
+<li>En 1988 S fué reescrito en <strong>C</strong>, un lenguaje que también fué desarrollado en <em>Bell Labs</em>.</li>
+<li>En el libro <a href="https://www.amazon.com/Statistical-Models-J-M-Chambers/dp/0412053012/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1489359240&amp;sr=1-1&amp;keywords=Statistical+models+in+S">Statistical Models in S</a> (conocido como el <em>white book</em>) se documentan la funcionalidad para análsis estadísticos a éste nivel de desarrollo de <strong>S</strong>.</li>
+<li>La versión 4 de <strong>S</strong> se liberó en 1998 y se parece mucho a los softwares actuales derivados de <strong>S</strong>: <a href="https://www.r-project.org">R</a> y <a href="http://www.solutionmetrics.com.au/products/splus/default.html">S-PLUS</a>. El libro <a href="https://www.amazon.com/Programming-Data-Language-Lecture-Economics/dp/0387985034">Programing with Data</a> (conocido como el <em>green book</em>) por John Chambers documenta ésta versión del lenguaje.</li>
+</ul></li>
+<li>La filosofía de S:
+<ul>
+<li>“Queríamos que los usuarios pudieran empezar en un ambiente interactivo, donde ellos no se pensaran, de forma conciente, como programadores. Posteriormente, mientras sus necesidades se hacían más claras y su sofisticación aumentara, podrían”deslizarse&quot; hacia la programación, cuando el lenguaje y el sistema como realizara los procesos se volvieran más importantes para ellos.&quot; <span class="citation">(Chambers <a href="#ref-historyS">2000</a>)</span></li>
+</ul></li>
+<li><strong>R</strong> fué desarrollado a partir de S en Nueva Zelanda por Ross Ihaka y Robert Gentleman. Su experiencia en el proceso está documentada en un <a href="https://www.stat.auckland.ac.nz/~ihaka/downloads/R-paper.pdf">paper</a> publcado por la Universidad de Auckland, NZ.</li>
+<li>En 1993 se libera por primera vez al público.</li>
+<li>En 1997 se forma el <strong>R Core Group</strong> con gente asociada a <em>S-PLUS</em>. Éste grupo controla el código fuente de R.</li>
+<li>En 2000 se libera <em>R version 1.0.0</em></li>
+<li>El 7 de Marzo de 2017 se libera <em>R version 3.3.3</em></li>
+</ul>
+</div>
+<div id="como-obtener-ayuda" class="section level2">
+<h2><span class="header-section-number">6.3</span> ¿Cómo obtener ayuda?</h2>
+</div>
+<div id="estructuras-de-datos-en-r" class="section level2">
+<h2><span class="header-section-number">6.4</span> Estructuras de datos en R</h2>
+</div>
+<div id="como-compartir-datos-y-analisis-con-estadisticos-o-cientificos-de-datos" class="section level2">
+<h2><span class="header-section-number">6.5</span> ¿Cómo compartir datos y análisis con estadísticos o científicos de datos?</h2>
+</div>
+<div id="utilizando-r" class="section level2">
+<h2><span class="header-section-number">6.6</span> Utilizando R</h2>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-historyS">
+<p>Chambers, John. 2000. “Stages in the Evolution of S.” March. <a href="http://ect.bell-labs.com/sl/S/history.html" class="uri">http://ect.bell-labs.com/sl/S/history.html</a>.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="conceptos-generales.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="data-visualization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tareas.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
@@ -249,7 +308,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/generaviles/estadistica-syllabusindex.Rmd",
+"link": "https://github.com/generaviles/estadistica-syllabus06-cursoR.Rmd",
 "text": "Edit"
 },
 "download": null,
