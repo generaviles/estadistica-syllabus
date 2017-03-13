@@ -181,4 +181,12 @@ Al completar los pasos, tu sesión de RStudio debería verse como se muestra en 
 
 ![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/rstudioproject4.png)
 
+###Cargando los datos
+
+Hay muchas maneras de cargar datos a R, se puede hacer con líneas de código desde la consola, a través de paquetes preinstalados que ayudan a leer datos en formatos específicos o através de los íconos de RStudio. La siguiente imagen muestra cómo realizar el proceso a través de RStudio:
+
+<center>![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/rstudioimport.png)
+
+Para éste ejercicio utilizaremos una base de datos que se puede obtener [aquí]().
+
 ##¿Cómo compartir datos y análisis con estadísticos o científicos de datos?
