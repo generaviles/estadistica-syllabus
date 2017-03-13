@@ -49,7 +49,7 @@ Instalaciones para:
   - La [sintaxis](http://librosweb.es/libro/javascript/capitulo_1/sintaxis.html) de R es muy similar a S mas no su [semántica](https://geekytheory.com/semantica-coder).
   - El software es ligero, la funcionalidad del mismo está dada en un formato modular, a través de paquetes.
   - Las capacidades **gráficas** son sofisticadas y mejores que la mayoría de los paquetes estadísticos.
-  - Funciona para realizar actividades de interacción pero también contiene un podereso lenguaje de programación para el desarrollo de nuevas herramientas (usuario->programador).
+  - Funciona para realizar actividades de interacción pero también contiene un poderoso lenguaje de programación para el desarrollo de nuevas herramientas (usuario->programador).
   - La comunidad R es muy activa y dinámica.
     
 ##¿Cómo obtener ayuda?
@@ -64,7 +64,8 @@ Una vez que entiendo cómo trabaja la función `plot` entonces puedo probar con 
 ```{r}
 plot(cars)
 ```
-Otro buen lugar para obtener información son las [***cheat sheets***](https://www.rstudio.com/resources/cheatsheets/) publicadas por RStudio en su mayoría.
+
+Otro buen lugar para obtener información son las [***cheat sheets***](https://www.rstudio.com/resources/cheatsheets/), publicadas por RStudio en su mayoría.
 
 Un recurso muy utilizado es la búsqueda en [Google](www.google.com).
 
@@ -78,8 +79,106 @@ Los cursos en línea han tenido un significativo auge en los últimos años, com
     - [Coursera](https://www.coursera.org/specializations/jhu-data-science)
     - [Edx](https://www.edx.org/xseries/data-analysis-life-sciences)
 
+##Entrada de datos y su evaluación en la consola
+
+Una vez que abrimos la consola R podemos empezar a escribir en el *R prompt*, los caracteres que se ingresan al *R prompt* se le llaman **expresiones**, hay algunas reglas básicas para entrar expresiones:
+
+  - **<-** es el símbolo que se utiliza como operador de asignación, también es posible utilizar **=**.
+  - **#**: R interpreta todo lo que esté a la derecha de éste símbolo como un comentario y no lo toma en cuenta para cálculos.
+
+Ejemplos:
+
+```{r, echo=TRUE, warning=TRUE, tidy=TRUE}
+x <- 1  #No se imprime nada, solo se creó un nuevo objeto con un valor numérico.
+
+print(x) #impresión explícita
+
+msg <- "hello" #No se imprime nada, se creó el objeto `msg` con valores `string` o `character`
+
+msg  #auto-impresión
+
+x  #auto-imrpesión
+```
+
 ##Estructuras de datos en R
 
-##¿Cómo compartir datos y análisis con estadísticos o científicos de datos?
+###Clases básicas de objetos
 
-##Utilizando R
+R tiene 5 clases básicas o *atómicas* de objetos:
+
+  - *Character*
+    - Valores cualitativos con escalas nominales u ordinales.
+  - *Numeric* (números reales)
+    - Números con valores cuantitativos con escalas continuas.
+    - Entre un valor y otro hay infinito de otros valores.
+  - *Integer*
+    - Números completos, sin fracciones, pueden ser positivos o negativos.
+    - Conocidos como valores cuantitativos con escalas discretas.
+    - Equidistancia entre un valor y otro.
+  - *Complex*
+  - *Logical* (booleans/binarios/falso-verdadero)
+    - Valores con solo dos opciones posibles, ambas mutuamente exclusivas y opuestas.
+
+El objeto **más básico** es el ***vector***:
+
+  - Un vector **solo** puede contener objetos de la misma clase.
+  - La **lista** permite contener objetos de distintos tipos como un vector.
+
+###Atributos
+
+Se puede accceder a los atributos de un objeto en R a través de la función `attributes()`. La información que R entregue será la siguiente:
+
+  - `names`/`dimnames`
+    - Nombres y/o nombres de dimensiones.
+  - `dimensions`
+    - En el caso de matrices y arreglos.
+  - `class`
+    - Clase del objeto.
+  - `length`
+    - Longitud del objeto.
+  - Otros atributos y metadata definidos por el usuario.
+
+##Utilizando R y RStudio
+
+*En esta sección nos apoyamos con las ilustraciones de Carlos Pérez González y Marcos Colabrook Santamaría [@rstudiocurso]*
+
+###Componentes RStudio
+
+Lo primero que haremos es abrir RStudio y explorar los componentes básicos:
+
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/rstudio.png)
+
+###Iniciando un proyecto
+
+####Paso 1
+
+En la esquina superior derecha, identifica el ícono de projecto y da click en él.
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/rstudioproject.png)
+
+####Paso 2
+
+Puedes elegir crear el proyecto en un directorio que ya exista o crear un directorio nuevo para iniciar. Aún puedes conectar tu projecto a algún administrador de versiones ([Git](https://git-scm.com)/[GitHub](https://github.com)).
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/rstudioproject1.png)
+
+####Paso 3
+
+Por ahora la opción *empty project* es la que utilizaremos.
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/rstudioproject2.png)
+
+####Paso 4
+
+Selecciona el nombre del directorio así como el folder donde se creará en tu ordenador.
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/rstudioproject3.png)
+
+####Paso 5
+
+Al completar los pasos, tu sesión de RStudio debería verse como se muestra en la imagen.
+
+![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/rstudioproject4.png)
+
+##¿Cómo compartir datos y análisis con estadísticos o científicos de datos?

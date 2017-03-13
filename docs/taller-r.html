@@ -26,7 +26,7 @@
 <meta name="author" content="Gener Avilés R">
 
 
-<meta name="date" content="2017-03-12">
+<meta name="date" content="2017-03-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -172,9 +172,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.2.2" data-path="taller-r.html"><a href="taller-r.html#generalidades"><i class="fa fa-check"></i><b>6.2.2</b> Generalidades</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="taller-r.html"><a href="taller-r.html#como-obtener-ayuda"><i class="fa fa-check"></i><b>6.3</b> ¿Cómo obtener ayuda?</a></li>
-<li class="chapter" data-level="6.4" data-path="taller-r.html"><a href="taller-r.html#estructuras-de-datos-en-r"><i class="fa fa-check"></i><b>6.4</b> Estructuras de datos en R</a></li>
-<li class="chapter" data-level="6.5" data-path="taller-r.html"><a href="taller-r.html#como-compartir-datos-y-analisis-con-estadisticos-o-cientificos-de-datos"><i class="fa fa-check"></i><b>6.5</b> ¿Cómo compartir datos y análisis con estadísticos o científicos de datos?</a></li>
-<li class="chapter" data-level="6.6" data-path="taller-r.html"><a href="taller-r.html#utilizando-r"><i class="fa fa-check"></i><b>6.6</b> Utilizando R</a></li>
+<li class="chapter" data-level="6.4" data-path="taller-r.html"><a href="taller-r.html#entrada-de-datos-y-su-evaluacion-en-la-consola"><i class="fa fa-check"></i><b>6.4</b> Entrada de datos y su evaluación en la consola</a></li>
+<li class="chapter" data-level="6.5" data-path="taller-r.html"><a href="taller-r.html#estructuras-de-datos-en-r"><i class="fa fa-check"></i><b>6.5</b> Estructuras de datos en R</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="taller-r.html"><a href="taller-r.html#clases-basicas-de-objetos"><i class="fa fa-check"></i><b>6.5.1</b> Clases básicas de objetos</a></li>
+<li class="chapter" data-level="6.5.2" data-path="taller-r.html"><a href="taller-r.html#atributos"><i class="fa fa-check"></i><b>6.5.2</b> Atributos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="taller-r.html"><a href="taller-r.html#utilizando-r-y-rstudio"><i class="fa fa-check"></i><b>6.6</b> Utilizando R y RStudio</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="taller-r.html"><a href="taller-r.html#componentes-rstudio"><i class="fa fa-check"></i><b>6.6.1</b> Componentes RStudio</a></li>
+<li class="chapter" data-level="6.6.2" data-path="taller-r.html"><a href="taller-r.html#iniciando-un-proyecto"><i class="fa fa-check"></i><b>6.6.2</b> Iniciando un proyecto</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="taller-r.html"><a href="taller-r.html#como-compartir-datos-y-analisis-con-estadisticos-o-cientificos-de-datos"><i class="fa fa-check"></i><b>6.7</b> ¿Cómo compartir datos y análisis con estadísticos o científicos de datos?</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="tareas.html"><a href="tareas.html"><i class="fa fa-check"></i><b>7</b> Tareas</a><ul>
 <li class="chapter" data-level="7.1" data-path="tareas.html"><a href="tareas.html#point-chart"><i class="fa fa-check"></i><b>7.1</b> Point Chart</a></li>
@@ -265,7 +272,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>La <a href="http://librosweb.es/libro/javascript/capitulo_1/sintaxis.html">sintaxis</a> de R es muy similar a S mas no su <a href="https://geekytheory.com/semantica-coder">semántica</a>.</li>
 <li>El software es ligero, la funcionalidad del mismo está dada en un formato modular, a través de paquetes.</li>
 <li>Las capacidades <strong>gráficas</strong> son sofisticadas y mejores que la mayoría de los paquetes estadísticos.</li>
-<li>Funciona para realizar actividades de interacción pero también contiene un podereso lenguaje de programación para el desarrollo de nuevas herramientas (usuario-&gt;programador).</li>
+<li>Funciona para realizar actividades de interacción pero también contiene un poderoso lenguaje de programación para el desarrollo de nuevas herramientas (usuario-&gt;programador).</li>
 <li>La comunidad R es muy activa y dinámica.</li>
 </ul>
 </div>
@@ -278,7 +285,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </blockquote>
 <p>Una vez que entiendo cómo trabaja la función <code>plot</code> entonces puedo probar con datos y ver qué obtengo. Ésta es una manera frecuente de resolver dudas o problemas de código.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(cars)</code></pre></div>
-<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-1-1.png" width="672" /> Otro buen lugar para obtener información son las <a href="https://www.rstudio.com/resources/cheatsheets/"><strong><em>cheat sheets</em></strong></a> publicadas por RStudio en su mayoría.</p>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Otro buen lugar para obtener información son las <a href="https://www.rstudio.com/resources/cheatsheets/"><strong><em>cheat sheets</em></strong></a>, publicadas por RStudio en su mayoría.</p>
 <p>Un recurso muy utilizado es la búsqueda en <a href="www.google.com">Google</a>.</p>
 <p>Los cursos en línea han tenido un significativo auge en los últimos años, comparto algunos que considero valen la pena, ésta lista no es exhaustiva:</p>
 <ul>
@@ -293,14 +301,139 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 </ul>
 </div>
+<div id="entrada-de-datos-y-su-evaluacion-en-la-consola" class="section level2">
+<h2><span class="header-section-number">6.4</span> Entrada de datos y su evaluación en la consola</h2>
+<p>Una vez que abrimos la consola R podemos empezar a escribir en el <em>R prompt</em>, los caracteres que se ingresan al <em>R prompt</em> se le llaman <strong>expresiones</strong>, hay algunas reglas básicas para entrar expresiones:</p>
+<ul>
+<li><strong>&lt;-</strong> es el símbolo que se utiliza como operador de asignación, también es posible utilizar <strong>=</strong>.</li>
+<li><strong>#</strong>: R interpreta todo lo que esté a la derecha de éste símbolo como un comentario y no lo toma en cuenta para cálculos.</li>
+</ul>
+<p>Ejemplos:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">1</span>  <span class="co">#No se imprime nada, solo se creó un nuevo objeto con un valor numérico.</span>
+
+<span class="kw">print</span>(x)  <span class="co">#impresión explícita</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">msg &lt;-<span class="st"> &quot;hello&quot;</span>  <span class="co">#No se imprime nada, se creó el objeto `msg` con valores `string` o `character`</span>
+
+msg  <span class="co">#auto-impresión</span></code></pre></div>
+<pre><code>## [1] &quot;hello&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x  <span class="co">#auto-imrpesión</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+</div>
 <div id="estructuras-de-datos-en-r" class="section level2">
-<h2><span class="header-section-number">6.4</span> Estructuras de datos en R</h2>
+<h2><span class="header-section-number">6.5</span> Estructuras de datos en R</h2>
+<div id="clases-basicas-de-objetos" class="section level3">
+<h3><span class="header-section-number">6.5.1</span> Clases básicas de objetos</h3>
+<p>R tiene 5 clases básicas o <em>atómicas</em> de objetos:</p>
+<ul>
+<li><em>Character</em>
+<ul>
+<li>Valores cualitativos con escalas nominales u ordinales.</li>
+</ul></li>
+<li><em>Numeric</em> (números reales)
+<ul>
+<li>Números con valores cuantitativos con escalas continuas.</li>
+<li>Entre un valor y otro hay infinito de otros valores.</li>
+</ul></li>
+<li><em>Integer</em>
+<ul>
+<li>Números completos, sin fracciones, pueden ser positivos o negativos.</li>
+<li>Conocidos como valores cuantitativos con escalas discretas.</li>
+<li>Equidistancia entre un valor y otro.</li>
+</ul></li>
+<li><em>Complex</em></li>
+<li><em>Logical</em> (booleans/binarios/falso-verdadero)
+<ul>
+<li>Valores con solo dos opciones posibles, ambas mutuamente exclusivas y opuestas.</li>
+</ul></li>
+</ul>
+<p>El objeto <strong>más básico</strong> es el <strong><em>vector</em></strong>:</p>
+<ul>
+<li>Un vector <strong>solo</strong> puede contener objetos de la misma clase.</li>
+<li>La <strong>lista</strong> permite contener objetos de distintos tipos como un vector.</li>
+</ul>
+</div>
+<div id="atributos" class="section level3">
+<h3><span class="header-section-number">6.5.2</span> Atributos</h3>
+<p>Se puede accceder a los atributos de un objeto en R a través de la función <code>attributes()</code>. La información que R entregue será la siguiente:</p>
+<ul>
+<li><code>names</code>/<code>dimnames</code>
+<ul>
+<li>Nombres y/o nombres de dimensiones.</li>
+</ul></li>
+<li><code>dimensions</code>
+<ul>
+<li>En el caso de matrices y arreglos.</li>
+</ul></li>
+<li><code>class</code>
+<ul>
+<li>Clase del objeto.</li>
+</ul></li>
+<li><code>length</code>
+<ul>
+<li>Longitud del objeto.</li>
+</ul></li>
+<li>Otros atributos y metadata definidos por el usuario.</li>
+</ul>
+</div>
+</div>
+<div id="utilizando-r-y-rstudio" class="section level2">
+<h2><span class="header-section-number">6.6</span> Utilizando R y RStudio</h2>
+<p><em>En esta sección nos apoyamos con las ilustraciones de Carlos Pérez González y Marcos Colabrook Santamaría <span class="citation">(Carlos Pérez-González <a href="#ref-rstudiocurso">2014</a>)</span></em></p>
+<div id="componentes-rstudio" class="section level3">
+<h3><span class="header-section-number">6.6.1</span> Componentes RStudio</h3>
+<p>Lo primero que haremos es abrir RStudio y explorar los componentes básicos:</p>
+<div class="figure">
+<img src="img/rstudio.png" />
+
+</div>
+</div>
+<div id="iniciando-un-proyecto" class="section level3">
+<h3><span class="header-section-number">6.6.2</span> Iniciando un proyecto</h3>
+<div id="paso-1" class="section level4">
+<h4><span class="header-section-number">6.6.2.1</span> Paso 1</h4>
+<p>En la esquina superior derecha, identifica el ícono de projecto y da click en él.</p>
+<div class="figure">
+<img src="img/rstudioproject.png" />
+
+</div>
+</div>
+<div id="paso-2" class="section level4">
+<h4><span class="header-section-number">6.6.2.2</span> Paso 2</h4>
+<p>Puedes elegir crear el proyecto en un directorio que ya exista o crear un directorio nuevo para iniciar. Aún puedes conectar tu projecto a algún administrador de versiones (<a href="https://git-scm.com">Git</a>/<a href="https://github.com">GitHub</a>).</p>
+<div class="figure">
+<img src="img/rstudioproject1.png" />
+
+</div>
+</div>
+<div id="paso-3" class="section level4">
+<h4><span class="header-section-number">6.6.2.3</span> Paso 3</h4>
+<p>Por ahora la opción <em>empty project</em> es la que utilizaremos.</p>
+<div class="figure">
+<img src="img/rstudioproject2.png" />
+
+</div>
+</div>
+<div id="paso-4" class="section level4">
+<h4><span class="header-section-number">6.6.2.4</span> Paso 4</h4>
+<p>Selecciona el nombre del directorio así como el folder donde se creará en tu ordenador.</p>
+<div class="figure">
+<img src="img/rstudioproject3.png" />
+
+</div>
+</div>
+<div id="paso-5" class="section level4">
+<h4><span class="header-section-number">6.6.2.5</span> Paso 5</h4>
+<p>Al completar los pasos, tu sesión de RStudio debería verse como se muestra en la imagen.</p>
+<div class="figure">
+<img src="img/rstudioproject4.png" />
+
+</div>
+</div>
+</div>
 </div>
 <div id="como-compartir-datos-y-analisis-con-estadisticos-o-cientificos-de-datos" class="section level2">
-<h2><span class="header-section-number">6.5</span> ¿Cómo compartir datos y análisis con estadísticos o científicos de datos?</h2>
-</div>
-<div id="utilizando-r" class="section level2">
-<h2><span class="header-section-number">6.6</span> Utilizando R</h2>
+<h2><span class="header-section-number">6.7</span> ¿Cómo compartir datos y análisis con estadísticos o científicos de datos?</h2>
 
 </div>
 </div>
@@ -308,6 +441,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="refs" class="references">
 <div id="ref-historyS">
 <p>Chambers, John. 2000. “Stages in the Evolution of S.” March. <a href="http://ect.bell-labs.com/sl/S/history.html" class="uri">http://ect.bell-labs.com/sl/S/history.html</a>.</p>
+</div>
+<div id="ref-rstudiocurso">
+<p>Carlos Pérez-González, Marcos Colebrook-Santamaría. 2014. “Curso Introductorio de R: Introducción a La Interfaz de Rstudio.” <a href="http://mcolebrook.github.io/CursoRStudio/RStudio.html#(1)" class="uri">http://mcolebrook.github.io/CursoRStudio/RStudio.html#(1)</a>.</p>
 </div>
 </div>
             </section>
