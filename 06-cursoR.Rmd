@@ -1,4 +1,4 @@
-#Curso R
+#Taller R
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -30,6 +30,7 @@ Instalaciones para:
 
 
 ## ¿Qué es R?
+###Historia
   - R fué desarrollado a partir de **S**, un lenguaje desarrollado en *Bell Labs* por John Chambers y colaboradores.
     - **S** inicialmente se corría con librerías de [Fortran](https://en.wikipedia.org/wiki/Fortran).
     - En 1988 S fué reescrito en **C**, un lenguaje que también fué desarrollado en *Bell Labs*.
@@ -42,8 +43,40 @@ Instalaciones para:
   - En 1997 se forma el **R Core Group** con gente asociada a *S-PLUS*. Éste grupo controla el código fuente de R.
   - En 2000 se libera *R version 1.0.0*
   - El 7 de Marzo de 2017 se libera *R version 3.3.3*
+
+###Generalidades
+
+  - La [sintaxis](http://librosweb.es/libro/javascript/capitulo_1/sintaxis.html) de R es muy similar a S mas no su [semántica](https://geekytheory.com/semantica-coder).
+  - El software es ligero, la funcionalidad del mismo está dada en un formato modular, a través de paquetes.
+  - Las capacidades **gráficas** son sofisticadas y mejores que la mayoría de los paquetes estadísticos.
+  - Funciona para realizar actividades de interacción pero también contiene un podereso lenguaje de programación para el desarrollo de nuevas herramientas (usuario->programador).
+  - La comunidad R es muy activa y dinámica.
     
-##¿Cómo obtener ayuda?  
+##¿Cómo obtener ayuda?
+
+Como se ha comentado en las secciones anteriores, la comunidad R es muy activa, uno de los lugares donde usualmente se obtienen buenas orientaciones es en [Stack Overflow](https://stackoverflow.com/questions/tagged/r).
+Otro lugar donde se pueden obtener información sobre una función o paquete en específico es en la documentación del paquete que se instala al descargar el mismo. En el siguiente ejemplo se puede ver cómo se explora el comando `plot` de los paquetes base de R:
+
+> `?plot`
+
+Una vez que entiendo cómo trabaja la función `plot` entonces puedo probar con datos y ver qué obtengo. Ésta es una manera frecuente de resolver dudas o problemas de código.
+
+```{r}
+plot(cars)
+```
+Otro buen lugar para obtener información son las [***cheat sheets***](https://www.rstudio.com/resources/cheatsheets/) publicadas por RStudio en su mayoría.
+
+Un recurso muy utilizado es la búsqueda en [Google](www.google.com).
+
+Los cursos en línea han tenido un significativo auge en los últimos años, comparto algunos que considero valen la pena, ésta lista no es exhaustiva:
+
+  - [DataCamp](https://www.datacamp.com)
+  - [DataQuest](https://www.dataquest.io)
+  - [Udacity](https://www.udacity.com/course/data-analysis-with-r--ud651)
+  - [Udemy](https://www.udemy.com/introduction-to-r/)
+  - MOOCs:
+    - [Coursera](https://www.coursera.org/specializations/jhu-data-science)
+    - [Edx](https://www.edx.org/xseries/data-analysis-life-sciences)
 
 ##Estructuras de datos en R
 
