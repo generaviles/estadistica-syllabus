@@ -185,8 +185,211 @@ Al completar los pasos, tu sesión de RStudio debería verse como se muestra en 
 
 Hay muchas maneras de cargar datos a R, se puede hacer con líneas de código desde la consola, a través de paquetes preinstalados que ayudan a leer datos en formatos específicos o através de los íconos de RStudio. La siguiente imagen muestra cómo realizar el proceso a través de RStudio:
 
-<center>![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/rstudioimport.png)
+<center>![](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/rstudioimport.png)</center>
 
-Para éste ejercicio utilizaremos una base de datos que se puede obtener [aquí]().
+Para éste ejercicio utilizaremos una base de datos que se puede obtener [aquí](https://raw.githubusercontent.com/generaviles/estadistica-syllabus/master/datasets/example.csv) provista amablemente por la compañera Pamela.
+
+Si realizamos el ejercicio desde RStuio se producirá el siguiente código con el siguiente resultado.
+
+*Toma en cuenta que la dirección cambiará dependiendo dónde haz guardado el archivo.*
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(readr)
+example <- read_csv("D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/datasets/example.csv")
+
+head(example)
+```
+
+###Preparando la base de datos
+
+De entrada vemos que la base de datos podría "limpiarse" si se eliminaran las filas 1 y 2 así como la columna 1 ya que no aportan información relevante.
+
+```{r}
+example <- example[-1:-2,-1] #Estamos creando un subconjunto de `dataset` que se compone de todos los elementos de la base de datos menos las filas 1 y 2 así como la columna 1.
+
+colnames(example)[1]<-"Año" #Arregla el problema de caracter en la variable "Año"
+
+head(example)
+```
+
+Con respecto a **datos faltantes** podemos ver que en la última fila, correspondiente al año 2015, los valores correspondientes al mes de Noviembre y Diciembre están faltantes. Para solucionar éste debemos implementar algún método de **imputación de datos** para calcular los valores faltantes. El proceso a seguir depende de cada área del conocimiento.
+
+###Visualización de datos para análisis exploratorios
+
+####Buscando tipo de distribución en los datos
+
+Para poder evaluar de una manera más cómoda y rápida, vamos a generar histogramas de la distribución de los datos contenidos en todas las variables (columnas) de nuestra base de datos, en éste caso necesitariemos hacer 12 histogramas y compararlos juntos.
+
+Utilizaremos el paquete `lattice` para ésta tarea en específico.
+
+  - Los paquetes se instalan con la funcion `install.packages()` dentro de los parentesis se pone el nombre del paquete **entre** comillas.
+  - Una vez instalado el paquete se debe llamar a la consola con la función `library()` y el nombre del paquete dentro de los paréntesis **sin** comillas.
+
+```{r, echo=TRUE, fig.align = 'center'}
+#install.packages("lattice")
+library(lattice)
+
+histogram( ~ ENERO +FEBRERO +MARZO +ABRIL +MAYO +JUNIO +JULIO +AGOSTO +SEPTIEMBRE +OCTUBRE +NOVIEMBRE +DICIEMBRE, data = example, main = 'Histogramas para Evaluación Inicial de Distribución de los Datos')
+
+```
+
+Ésta información se puede obtener también con la función `summary()`:
+
+```{r, echo=TRUE}
+summary(example)
+```
+
+De los resultados generados por `summary()` se pueden obtener la siguiente información de cada variable:
+
+  - Media
+  - Mediana
+  - Rango Intercuartil
+  - Valor mínimo
+  - Valor máximo
+
+####Medidas de tendencia central
+
+Seleccionaremos los meses de **Abril** y **Agosto** para calcular medidas de tendencia central, de los histogramas previos podemos intuir que uno de éstos meses tiene un "comportamiento normal" y el otro no. Para éste ejercicio utilizarmos el generador de gráficas que viene con los paquetes báiscos cuando se instala R.
+
+#####Distribuciones no Normales
+
+**Gráfica Base**
+
+```{r, fig.align='center'}
+hist(example$ABRIL, #Histograma base
+     col = "darksalmon", #color del relleno de las barras
+     border = "black", #color del borde de las barras
+     prob = TRUE, #le indica a R que los histogramas se realizaran en base a densidad y no a cantidad.
+     xlab = "Milímetros de Agua",
+     ylab = "Frecuencia",
+     main = "Precipitación durante el mes de Abril de los años 1965 a 2015")
+
+
+```
+
+> Para una lista de los colores que puedes utilizar con las gráficas base de R puedes consultar [aquí](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf). 
+
+**Medidas de Tendencia Central**
+
+Una vez que la gráfica base está desarrollada, procederemos a agregar la curva de distribución, las líneas de media y mediana.
+
+```{r, eval=FALSE, fig.align='center', include=TRUE}
+
+hist(example$ABRIL, #Histograma base
+     col = "darksalmon", #color del relleno de las barras
+     border = "black", #color del borde de las barras
+     prob = TRUE, #le indica a R que los histogramas se realizaran en base a densidad y no a cantidad.
+     xlab = "Milímetros de Agua",
+     ylab = "Frecuencia",
+     main = "Precipitación durante el mes de Abril de los años 1965 a 2015")
+
+##Distribución##
+lines(density(example$ABRIL), #Línea base de distribución
+      lwd = 3, #ancho de la linea
+      col = "deeppink" #color of line
+      )
+
+##Media##
+abline(v = mean(example$ABRIL), #Línea base
+       lwd = 2, #Ancho de línea
+       col = "blue" #Color de línea
+       )
+
+##Mediana##
+
+abline(v = median(example$ABRIL), ##Línea básica
+       lwd = 2,
+       col = "chartreuse")
+```
+
+**Leyenda**
+
+```{r, eval=TRUE, fig.align='center', include=TRUE}
+
+hist(example$ABRIL, #Histograma base
+     col = "darksalmon", #color del relleno de las barras
+     border = "black", #color del borde de las barras
+     prob = TRUE, #le indica a R que los histogramas se realizaran en base a densidad y no a cantidad.
+     xlab = "Milímetros de Agua",
+     ylab = "Frecuencia",
+     main = "Precipitación durante el mes de Abril de los años 1965 a 2015")
+
+##Distribución##
+lines(density(example$ABRIL), #Línea base de distribución
+      lwd = 3, #ancho de la linea
+      col = "deeppink" #color of line
+      )
+
+##Media##
+abline(v = mean(example$ABRIL), #Línea base
+       lwd = 2, #Ancho de línea
+       col = "blue" #Color de línea
+       )
+
+##Mediana##
+
+abline(v = median(example$ABRIL), ##Línea básica
+       lwd = 2,
+       col = "chartreuse")
+
+##Leyenda
+
+legend(x = "topright", #Dónde se va a ubicar la leyenda con relación a la gráfica
+       c("Gráfica de Densidad", "Media", "Mediana"),
+       lwd = c(3,2,2),
+       col = c("deeppink", "blue", "chartreuse"))
+```
+
+####Distribuciones Normales
+
+**AGOSTO**
+
+Realiza el mismo proceso para obtener una gráfica del mes de `AGOSTO` como la que se presenta abajo:
+```{r, echo=FALSE, fig.align='center'}
+hist(example$AGOSTO, #Histograma base
+     col = "darksalmon", #color del relleno de las barras
+     border = "black", #color del borde de las barras
+     prob = TRUE, #le indica a R que los histogramas se realizaran en base a densidad y no a cantidad.
+     xlab = "Milímetros de Agua",
+     ylab = "Frecuencia",
+     main = "Precipitación durante el mes de Abril de los años 1965 a 2015")
+
+##Distribución##
+lines(density(example$AGOSTO), #Línea base de distribución
+      lwd = 3, #ancho de la linea
+      col = "deeppink" #color of line
+      )
+
+##Media##
+abline(v = mean(example$AGOSTO), #Línea base
+       lwd = 2, #Ancho de línea
+       col = "blue" #Color de línea
+       )
+
+##Mediana##
+
+abline(v = median(example$AGOSTO), ##Línea básica
+       lwd = 2,
+       col = "chartreuse")
+
+##Leyenda
+
+legend(x = "topright", #Dónde se va a ubicar la leyenda con relación a la gráfica
+       c("Gráfica de Densidad", "Media", "Mediana"),
+       lwd = c(3,2,2),
+       col = c("deeppink", "blue", "chartreuse"))
+
+```
 
 ##¿Cómo compartir datos y análisis con estadísticos o científicos de datos?
+
+Una breve guía de cómo compartir datos con personas que se dedican a la estadística o ciencia de datos [@jeffleek], Jeff Leek dice que los datos compartidos deben venir ordenados en cuatro grandes grupos/folders/repositorios:
+
+  1. Datos crudos.
+    - Datos que no han sido manipulados por ningún software de minería de datos o algún otro.
+  1. Una base de datos "arreglada" (*tidy dataset*).
+    - Cada fila una instancia/paciente/ente a medir.
+    - Cada columna una variable.
+    - Cada celda un valor de la variable correspondiente.
+  1. Un libro de códigos que explique cada variable y sus valores en en la base de datos "arreglada".
+  1. Una receta explícita y exacta de lo que se hizo para ir de 1 --> 2,3, étc

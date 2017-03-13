@@ -181,6 +181,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6.6.1" data-path="taller-r.html"><a href="taller-r.html#componentes-rstudio"><i class="fa fa-check"></i><b>6.6.1</b> Componentes RStudio</a></li>
 <li class="chapter" data-level="6.6.2" data-path="taller-r.html"><a href="taller-r.html#iniciando-un-proyecto"><i class="fa fa-check"></i><b>6.6.2</b> Iniciando un proyecto</a></li>
 <li class="chapter" data-level="6.6.3" data-path="taller-r.html"><a href="taller-r.html#cargando-los-datos"><i class="fa fa-check"></i><b>6.6.3</b> Cargando los datos</a></li>
+<li class="chapter" data-level="6.6.4" data-path="taller-r.html"><a href="taller-r.html#preparando-la-base-de-datos"><i class="fa fa-check"></i><b>6.6.4</b> Preparando la base de datos</a></li>
+<li class="chapter" data-level="6.6.5" data-path="taller-r.html"><a href="taller-r.html#visualizacion-de-datos-para-analisis-exploratorios"><i class="fa fa-check"></i><b>6.6.5</b> Visualización de datos para análisis exploratorios</a></li>
 </ul></li>
 <li class="chapter" data-level="6.7" data-path="taller-r.html"><a href="taller-r.html#como-compartir-datos-y-analisis-con-estadisticos-o-cientificos-de-datos"><i class="fa fa-check"></i><b>6.7</b> ¿Cómo compartir datos y análisis con estadísticos o científicos de datos?</a></li>
 </ul></li>
@@ -436,15 +438,210 @@ msg  <span class="co">#auto-impresión</span></code></pre></div>
 <h3><span class="header-section-number">6.6.3</span> Cargando los datos</h3>
 <p>Hay muchas maneras de cargar datos a R, se puede hacer con líneas de código desde la consola, a través de paquetes preinstalados que ayudan a leer datos en formatos específicos o através de los íconos de RStudio. La siguiente imagen muestra cómo realizar el proceso a través de RStudio:</p>
 <center>
-<div class="figure">
 <img src="img/rstudioimport.png" />
+</center>
+<p>Para éste ejercicio utilizaremos una base de datos que se puede obtener <a href="https://raw.githubusercontent.com/generaviles/estadistica-syllabus/master/datasets/example.csv">aquí</a> provista amablemente por la compañera Pamela.</p>
+<p>Si realizamos el ejercicio desde RStuio se producirá el siguiente código con el siguiente resultado.</p>
+<p><em>Toma en cuenta que la dirección cambiará dependiendo dónde haz guardado el archivo.</em></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+example &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/datasets/example.csv&quot;</span>)
 
+<span class="kw">head</span>(example)</code></pre></div>
+<pre><code>## # A tibble: 6 × 17
+##      X1 `A&lt;d1&gt;O`   EST   ENT ENERO FEBRERO MARZO  ABRIL  MAYO  JUNIO
+##   &lt;int&gt;    &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1    NA       NA    NA    NA    NA      NA    NA     NA    NA     NA
+## 2    NA       NA    NA    NA    NA      NA    NA     NA    NA     NA
+## 3     1     1965     4     7 18.83   10.02 36.22 102.36 159.6 149.47
+## 4     2     1966     4     7 22.00    1.00  0.00  98.00 197.0 141.20
+## 5     3     1967     4     7  6.00   40.00  0.00  41.00 137.0 215.00
+## 6     4     1968     2     1 20.40    4.60 45.00 100.00 153.8 165.60
+## # ... with 7 more variables: JULIO &lt;dbl&gt;, AGOSTO &lt;dbl&gt;, SEPTIEMBRE &lt;dbl&gt;,
+## #   OCTUBRE &lt;dbl&gt;, NOVIEMBRE &lt;int&gt;, DICIEMBRE &lt;int&gt;, VR &lt;int&gt;</code></pre>
 </div>
-<p>Para éste ejercicio utilizaremos una base de datos que se puede obtener <a href="">aquí</a>.</p>
+<div id="preparando-la-base-de-datos" class="section level3">
+<h3><span class="header-section-number">6.6.4</span> Preparando la base de datos</h3>
+<p>De entrada vemos que la base de datos podría “limpiarse” si se eliminaran las filas 1 y 2 así como la columna 1 ya que no aportan información relevante.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">example &lt;-<span class="st"> </span>example[-<span class="dv">1</span>:-<span class="dv">2</span>,-<span class="dv">1</span>] <span class="co">#Estamos creando un subconjunto de `dataset` que se compone de todos los elementos de la base de datos menos las filas 1 y 2 así como la columna 1.</span>
+
+<span class="kw">colnames</span>(example)[<span class="dv">1</span>]&lt;-<span class="st">&quot;Año&quot;</span> <span class="co">#Arregla el problema de caracter en la variable &quot;Año&quot;</span>
+
+<span class="kw">head</span>(example)</code></pre></div>
+<pre><code>## # A tibble: 6 × 16
+##     Año   EST   ENT  ENERO FEBRERO  MARZO  ABRIL  MAYO  JUNIO  JULIO
+##   &lt;dbl&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1  1965     4     7  18.83   10.02  36.22 102.36 159.6 149.47 154.37
+## 2  1966     4     7  22.00    1.00   0.00  98.00 197.0 141.20 158.00
+## 3  1967     4     7   6.00   40.00   0.00  41.00 137.0 215.00 110.00
+## 4  1968     2     1  20.40    4.60  45.00 100.00 153.8 165.60 156.40
+## 5  1969     2     1   5.00    0.00   1.00 222.00 102.0 191.00 124.00
+## 6  1970     2     1 140.00    3.00 105.00 116.00 176.0 302.00 158.00
+## # ... with 6 more variables: AGOSTO &lt;dbl&gt;, SEPTIEMBRE &lt;dbl&gt;,
+## #   OCTUBRE &lt;dbl&gt;, NOVIEMBRE &lt;int&gt;, DICIEMBRE &lt;int&gt;, VR &lt;int&gt;</code></pre>
+<p>Con respecto a <strong>datos faltantes</strong> podemos ver que en la última fila, correspondiente al año 2015, los valores correspondientes al mes de Noviembre y Diciembre están faltantes. Para solucionar éste debemos implementar algún método de <strong>imputación de datos</strong> para calcular los valores faltantes. El proceso a seguir depende de cada área del conocimiento.</p>
+</div>
+<div id="visualizacion-de-datos-para-analisis-exploratorios" class="section level3">
+<h3><span class="header-section-number">6.6.5</span> Visualización de datos para análisis exploratorios</h3>
+<div id="buscando-tipo-de-distribucion-en-los-datos" class="section level4">
+<h4><span class="header-section-number">6.6.5.1</span> Buscando tipo de distribución en los datos</h4>
+<p>Para poder evaluar de una manera más cómoda y rápida, vamos a generar histogramas de la distribución de los datos contenidos en todas las variables (columnas) de nuestra base de datos, en éste caso necesitariemos hacer 12 histogramas y compararlos juntos.</p>
+<p>Utilizaremos el paquete <code>lattice</code> para ésta tarea en específico.</p>
+<ul>
+<li>Los paquetes se instalan con la funcion <code>install.packages()</code> dentro de los parentesis se pone el nombre del paquete <strong>entre</strong> comillas.</li>
+<li>Una vez instalado el paquete se debe llamar a la consola con la función <code>library()</code> y el nombre del paquete dentro de los paréntesis <strong>sin</strong> comillas.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;lattice&quot;)</span>
+<span class="kw">library</span>(lattice)
+
+<span class="kw">histogram</span>( ~<span class="st"> </span>ENERO +FEBRERO +MARZO +ABRIL +MAYO +JUNIO +JULIO +AGOSTO +SEPTIEMBRE +OCTUBRE +NOVIEMBRE +DICIEMBRE, <span class="dt">data =</span> example, <span class="dt">main =</span> <span class="st">&#39;Histogramas para Evaluación Inicial de Distribución de los Datos&#39;</span>)</code></pre></div>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Ésta información se puede obtener también con la función <code>summary()</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(example)</code></pre></div>
+<pre><code>##       Año            EST             ENT            ENERO      
+##  Min.   :1965   Min.   :1.000   Min.   :1.000   Min.   :  0.0  
+##  1st Qu.:1978   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:  0.0  
+##  Median :1990   Median :1.000   Median :1.000   Median :  7.0  
+##  Mean   :1990   Mean   :1.549   Mean   :1.353   Mean   : 18.4  
+##  3rd Qu.:2002   3rd Qu.:2.000   3rd Qu.:1.000   3rd Qu.: 21.2  
+##  Max.   :2015   Max.   :4.000   Max.   :7.000   Max.   :140.0  
+##                                                                
+##     FEBRERO          MARZO            ABRIL            MAYO      
+##  Min.   :  0.0   Min.   :  0.00   Min.   :  0.0   Min.   : 55.0  
+##  1st Qu.:  0.0   1st Qu.:  0.00   1st Qu.: 50.0   1st Qu.:136.5  
+##  Median :  2.0   Median : 28.80   Median : 88.0   Median :167.0  
+##  Mean   : 10.5   Mean   : 36.46   Mean   :107.5   Mean   :169.8  
+##  3rd Qu.: 12.5   3rd Qu.: 51.00   3rd Qu.:139.0   3rd Qu.:197.5  
+##  Max.   :113.0   Max.   :132.00   Max.   :465.0   Max.   :367.0  
+##                                                                  
+##      JUNIO           JULIO           AGOSTO        SEPTIEMBRE   
+##  Min.   : 16.0   Min.   : 60.0   Min.   : 39.0   Min.   : 30.1  
+##  1st Qu.:111.0   1st Qu.:110.0   1st Qu.:141.5   1st Qu.:123.0  
+##  Median :143.0   Median :156.4   Median :171.0   Median :166.5  
+##  Mean   :155.7   Mean   :162.8   Mean   :179.1   Mean   :171.3  
+##  3rd Qu.:189.5   3rd Qu.:198.1   3rd Qu.:212.0   3rd Qu.:217.0  
+##  Max.   :388.0   Max.   :311.0   Max.   :402.0   Max.   :455.0  
+##                                                                 
+##     OCTUBRE        NOVIEMBRE        DICIEMBRE            VR      
+##  Min.   : 32.0   Min.   :  0.00   Min.   :  0.00   Min.   : 396  
+##  1st Qu.:104.5   1st Qu.: 66.75   1st Qu.: 12.50   1st Qu.:1145  
+##  Median :132.8   Median :105.50   Median : 29.00   Median :1297  
+##  Mean   :152.2   Mean   :117.68   Mean   : 46.28   Mean   :1295  
+##  3rd Qu.:185.0   3rd Qu.:155.75   3rd Qu.: 64.75   3rd Qu.:1466  
+##  Max.   :289.0   Max.   :374.00   Max.   :208.00   Max.   :1957  
+##                  NA&#39;s   :1        NA&#39;s   :1</code></pre>
+<p>De los resultados generados por <code>summary()</code> se pueden obtener la siguiente información de cada variable:</p>
+<ul>
+<li>Media</li>
+<li>Mediana</li>
+<li>Rango Intercuartil</li>
+<li>Valor mínimo</li>
+<li>Valor máximo</li>
+</ul>
+</div>
+<div id="medidas-de-tendencia-central-1" class="section level4">
+<h4><span class="header-section-number">6.6.5.2</span> Medidas de tendencia central</h4>
+<p>Seleccionaremos los meses de <strong>Abril</strong> y <strong>Agosto</strong> para calcular medidas de tendencia central, de los histogramas previos podemos intuir que uno de éstos meses tiene un “comportamiento normal” y el otro no. Para éste ejercicio utilizarmos el generador de gráficas que viene con los paquetes báiscos cuando se instala R.</p>
+<div id="distribuciones-no-normales" class="section level5">
+<h5><span class="header-section-number">6.6.5.2.1</span> Distribuciones no Normales</h5>
+<p><strong>Gráfica Base</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(example$ABRIL, <span class="co">#Histograma base</span>
+     <span class="dt">col =</span> <span class="st">&quot;darksalmon&quot;</span>, <span class="co">#color del relleno de las barras</span>
+     <span class="dt">border =</span> <span class="st">&quot;black&quot;</span>, <span class="co">#color del borde de las barras</span>
+     <span class="dt">prob =</span> <span class="ot">TRUE</span>, <span class="co">#le indica a R que los histogramas se realizaran en base a densidad y no a cantidad.</span>
+     <span class="dt">xlab =</span> <span class="st">&quot;Milímetros de Agua&quot;</span>,
+     <span class="dt">ylab =</span> <span class="st">&quot;Frecuencia&quot;</span>,
+     <span class="dt">main =</span> <span class="st">&quot;Precipitación durante el mes de Abril de los años 1965 a 2015&quot;</span>)</code></pre></div>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<blockquote>
+<p>Para una lista de los colores que puedes utilizar con las gráficas base de R puedes consultar <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">aquí</a>.</p>
+</blockquote>
+<p><strong>Medidas de Tendencia Central</strong></p>
+<p>Una vez que la gráfica base está desarrollada, procederemos a agregar la curva de distribución, las líneas de media y mediana.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(example$ABRIL, <span class="co">#Histograma base</span>
+     <span class="dt">col =</span> <span class="st">&quot;darksalmon&quot;</span>, <span class="co">#color del relleno de las barras</span>
+     <span class="dt">border =</span> <span class="st">&quot;black&quot;</span>, <span class="co">#color del borde de las barras</span>
+     <span class="dt">prob =</span> <span class="ot">TRUE</span>, <span class="co">#le indica a R que los histogramas se realizaran en base a densidad y no a cantidad.</span>
+     <span class="dt">xlab =</span> <span class="st">&quot;Milímetros de Agua&quot;</span>,
+     <span class="dt">ylab =</span> <span class="st">&quot;Frecuencia&quot;</span>,
+     <span class="dt">main =</span> <span class="st">&quot;Precipitación durante el mes de Abril de los años 1965 a 2015&quot;</span>)
+
+##Distribución##
+<span class="kw">lines</span>(<span class="kw">density</span>(example$ABRIL), <span class="co">#Línea base de distribución</span>
+      <span class="dt">lwd =</span> <span class="dv">3</span>, <span class="co">#ancho de la linea</span>
+      <span class="dt">col =</span> <span class="st">&quot;deeppink&quot;</span> <span class="co">#color of line</span>
+      )
+
+##Media##
+<span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(example$ABRIL), <span class="co">#Línea base</span>
+       <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="co">#Ancho de línea</span>
+       <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span> <span class="co">#Color de línea</span>
+       )
+
+##Mediana##
+
+<span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">median</span>(example$ABRIL), ##Línea básica
+       <span class="dt">lwd =</span> <span class="dv">2</span>,
+       <span class="dt">col =</span> <span class="st">&quot;chartreuse&quot;</span>)</code></pre></div>
+<p><strong>Leyenda</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(example$ABRIL, <span class="co">#Histograma base</span>
+     <span class="dt">col =</span> <span class="st">&quot;darksalmon&quot;</span>, <span class="co">#color del relleno de las barras</span>
+     <span class="dt">border =</span> <span class="st">&quot;black&quot;</span>, <span class="co">#color del borde de las barras</span>
+     <span class="dt">prob =</span> <span class="ot">TRUE</span>, <span class="co">#le indica a R que los histogramas se realizaran en base a densidad y no a cantidad.</span>
+     <span class="dt">xlab =</span> <span class="st">&quot;Milímetros de Agua&quot;</span>,
+     <span class="dt">ylab =</span> <span class="st">&quot;Frecuencia&quot;</span>,
+     <span class="dt">main =</span> <span class="st">&quot;Precipitación durante el mes de Abril de los años 1965 a 2015&quot;</span>)
+
+##Distribución##
+<span class="kw">lines</span>(<span class="kw">density</span>(example$ABRIL), <span class="co">#Línea base de distribución</span>
+      <span class="dt">lwd =</span> <span class="dv">3</span>, <span class="co">#ancho de la linea</span>
+      <span class="dt">col =</span> <span class="st">&quot;deeppink&quot;</span> <span class="co">#color of line</span>
+      )
+
+##Media##
+<span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">mean</span>(example$ABRIL), <span class="co">#Línea base</span>
+       <span class="dt">lwd =</span> <span class="dv">2</span>, <span class="co">#Ancho de línea</span>
+       <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span> <span class="co">#Color de línea</span>
+       )
+
+##Mediana##
+
+<span class="kw">abline</span>(<span class="dt">v =</span> <span class="kw">median</span>(example$ABRIL), ##Línea básica
+       <span class="dt">lwd =</span> <span class="dv">2</span>,
+       <span class="dt">col =</span> <span class="st">&quot;chartreuse&quot;</span>)
+
+##Leyenda
+
+<span class="kw">legend</span>(<span class="dt">x =</span> <span class="st">&quot;topright&quot;</span>, <span class="co">#Dónde se va a ubicar la leyenda con relación a la gráfica</span>
+       <span class="kw">c</span>(<span class="st">&quot;Gráfica de Densidad&quot;</span>, <span class="st">&quot;Media&quot;</span>, <span class="st">&quot;Mediana&quot;</span>),
+       <span class="dt">lwd =</span> <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>),
+       <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;deeppink&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;chartreuse&quot;</span>))</code></pre></div>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="distribuciones-normales" class="section level4">
+<h4><span class="header-section-number">6.6.5.3</span> Distribuciones Normales</h4>
+<p><strong>AGOSTO</strong></p>
+<p>Realiza el mismo proceso para obtener una gráfica del mes de <code>AGOSTO</code> como la que se presenta abajo: <img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
 </div>
 </div>
 <div id="como-compartir-datos-y-analisis-con-estadisticos-o-cientificos-de-datos" class="section level2">
 <h2><span class="header-section-number">6.7</span> ¿Cómo compartir datos y análisis con estadísticos o científicos de datos?</h2>
+<p>Una breve guía de cómo compartir datos con personas que se dedican a la estadística o ciencia de datos <span class="citation">(Leek <a href="#ref-jeffleek">2016</a>)</span>, Jeff Leek dice que los datos compartidos deben venir ordenados en cuatro grandes grupos/folders/repositorios:</p>
+<ol style="list-style-type: decimal">
+<li>Datos crudos.
+<ul>
+<li>Datos que no han sido manipulados por ningún software de minería de datos o algún otro.</li>
+</ul></li>
+<li>Una base de datos “arreglada” (<em>tidy dataset</em>).
+<ul>
+<li>Cada fila una instancia/paciente/ente a medir.</li>
+<li>Cada columna una variable.</li>
+<li>Cada celda un valor de la variable correspondiente.</li>
+</ul></li>
+<li>Un libro de códigos que explique cada variable y sus valores en en la base de datos “arreglada”.</li>
+<li>Una receta explícita y exacta de lo que se hizo para ir de 1 –&gt; 2,3, étc</li>
+</ol>
 
 </div>
 </div>
@@ -455,6 +652,9 @@ msg  <span class="co">#auto-impresión</span></code></pre></div>
 </div>
 <div id="ref-rstudiocurso">
 <p>Carlos Pérez-González, Marcos Colebrook-Santamaría. 2014. “Curso Introductorio de R: Introducción a La Interfaz de Rstudio.” <a href="http://mcolebrook.github.io/CursoRStudio/RStudio.html#(1)" class="uri">http://mcolebrook.github.io/CursoRStudio/RStudio.html#(1)</a>.</p>
+</div>
+<div id="ref-jeffleek">
+<p>Leek, Jeff. 2016. “How to Share Data with a Statistician.” November. <a href="https://github.com/jtleek/datasharing" class="uri">https://github.com/jtleek/datasharing</a>.</p>
 </div>
 </div>
             </section>
