@@ -350,7 +350,7 @@ hist(example$AGOSTO, #Histograma base
      col = "darksalmon", #color del relleno de las barras
      border = "black", #color del borde de las barras
      prob = TRUE, #le indica a R que los histogramas se realizaran en base a densidad y no a cantidad.
-     xlab = "Milímetros de Agua",
+     xlab = "Milimetros de Agua",
      ylab = "Frecuencia",
      main = "Precipitación durante el mes de Abril de los años 1965 a 2015")
 

@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="conceptos-generales.html">
-<link rel="next" href="data-preparation.html">
+<link rel="prev" href="exploracion-de-datos-y-visualizacion.html">
+<link rel="next" href="taller-r.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -231,109 +231,92 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="recoleccion-de-datos" class="section level1">
-<h1><span class="header-section-number">Capítulo 3</span> Recolección de Datos</h1>
-<div id="definiciones-1" class="section level2">
-<h2><span class="header-section-number">3.1</span> Definiciones</h2>
-<p>A primary goal of statistical studies is to collect data that can then be used to make informed decisions. It should come as no surprise that the ability to make good decisions depends on the quality of the information available.</p>
+<div id="analisis-de-los-datos" class="section level1">
+<h1><span class="header-section-number">Capítulo 6</span> Análisis de los Datos</h1>
+<div id="analisis-univariante" class="section level2">
+<h2><span class="header-section-number">6.1</span> Análisis Univariante</h2>
 <ul>
-<li><strong>Datos</strong>: colección de información sobre las variables de interés.<br \> Para poder tener una colección habrá que definir la población de donde saldrán éstos datos:</li>
-<li><strong>Población</strong>: Conjunto de datos, objetos, humanos, experiencias, étc.
-<ul>
-<li><em>Población infinita:</em> Aquella que no se puede o es difícil de contar. (población difícil o no contable)</li>
-<li><em>Población finita:</em> se puede contar y/o medir.</li>
-<li><em>Población muestreada:</em> subconjunto de la población que reúne todas las características (parámetros) de la población.</li>
-</ul></li>
-<li><strong>Parámetro:</strong> unidad de medida de los atributos, características de la población.</li>
-<li><strong>Muestra:</strong> Subconjunto de la población.</li>
-<li><strong>Estadísticos:</strong> unidad de medida de un atributo o característica de la muestra.</li>
-<li><strong>Censo:</strong> cuando la población se analiza en su totalidad.</li>
-</ul>
-<p>A study is an <strong>observational study</strong> if the investigator <strong>observes</strong> characteristics of a sample selected from one or more existing populations. The goal of an observational study is usually to draw conclusions about the corresponding population or about differences between two or more populations. In a well-designed observational study, the sample is selected in a way that is designed to produce a sample that is representative of the population.</p>
-<p>A study is an <strong>experiment</strong> if the investigator observes how a response variable behaves when one or more explanatory variables, also called factors, are <strong>manipulated</strong>. The usual goal of an experiment is to determine the effect of the manipulated explanatory variables (factors) on the response variable. In a well-designed experiment, the composition of the groups that will be exposed to different experimental conditions is determined by random assignment.</p>
-</div>
-<div id="tipos-de-muestreo" class="section level2">
-<h2><span class="header-section-number">3.2</span> Tipos de Muestreo</h2>
-<p>Advantages of sampling methods:</p>
-<ul>
-<li>Reduced cost.</li>
-<li>Greater speed.</li>
-<li>Greater Scope</li>
-<li>Greater Accuracy</li>
-</ul>
-<div id="types-of-sampling" class="section level4">
-<h4><span class="header-section-number">3.2.0.1</span> Types of sampling</h4>
-<div id="non-probabilistic-techniques" class="section level5">
-<h5><span class="header-section-number">3.2.0.1.1</span> Non Probabilistic Techniques</h5>
-<ul>
-<li><strong>Muestreo por Conveniencia</strong>: Los encuestados son seleccionados porque estaban en el lugar preciso en el momento adecuado.</li>
-<li><strong>Muestreo por Juicio</strong>: Los encuestados son seleccionados siguiendo el criterio del investigador, basándose en su conocimiento de la población objetivo.</li>
-<li><strong>Muestreo Encadenado</strong>: Se selecciona a una muestra que sirve como punto de partida para otra muestra. Se utiliza cuando, por la naturaleza delicada de la pregunta o la dificultad de encontrar a los encuestados, es necesario que el encuestado nos dirija a otro. Un ejemplo típico de la utilidad de este método sería la investigación sobre hábitos de conducta moralmente no aceptados por la sociedad.</li>
-<li><strong>Muestreo por Cuotas</strong>: En este caso el investigador tiene una información más detallada de la distribución de la población según algunas variables que están relacionadas con la variable a estudiar. De acuerdo con estas variables se divide la población en estratos y se entrevista un número determinado en cada estrato.</li>
+<li><p>Estudia la distribución individual de cada variable. Este análisis se centra en dos aspectos: La tendencia central de la distribución y su dispersión. En el primer caso hablamos de un valor característico o medio de la distribución, en el segundo de la variabilidad interna de los datos. Según el tipo de variables proceden los siguientes análisis:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Variables nominales</strong>. Para este tipo de variables el análisis se limita a las frecuencias de cada categoría. Se suele expresar en porcentajes.</li>
+<li><strong>Variables ordinales</strong>. La tendencia central se mide con los estadísticos mediana y moda (pero no la media, ya que ésta implica distancias comparables), mientras que para la dispersión podemos utilizar un diagrama de frecuencias (histograma).</li>
+<li><strong>Variables métricas</strong>. Para el análisis de la tendencia central se utiliza por lo general la media, si bien es aconsejable utilizar la mediana cuando nos encontramos con unos pocos valores extremos cuya magnitud difiere ampliamente del resto (son mucho mayores o mucho menores que la mayoría). Para estudiar el grado de dispersión recurrimos a la desviación típica o la varianza. Es posible estudiar además del momento de primer orden de la distribución (tendencia central) y el momento de segundo orden (dispersión), el momento de tercer orden (simetría) y el de cuarto orden (achatamiento). No es frecuente estudiar momentos de orden superior.</li>
+</ol></li>
 </ul>
 </div>
-<div id="probabilistic-techniques" class="section level5">
-<h5><span class="header-section-number">3.2.0.1.2</span> Probabilistic Techniques</h5>
+<div id="analisis-vibariante" class="section level2">
+<h2><span class="header-section-number">6.2</span> Análisis Vibariante</h2>
+<ol style="list-style-type: decimal">
+<li>Distribución normal de las variables.
 <ul>
-<li><strong>Muestreo Aleatorio Simple (MAS)</strong>: Cada elemento de la población y cada posible muestra de un tamaño n tienen una probabilidad conocida e igual de ser seleccionados. Esta técnica requiere tener un listado exhaustivo de todos los elementos de la población objetivo. Errores que arruinan el muestreo aleatorio simple (buscar evitarlos siempre):
-<ul>
-<li>Tendencias.</li>
-<li>Prejuicios.</li>
-<li>Parcialidades.</li>
+<li>Para llevar a cabo pruebas de estadística paramétrica se asume que la variable estudiada de la población sigue una dsitribución normal.</li>
 </ul></li>
-<li><strong>Muestreo Sistemático</strong>: Se elige un primer elemento aleatoriamente y a continuación todos los siguientes cada n posiciones. Así, si por ejemplo queremos seleccionar 20 individuos de entre 100, el primer paso es seleccionar un número aleatorio entre 1 y 5 (ya que 100/20=5), digamos el 3; a continuación seleccionamos los individuos 3, 8, 13, 18,… 93, 98. Esto implica la ordenación de todos los elementos de la población, si bien el criterio de ordenación no debe guardar ninguna relación con el fenómeno sociológico a estudiar.</li>
-<li><strong>Muestreo Estratificado</strong>: Requiere al menos dos etapas. En una primera etapa la población objetivo se divide en estratos según las variables que se consideran relacionadas con el fenómeno sociológico a estudiar. La segunda fase consiste en seleccionar aleatoriamente una muestra dentro de cada estrato.</li>
-<li><strong>Muestreo por conglomerados (<em>clusters</em>)</strong>:
+<li>Uniformidad de la varianza.
 <ul>
-<li><strong>Monoetápico:</strong> La población es dividida en conglomerados (barrios, manzanas), seleccionando un grupo de ellos con probabilidad proporcional a su importancia. Una vez se tienen estos conglomerados se encuesta a todos los elementos del conglomerado (todos los vecinos de las manzanas B, H y G).</li>
-<li><strong>Bietápico:</strong> Igual que el anterior pero en lugar de encuestar a todos los elementos del conglomerado se selecciona una muestra.</li>
+<li>Se requiere que la varianza de una variable no dependa del nivel de otra variable.</li>
 </ul></li>
-</ul>
-<div class="figure">
-<img src="img/cluster.jpg" />
-
+<li>Escala de medida.
+<ul>
+<li>Las variables deben medirse en una escala métrica.</li>
+</ul></li>
+<li>Independencia.
+<ul>
+<li>Las respuestas de un sujeto no dependen de las de otro.</li>
+</ul></li>
+</ol>
+<p><br \> <img src="img/analisis.png" /></p>
+<p><br \> <img src="img/prueba.png" /></p>
 </div>
-<ul>
-<li><strong>1-in-<span class="math inline">\(k\)</span> systematic sampling/ muestreo sistemático 1-en-<span class="math inline">\(k\)</span>:</strong> Consiste en seleccionar cada <span class="math inline">\(k\)</span>-ésima unidad. Útil para muestreo de artículos en líneas de producción.<br \></li>
-</ul>
+<div id="analisis-multivariante" class="section level2">
+<h2><span class="header-section-number">6.3</span> Análisis Multivariante</h2>
+<ol style="list-style-type: decimal">
+<li><strong>Análisis de la varianza (ANOVA II)</strong>. Se analiza el efecto de dos variables nominales (llamadas factores) sobre una variable métrica.</li>
+</ol>
 <blockquote>
-<p><strong>Ejemplos:</strong> <br \> <em>Muestreo con reemplazo:</em> <br \> En un lote de 1000 artículos. Agarro 20 al hazar, si <span class="math inline">\(\leq 4\)</span> están defectuosos, acepto el lote. <br \><br \> <em>Muestreo sin remplazo:</em> <br \> Después de sacar 20, vuelvo a muestrear a los 980 restantes (con ésta técnica la muestra aumenta, dado que <span class="math inline">\(\Omega\)</span> disminuye y la cantidad de artículos defectuosos siguen siendo los mismos en cantidad) <span class="math inline">\(\therefore\)</span> <br \> Tomo 30 artículos, si <span class="math inline">\(\leq 4\)</span> resultan defectuosos entonces rechazo el lote.</p>
+<p>Ejemplo: ¿Depende el rendimiento de una máquina (variable métrica) del modelo de la máquina (factor 1) y del operario que la manjea (factor 2)?</p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Análisis multivariante de la varianza (MANOVA)</strong>. A diferencia de ANOVA, éste análisis considera simultáneamente dos o más variables dependeintes. En este caso, ¿por qué no utilizar ANOVA para cada una de las variables dependeintes? La respuesta es simple: porque es posible que exista una diferencia entre grupos que sólo se ponga en evidencia considerando varias variables dependientes simultáneamente.</li>
+<li><strong>Análisis discriminante</strong>. La idea central de ésta técnica consiste en ponderar las diferentes variables a la hora de asignar un elemento a un grupo u otro. Por tanto, la variable dependiente es nominal mientras que las explicativas pueden ser de cualquier tipo.</li>
+</ol>
+<blockquote>
+<p>Ejemplo: ¿Podríamos predecir el tipo de coche (variable nominal) que un consumidor compraría en función de su nivel de ingresos (variable ordinal), sexo (variable nominal) y edad (variable métrica)?</p>
+</blockquote>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Análisis de regresión lineal múltiple</strong>. Se estudia el efecto simultáneo de un conjunto de variables de cualquier tipo (variables explicativas) sobre una variable métrica (variable dependiente).</li>
+</ol>
+<blockquote>
+<p>Ejemplo: ¿Cómo influye en el rendimiento de una máquina el modelo de la misma, el operario que la maneja, su antigüedad y el turno de trabajo?</p>
 </blockquote>
 </div>
+<div id="pruebas-de-hipotesis" class="section level2">
+<h2><span class="header-section-number">6.4</span> Pruebas de Hipótesis</h2>
+<div id="generalidades" class="section level3">
+<h3><span class="header-section-number">6.4.1</span> Generalidades</h3>
+<p><br \> <img src="img/hipotesis.png" /></p>
 </div>
-<div id="resumen-de-muestreos" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> Resumen de Muestreos</h3>
+<div id="errores-tipo-i-y-tipo-ii" class="section level3">
+<h3><span class="header-section-number">6.4.2</span> Errores Tipo I y Tipo II</h3>
 <div class="figure">
-<img src="img/muestreo.png" />
+<img src="img/error.png" />
 
 </div>
 </div>
+<div id="prueba-de-una-cola" class="section level3">
+<h3><span class="header-section-number">6.4.3</span> Prueba de una cola</h3>
+<p>Queremos determinar si el tratamiento A contra una plaga reduce significativamente la incidencia de la misma sobre el cultivo. Para ello medimos el número de gusanos por planta en 5 parcelas con tratamiento y en 5 parcelas sin tratamiento. En este caso, lo lógico es pensar que el tratamiento no va a incrementar el número de gusanos y que, si tiene algún efecto, será reducir dicho número. Este es un caso de prueba de una cola. &lt; br&gt; La hipótesis se formula como sigue:</p>
+<p><span class="math display">\[H_0: \mu_0 = \mu_A \text{  &lt;--- (no existe diferencia entre las dos medias)}\]</span></p>
+<p><span class="math display">\[H_A: \mu_0 &gt; \mu_A \text{  &lt;--- (la media de las fincas sin tratar es mayor que la media de las fincas tratadas)}\]</span></p>
 </div>
-<div id="tipos-de-estudios" class="section level2">
-<h2><span class="header-section-number">3.3</span> Tipos de Estudios</h2>
-<div id="correlation-analysis-ca" class="section level4">
-<h4><span class="header-section-number">3.3.0.1</span> Correlation Analysis (CA)</h4>
-<p>El análisis de correlaciones es muy útil para el investigador para determinar si existe alguna relación o asociación entre diversas variables de interés antes de continuar con un análisis más sofisticado de causa-efecto. El análisis de correlaciones también constituye un insumo fundamental para realizar diversos análisis estadísticos más avanzados como el análisis factorial y el análisis de confiabilidad. Estos análisis son utilizados por los investigadores para determinar la validez y confiabilidad de las encuestas de actitud.</p>
-<div id="statistical-assumption-of-ca" class="section level5">
-<h5><span class="header-section-number">3.3.0.1.1</span> Statistical assumption of CA</h5>
-<p>El análisis más común es el análisis de correlación de Pearson (Pearson product moment correlacion coefficient). Este tipo de análisis presupone que las variables son ordinales o continuas y que la distribución de estas variables se acerca a la distribución normal (Bell shape curveo “curva de campana”). Es aconsejable que antes de proceder al análisis de correlación de las variables, el investigador estime las estadísticas descriptivas correspondientes para determinar si se cumplen estos supuestos.</p>
-<ul>
-<li><strong>Estudio observacional:</strong></li>
-</ul>
+<div id="dos-colas" class="section level3">
+<h3><span class="header-section-number">6.4.4</span> Dos colas</h3>
+<p>Tenemos una prueba de dos colas cuando la prueba de hipótesis queda expresada como el siguiente ejemplo: <span class="math display">\[H_0: \mu_A = \mu_B \text{  &lt;--- (no existen diferencias entre las dos medias)}\]</span> <span class="math display">\[H_0: \mu_A \neq \mu_B \text{  &lt;--- (las medias de las fincas tratadas con A o B son distintas)}\]</span> <strong>¿Qué implica el hecho de considerar una prueba con una o dos colas?</strong> &lt; br&gt; En el primer caso, una cola, el valor crítico que determina rechazar o no la hipótesis nula deja a la derecha la totalidad del nivel de significancia (<span class="math inline">\(\alpha\)</span>). En el caso de una prueba de dos colas, este vlaor deja a la derecha (o a la izquierda para un valor negativo) la mitad de esta probabilidad (<span class="math inline">\(\alpha/2\)</span>). Esto implica que en una prueba de dos colas es más difícil rechazar la hipótesis nula ya que el valor crítico es mayor. Por ejemplo, en una distribución normal el valor crítico que deja el 5% de la probabilidad a la derecha es igual a 1.65, sin embargo este valor aumenta hasta 1.96 con sólo el 2.5% de la superficie a la derecha.</p>
+<p>A continuación una imagen que ejemplifica éste concepto:</p>
 <div class="figure">
-<img src="img/observacional.jpg" />
+<img src="img/valorcritico.png" />
 
 </div>
-<ul>
-<li><strong>Estudio experimental:</strong></li>
-</ul>
-<div class="figure">
-<img src="img/experimental.jpg" />
 
-</div>
-<p>Recordar el concepto de <strong>efecto placebo</strong>, para evitar éste efecto se utilizan grupos control en los estudios.</p>
-
-</div>
 </div>
 </div>
 </div>
@@ -342,8 +325,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="conceptos-generales.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-preparation.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="exploracion-de-datos-y-visualizacion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taller-r.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
@@ -371,7 +354,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/generaviles/estadistica-syllabus02-coleccion_datos.Rmd",
+"link": "https://github.com/generaviles/estadistica-syllabus05-analisisDatos.Rmd",
 "text": "Edit"
 },
 "download": null,

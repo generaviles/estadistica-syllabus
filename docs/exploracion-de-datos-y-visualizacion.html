@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="conceptos-generales.html">
-<link rel="next" href="data-preparation.html">
+<link rel="prev" href="data-preparation.html">
+<link rel="next" href="analisis-de-los-datos.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -231,110 +231,195 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="recoleccion-de-datos" class="section level1">
-<h1><span class="header-section-number">Capítulo 3</span> Recolección de Datos</h1>
-<div id="definiciones-1" class="section level2">
-<h2><span class="header-section-number">3.1</span> Definiciones</h2>
-<p>A primary goal of statistical studies is to collect data that can then be used to make informed decisions. It should come as no surprise that the ability to make good decisions depends on the quality of the information available.</p>
+<div id="exploracion-de-datos-y-visualizacion" class="section level1">
+<h1><span class="header-section-number">Capítulo 5</span> Exploración de Datos y Visualización</h1>
+<div id="general-concetps" class="section level2">
+<h2><span class="header-section-number">5.1</span> General Concetps</h2>
 <ul>
-<li><strong>Datos</strong>: colección de información sobre las variables de interés.<br \> Para poder tener una colección habrá que definir la población de donde saldrán éstos datos:</li>
-<li><strong>Población</strong>: Conjunto de datos, objetos, humanos, experiencias, étc.
+<li>An “outlier” is an extremely high or an extremely low data value when compared with the rest of the data values.</li>
+<li>Scott’s rule for the bin width w = 3.5σ/ 3√n, where σ is the standard deviation for the entire data set and n is the number of points.</li>
+<li>This rule assumes that the data follows a Gaussian distribution; otherwise, it is likely to give a bin width that is too wide.</li>
+<li>Histograms can be either normalized or unnormalized.
 <ul>
-<li><em>Población infinita:</em> Aquella que no se puede o es difícil de contar. (población difícil o no contable)</li>
-<li><em>Población finita:</em> se puede contar y/o medir.</li>
-<li><em>Población muestreada:</em> subconjunto de la población que reúne todas las características (parámetros) de la población.</li>
-</ul></li>
-<li><strong>Parámetro:</strong> unidad de medida de los atributos, características de la población.</li>
-<li><strong>Muestra:</strong> Subconjunto de la población.</li>
-<li><strong>Estadísticos:</strong> unidad de medida de un atributo o característica de la muestra.</li>
-<li><strong>Censo:</strong> cuando la población se analiza en su totalidad.</li>
-</ul>
-<p>A study is an <strong>observational study</strong> if the investigator <strong>observes</strong> characteristics of a sample selected from one or more existing populations. The goal of an observational study is usually to draw conclusions about the corresponding population or about differences between two or more populations. In a well-designed observational study, the sample is selected in a way that is designed to produce a sample that is representative of the population.</p>
-<p>A study is an <strong>experiment</strong> if the investigator observes how a response variable behaves when one or more explanatory variables, also called factors, are <strong>manipulated</strong>. The usual goal of an experiment is to determine the effect of the manipulated explanatory variables (factors) on the response variable. In a well-designed experiment, the composition of the groups that will be exposed to different experimental conditions is determined by random assignment.</p>
-</div>
-<div id="tipos-de-muestreo" class="section level2">
-<h2><span class="header-section-number">3.2</span> Tipos de Muestreo</h2>
-<p>Advantages of sampling methods:</p>
-<ul>
-<li>Reduced cost.</li>
-<li>Greater speed.</li>
-<li>Greater Scope</li>
-<li>Greater Accuracy</li>
-</ul>
-<div id="types-of-sampling" class="section level4">
-<h4><span class="header-section-number">3.2.0.1</span> Types of sampling</h4>
-<div id="non-probabilistic-techniques" class="section level5">
-<h5><span class="header-section-number">3.2.0.1.1</span> Non Probabilistic Techniques</h5>
-<ul>
-<li><strong>Muestreo por Conveniencia</strong>: Los encuestados son seleccionados porque estaban en el lugar preciso en el momento adecuado.</li>
-<li><strong>Muestreo por Juicio</strong>: Los encuestados son seleccionados siguiendo el criterio del investigador, basándose en su conocimiento de la población objetivo.</li>
-<li><strong>Muestreo Encadenado</strong>: Se selecciona a una muestra que sirve como punto de partida para otra muestra. Se utiliza cuando, por la naturaleza delicada de la pregunta o la dificultad de encontrar a los encuestados, es necesario que el encuestado nos dirija a otro. Un ejemplo típico de la utilidad de este método sería la investigación sobre hábitos de conducta moralmente no aceptados por la sociedad.</li>
-<li><strong>Muestreo por Cuotas</strong>: En este caso el investigador tiene una información más detallada de la distribución de la población según algunas variables que están relacionadas con la variable a estudiar. De acuerdo con estas variables se divide la población en estratos y se entrevista un número determinado en cada estrato.</li>
-</ul>
-</div>
-<div id="probabilistic-techniques" class="section level5">
-<h5><span class="header-section-number">3.2.0.1.2</span> Probabilistic Techniques</h5>
-<ul>
-<li><strong>Muestreo Aleatorio Simple (MAS)</strong>: Cada elemento de la población y cada posible muestra de un tamaño n tienen una probabilidad conocida e igual de ser seleccionados. Esta técnica requiere tener un listado exhaustivo de todos los elementos de la población objetivo. Errores que arruinan el muestreo aleatorio simple (buscar evitarlos siempre):
-<ul>
-<li>Tendencias.</li>
-<li>Prejuicios.</li>
-<li>Parcialidades.</li>
-</ul></li>
-<li><strong>Muestreo Sistemático</strong>: Se elige un primer elemento aleatoriamente y a continuación todos los siguientes cada n posiciones. Así, si por ejemplo queremos seleccionar 20 individuos de entre 100, el primer paso es seleccionar un número aleatorio entre 1 y 5 (ya que 100/20=5), digamos el 3; a continuación seleccionamos los individuos 3, 8, 13, 18,… 93, 98. Esto implica la ordenación de todos los elementos de la población, si bien el criterio de ordenación no debe guardar ninguna relación con el fenómeno sociológico a estudiar.</li>
-<li><strong>Muestreo Estratificado</strong>: Requiere al menos dos etapas. En una primera etapa la población objetivo se divide en estratos según las variables que se consideran relacionadas con el fenómeno sociológico a estudiar. La segunda fase consiste en seleccionar aleatoriamente una muestra dentro de cada estrato.</li>
-<li><strong>Muestreo por conglomerados (<em>clusters</em>)</strong>:
-<ul>
-<li><strong>Monoetápico:</strong> La población es dividida en conglomerados (barrios, manzanas), seleccionando un grupo de ellos con probabilidad proporcional a su importancia. Una vez se tienen estos conglomerados se encuesta a todos los elementos del conglomerado (todos los vecinos de las manzanas B, H y G).</li>
-<li><strong>Bietápico:</strong> Igual que el anterior pero en lugar de encuestar a todos los elementos del conglomerado se selecciona una muestra.</li>
+<li>In an unnormalized histogram, the value plotted for each bin is the absolute count of events in that bin.</li>
+<li>In a normalized histogram, we divide each count by the total number of points in the data set, so that the value for each bin becomes the fraction of points in that bin. If we want the percentage of points per bin instead, we simply multiply the fraction by 100.</li>
 </ul></li>
 </ul>
-<div class="figure">
-<img src="img/cluster.jpg" />
-
-</div>
+<div id="key-points-to-explore-in-cuantitative-data-to-begin-with" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Key points to explore in cuantitative data to begin with:</h3>
 <ul>
-<li><strong>1-in-<span class="math inline">\(k\)</span> systematic sampling/ muestreo sistemático 1-en-<span class="math inline">\(k\)</span>:</strong> Consiste en seleccionar cada <span class="math inline">\(k\)</span>-ésima unidad. Útil para muestreo de artículos en líneas de producción.<br \></li>
-</ul>
-<blockquote>
-<p><strong>Ejemplos:</strong> <br \> <em>Muestreo con reemplazo:</em> <br \> En un lote de 1000 artículos. Agarro 20 al hazar, si <span class="math inline">\(\leq 4\)</span> están defectuosos, acepto el lote. <br \><br \> <em>Muestreo sin remplazo:</em> <br \> Después de sacar 20, vuelvo a muestrear a los 980 restantes (con ésta técnica la muestra aumenta, dado que <span class="math inline">\(\Omega\)</span> disminuye y la cantidad de artículos defectuosos siguen siendo los mismos en cantidad) <span class="math inline">\(\therefore\)</span> <br \> Tomo 30 artículos, si <span class="math inline">\(\leq 4\)</span> resultan defectuosos entonces rechazo el lote.</p>
-</blockquote>
-</div>
-</div>
-<div id="resumen-de-muestreos" class="section level3">
-<h3><span class="header-section-number">3.2.1</span> Resumen de Muestreos</h3>
-<div class="figure">
-<img src="img/muestreo.png" />
-
-</div>
-</div>
-</div>
-<div id="tipos-de-estudios" class="section level2">
-<h2><span class="header-section-number">3.3</span> Tipos de Estudios</h2>
-<div id="correlation-analysis-ca" class="section level4">
-<h4><span class="header-section-number">3.3.0.1</span> Correlation Analysis (CA)</h4>
-<p>El análisis de correlaciones es muy útil para el investigador para determinar si existe alguna relación o asociación entre diversas variables de interés antes de continuar con un análisis más sofisticado de causa-efecto. El análisis de correlaciones también constituye un insumo fundamental para realizar diversos análisis estadísticos más avanzados como el análisis factorial y el análisis de confiabilidad. Estos análisis son utilizados por los investigadores para determinar la validez y confiabilidad de las encuestas de actitud.</p>
-<div id="statistical-assumption-of-ca" class="section level5">
-<h5><span class="header-section-number">3.3.0.1.1</span> Statistical assumption of CA</h5>
-<p>El análisis más común es el análisis de correlación de Pearson (Pearson product moment correlacion coefficient). Este tipo de análisis presupone que las variables son ordinales o continuas y que la distribución de estas variables se acerca a la distribución normal (Bell shape curveo “curva de campana”). Es aconsejable que antes de proceder al análisis de correlación de las variables, el investigador estime las estadísticas descriptivas correspondientes para determinar si se cumplen estos supuestos.</p>
+<li><strong>Shape</strong> (graphs done with data)
 <ul>
-<li><strong>Estudio observacional:</strong></li>
-</ul>
-<div class="figure">
-<img src="img/observacional.jpg" />
-
-</div>
+<li>Symmetric?</li>
+<li>Left or right skewed?</li>
+<li>Unimodal?</li>
+<li>Bi-modal?</li>
+</ul></li>
+<li><strong>Center</strong>
 <ul>
-<li><strong>Estudio experimental:</strong></li>
+<li>Mean</li>
+<li>Median</li>
+<li>Mode</li>
+</ul></li>
+<li><strong>Spread</strong>
+<ul>
+<li>Range (<em>max-min</em> values)</li>
+<li>IQR (interquartile range): <span class="math inline">\(Q_3 - Q_1\)</span></li>
+</ul></li>
+<li>Outliers</li>
+</ul>
+<p><br \> <img src="img/dataViz.png" alt="Prueba" /></p>
+</div>
+</div>
+<div id="medidas-de-tendencia-central" class="section level2">
+<h2><span class="header-section-number">5.2</span> Medidas de Tendencia Central</h2>
+<p>Criterios a seguir:<br \></p>
+<ol style="list-style-type: decimal">
+<li>Calcular la media (entre otras razones porque es el mejor estimador del parámetro poblacional).</li>
+<li>Si no puede calcularse (p.e. variables ordinales, valores extremos) obtener Mediana.</li>
+<li>Si no puede obtenerse Mediana (p.e. datos nominales, intervalos abiertos con más del 50% de sujetos) obtener Moda.</li>
+</ol>
+<p>En algunos casos los tres indicadores pueden dar valores similares pero no necesariamente ha de ser así. Mdn = X = Mo, esto solo sucedera sii la distribución es simétrica:</p>
+<div class="figure">
+<img src="img/simetria.png" />
+
+</div>
+</div>
+<div id="medidas-de-variabilidad-o-dispersion" class="section level2">
+<h2><span class="header-section-number">5.3</span> Medidas de Variabilidad o Dispersión</h2>
+<ul>
+<li>Asimetría positiva.</li>
+<li>Asimetría negativa.</li>
+</ul>
+<p>Para conseguir una visión completa y comprensiva de los datos obtenidos hay que complementar las medidas de tendencia central con otros estadísticos que reflejen otras propiedades. Por ejemplo, el grado en que los datos se parecen o diferencian entre sí, propiedad que se denomina variabilidad o variación.</p>
+<div id="varianza" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Varianza</h3>
+<p>Es el promedio de las distancias al cuadrado desde los valores en <span class="math inline">\(X\)</span> hasta la media de <span class="math inline">\(\overline X\)</span> (es decir, de las puntuaciones diferenciales al cuadrado) en una muestra de <span class="math inline">\(n\)</span> sujetos.</p>
+<p>Fórmulas:</p>
+<p><span class="math display">\[S^2_x = \frac{\sum(X_i - \overline X)^2}{N}\]</span></p>
+<p><span class="math display">\[S^2_x = \frac{\sum x^2_i}{N}\]</span></p>
+<p>Fórmula alternativa:</p>
+<p><span class="math display">\[S^2_x = \frac{\sum X^2_i}{N}-\overline X^2\]</span></p>
+</div>
+</div>
+<div id="desviacion-estandar-o-tipica" class="section level2">
+<h2><span class="header-section-number">5.4</span> Desviación Estándar o Típica</h2>
+<div class="figure">
+<img src="img/ds.png" />
+
+</div>
+</div>
+<div id="propiedades-de-la-media-y-varianza" class="section level2">
+<h2><span class="header-section-number">5.5</span> Propiedades de la Media y Varianza</h2>
+<ul>
+<li>La media puede tomarse como cualquier valor mientras que <span class="math inline">\(S^2X\)</span> y <span class="math inline">\(SX\)</span> son siempre positivas, siendo su valor mínimo <span class="math inline">\(0\)</span>.</li>
+<li>Si tenemos una misma variable <span class="math inline">\(X\)</span> que ha sido medida en <span class="math inline">\(k\)</span> grupos y conocemos las medidas y varianzas en cada grupo, entonces podemos calcular los estadísticos globalesÑ</li>
 </ul>
 <div class="figure">
-<img src="img/experimental.jpg" />
-
-</div>
-<p>Recordar el concepto de <strong>efecto placebo</strong>, para evitar éste efecto se utilizan grupos control en los estudios.</p>
+<img src="img/meanVar.png" />
 
 </div>
 </div>
+<div id="curtosis" class="section level2">
+<h2><span class="header-section-number">5.6</span> Curtosis</h2>
+<p>Sirve para analizar el grado de concentración que presentan los valores de una variable analizada alrededor de la zona centrla de la distribución de frecuencias, sin necesidad de generar un gráfico.</p>
+<div class="figure">
+<img src="img/curtosis.png" />
+
+</div>
+</div>
+<div id="indice-de-asimetria" class="section level2">
+<h2><span class="header-section-number">5.7</span> Índice de Asimetría</h2>
+<p>La asimetría de una distribución hace referencia al grado en que los datos se reparten por encima y por debajo de la tendencia central.</p>
+<div class="figure">
+<img src="img/asimetria.png" />
+
+</div>
+</div>
+<div id="quantile-quantile-plot-q-q-plot" class="section level2">
+<h2><span class="header-section-number">5.8</span> Quantile-Quantile Plot (Q-Q plot)</h2>
+<p>It is a graphical tool to help us assess if a set of data plausibly came from some theoretical distribution such as a <em>normal</em> or <em>exponential</em>. For example, if we run a statistical analysis that assumes our dependent variable is <em>normally distributed</em>, we can use a Normal Q-Q plot to check that assumption.</p>
+<p>A Q-Q plot is a scatterplot created by plotting two sets of quantiles against one another. If both sets of quantiles came from the same distribution, we should see the points forming a line that’s roughly straight.</p>
+<div class="figure">
+<img src="img/qqplot.png" />
+
+</div>
+<div id="q-q-plot-of-a-uniform-distribution" class="section level3">
+<h3><span class="header-section-number">5.8.1</span> Q-Q plot of a uniform distribution</h3>
+<div class="figure">
+<img src="img/qquniform.png" />
+
+</div>
+<div class="figure">
+<img src="img/qquniform1.png" />
+
+</div>
+</div>
+<div id="q-q-plot-of-a-poisson-distribution" class="section level3">
+<h3><span class="header-section-number">5.8.2</span> Q-Q plot of a Poisson distribution</h3>
+<div class="figure">
+<img src="img/qqpoisson.png" />
+
+</div>
+</div>
+<div id="understanding-type-of-distribution-through-q-q-plots" class="section level3">
+<h3><span class="header-section-number">5.8.3</span> Understanding type of distribution through Q-Q plots</h3>
+<div class="figure">
+<img src="img/qqexamples.png" />
+
+</div>
+</div>
+</div>
+<div id="boxplots" class="section level2">
+<h2><span class="header-section-number">5.9</span> Boxplots</h2>
+<p>Officially known as <strong>box-and-whisker plots</strong>, also called <strong>boxplots</strong>, for short, this is a technique for exploratory data analysis devised by Tukey (1977). One can see the spread and symmetry of a distribution at a glance, and the position of any extreme scores.</p>
+<ul>
+<li><em>Hinges</em>: These are the sides of the box in a boxplot, corresponding approximately to the 25th and 75th percentiles of the distribution.</li>
+<li><em>H-spread</em>: The distance between the two hinges (i.e., the width of the box) in a boxplot.</li>
+<li><em>Inner fences</em>: Locations on either side of the box (in a boxplot) that are 1.5 times the H-spread from each hinge. The distance between the upper and lower inner fence is four times the H-spread.</li>
+<li><em>Adjacent values</em>: The upper adjacent value is the highest score in the distribution that is not higher than the upper inner fence, and the lower adjacent value is similarly defined in terms of the lower inner fence of a boxplot.</li>
+<li>The <em>upper whisker</em> is drawn from the upper hinge to the upper adjacent value, and the lower whisker is drawn from the lower hinge to the lower adjacent value.</li>
+<li><em>Outlier</em>: Defined in general as an extreme score standing by itself in a distribution, an outlier is more specifically defined in the context of a boxplot.</li>
+<li>In terms of a boxplot, an outlier is any score that is beyond the reach of the whiskers on either side. The outliers are indicated as points in the boxplot.</li>
+</ul>
+<p><img src="img/boxplot.png" /> Two or more box plots drawn on the same Y-axis. These are often useful in comparing features of distributions. An example portraying the times it took samples of women and men to do a task is shown below.</p>
+<div class="figure">
+<img src="img/boxplot1.png" />
+
+</div>
+<div id="more-elaborate-boxplots" class="section level3">
+<h3><span class="header-section-number">5.9.1</span> More elaborate Boxplots</h3>
+<ul>
+<li>Means indicated in green lines rahter than plus signs.</li>
+<li>Mean of all scores indicated by a gray line.</li>
+<li>individual scores are represented by dots. Since the scores have been rounded to the nearest second, any given dot might represent more than one score.</li>
+<li>One box is <strong>wider</strong> than the other one because the widths of the boxes are proportional to the number of subjects.</li>
+</ul>
+<div class="figure">
+<img src="img/boxplotfancy.png" />
+
+</div>
+<p>If all the dots want to be seen we need to add some <code>jitter</code> to the boxplot:</p>
+<div class="figure">
+<img src="img/boxplotjitter.png" />
+
+</div>
+</div>
+</div>
+<div id="using-different-graphics-in-the-same-exploration" class="section level2">
+<h2><span class="header-section-number">5.10</span> Using different graphics in the same exploration</h2>
+<div class="figure">
+<img src="img/mixedgraph.png" />
+
+</div>
+</div>
+<div id="other-kinds-of-distributions" class="section level2">
+<h2><span class="header-section-number">5.11</span> Other kinds of distributions</h2>
+<div class="figure">
+<img src="img/dist.png" />
+
+</div>
+
 </div>
 </div>
             </section>
@@ -342,8 +427,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="conceptos-generales.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-preparation.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="data-preparation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analisis-de-los-datos.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
@@ -371,7 +456,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/generaviles/estadistica-syllabus02-coleccion_datos.Rmd",
+"link": "https://github.com/generaviles/estadistica-syllabus04-dataViz.Rmd",
 "text": "Edit"
 },
 "download": null,

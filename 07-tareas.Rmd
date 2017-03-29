@@ -54,7 +54,7 @@ The Titanic Database:
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(readr)
-titanic <- read_csv("D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/tareas/titanictest.csv")
+titanic <- read_csv("D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica_tareas/titanictest.csv")
 summary(titanic)
 ```
 

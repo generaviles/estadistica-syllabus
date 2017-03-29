@@ -1,4 +1,4 @@
-#Data Visualization
+#Exploración de Datos y Visualización
 
 ##General Concetps
 
@@ -26,17 +26,6 @@
   - Outliers
     
 
-
-
-##Análisis Univariante
-
-- Estudia la distribución individual de cada variable. Este análisis se centra en dos aspectos: La tendencia central de la distribución y su dispersión. En el primer caso hablamos de un valor característico o medio de la distribución, en el segundo de la variabilidad interna de los datos. Según el tipo de variables proceden los siguientes análisis:
-
-    1. Variables nominales. Para este tipo de variables el análisis se limita a las frecuencias de cada categoría. Se suele expresar en porcentajes.
-    1.  Variables ordinales. La tendencia central se mide con los estadísticos mediana y moda (pero no la media, ya que ésta implica distancias comparables), mientras que para la dispersión podemos utilizar un diagrama de frecuencias (histograma).
-    1. Variables métricas. Para el análisis de la tendencia central se utiliza por lo general la media, si bien es aconsejable utilizar la mediana cuando nos encontramos con unos pocos valores extremos cuya magnitud difiere ampliamente del resto (son mucho mayores o mucho menores que la mayoría). 
-
-  - Para estudiar el grado de dispersión recurrimos a la desviación típica o la varianza. Es posible estudiar además del momento de primer orden de la distribución (tendencia central) y el momento de segundo orden (dispersión), el momento de tercer orden (simetría) y el de cuarto orden (achatamiento).
 
 <br \>
 ![Prueba](D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/img/dataViz.png)

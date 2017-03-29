@@ -180,6 +180,12 @@ $$P(A)= \frac{\text{Número de elementos de A}}{n}$$
 Para una variable aleatoria o evento discreto, se define como:
 $$f(x) = P(X=x)$$
 
+  - Muchos procesos aleatorios vienen descritos por variables de forma que son conocidas las probabilidades en itnervalos.
+  - La integral definida de la función de densidad en dichos intervalos coincide con la probabilidad de los mismos.
+  - Es decir, identificamos la **probabilida de un intervalo** con el **área bajo** la función de densidad.
+  
+![](D:\Dropbox\MsC UABC\2o Semestre\Clases\Estadistica\estadistica-syllabus\img/densidad.png)
+  
 ### Acumulativa pdf (*Comulative pdf*)
 
   - Se define como la suma de los resultados parcials de los eventos que validan el experimento:
@@ -188,7 +194,27 @@ $$cpdf = \sum_{i}(P(x_i=x))$$
 
 Para los $x_i$ que validan el experimento.
 
-**14 de Febrero 2017**
+###Función de Distribución
+
+Es la función que asocia a cada valor de una variable, la probabilidad acumulada de los valores inferiores o iguales.
+  
+  - Piénsalo como la generalización de las frecuencias acumuladas. Diagrama integral.
+    - A los valores extremadamente bajos les corresponden valores de la función de distribución cercanos a cero.
+    - A los valores extremadamente altos les corresponden valores de la función de distribución cercanos a uno.
+  - Se encuéntra en los artículos y aplicaciones en forma de **valor *p***, **significación**.
+
+<center>![](D:\Dropbox\MsC UABC\2o Semestre\Clases\Estadistica\estadistica-syllabus\img/distribucion.png)</center>
+
+####Para qué sirve la función de distribución
+
+  - Contrastar lo anómalo de una observación concreta.
+    - *Sé que una persona de altura 210 cm es **"anómala"** porque la función de distribución en 210 es muy **alta***.
+    - *Sé que una persona adulta que mida menos de 140 cm es **"anómala"** porque la función de distribución es muy baja para 140cm.*
+    - *Sé que una persona que mida 170 cm no posee una altura nada extraña pues su función de distribución es aproximadamente 0.5*
+  - Ésto se puede relacional con la idea de **cuantil**.
+  - En otro contexto (contrastes de hipótesis) podremos observar unos resultados experimentales y contrastar lo “anómalos” que son en conjunto con respecto a una hipótesis de terminada.
+
+
 
 ## Probabilidad Condicional
 
@@ -308,3 +334,69 @@ Entonces, asumiendo independencia obetnemos:
 $$P(A/B) = \frac {P(A\cap B)}{P(B)} = \frac{P(A)P(B)}{P(B)} = P(A)$$
 
 La ecuación anterior demuestra que, los eventos independientes no afectan la probabilidad uno del otro.
+
+##Modelos de Distribución Probabilística  y variables aleatorias.
+
+Hay variables aleatorias que aparecen con frecuencia:
+
+  - Experimentos dicotómicos.
+    - **Bernoulli**
+  - Contar éxitos en experimentos dicotómicos repetidos:
+    - **Binomial**
+    - **Poisson (sucesos raros)**
+  - Y en otras muchas ocasiones:
+    - Distribución **normal** (gaussiana, campana, ...)
+    
+###Distribución de Bernoulli [@malagabioest]
+
+Tenemos un experimento de Bernoulli si al realizar un experimento sólo son posibles dos resultados:
+
+  - $x = 1$ (**éxito**, con probabilidad **p**)
+  - $x = 0$ (**fracaso**, con probabilidad **q = 1 - p**)
+
+Ejemplos:
+
+>   - Lanzar una moneda y que salga cara: $p = \frac{1}{2}$.
+>   - Elegir una persona de la población y que esté enfermo: $p = \frac{1}{1000} = $ prevalencia de la enferemdad.
+>   - Aplicar un tratamiento a un enfermo y que éste se cure: $p = 95% = $ probabilidad de que el individuo se cure.
+
+  - Como se aprecia, en experimentos donde el resultado es dicotómico, la variable queda perfectamente determinada conociendo el **parámetro p**.
+
+###Distribución binomial [@malagabioest]
+
+Función de probabilidad:
+
+$$P[X = k]= \left( \begin{array}{c} x \\ y \end{array}\right)p^kq^{n-k}, 0 \leq k \leq n$$
+
+  - En ésta distribución hay problemas de cálculo si $n$ es grande y/o **$p$** cercano a $0$ ó $1$.
+  - Media: $\mu = np$
+  - Varianza: $\sigma^2 = npq$
+  
+AQUI PONER IMAGEN
+
+###Distribución Binomial [@malagabioest]
+
+  - Si se repite un número fijo de veces, **$n$**, un experimento de Bernoulli con parámetro **$p$**, el número de éxitos sigue una distribución binomial de parámetros ($n,p$).
+
+Ejemplos:
+
+>  - Lanzar una moneda 10 veces y contar las caras: Bin($n = 10$, $p = \frac{1}{2}$)
+>  - Lanzar una moneda 100 veces y contar las caras: Bin($n = 100$, $p = \frac{1}{2}$). En éste caso es mejor utilizar una distribución normal.
+>  - El número de personas que enfermará (en una población de 500, 000 personas) de **una enfermedad que desarrolla una cada de 2000 personas**: Bin($n = 500,000$, $p = \frac{1}{2000}$)
+>  - Es difícil hacer cálculos con las cantidades del ejemplo anterior. El modelo de Poisson será mas adecuado en éstas ocaciones.
+
+###Distribución normal de Gauss [@malagabioest]
+
+  - Aparece de manera natural:
+    - Errores de medida.
+    - Distancia de frenado.
+    - Altura, peso, propensión al crimen ...
+    - Distribuciones binomiales con $n$ grande (n > 30) y 'p con (np>5) ó (nq > 5).
+  - Está caracterizada por **dos parámetros**:
+    - La **media** ($\mu$) y
+    - La **desviación estándar/ típica** ($\sigma$)
+  - Función de densidad de la distribución normal:
+  
+  $$f(x) = \frac {1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})}$$
+    
+    
