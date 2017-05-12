@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Estadística para el Análisis de Datos</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Notas y ejercicios de clase.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Estadística para el Análisis de Datos" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Notas y ejercicios de clase." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Estadística para el Análisis de Datos" />
+  
+  <meta name="twitter:description" content="Notas y ejercicios de clase." />
+  
+
+<meta name="author" content="Gener Avilés R">
+
+
+<meta name="date" content="2017-05-12">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="analisis-de-los-datos.html">
+<link rel="next" href="taller-r.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Estadística para el Análisis de Datos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="conceptos-generales.html"><a href="conceptos-generales.html"><i class="fa fa-check"></i><b>2</b> Conceptos Generales</a><ul>
+<li class="chapter" data-level="2.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#terms-comparing-statistics-and-computer-sciences"><i class="fa fa-check"></i><b>2.1</b> Terms comparing statistics and computer sciences</a></li>
+<li class="chapter" data-level="2.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#teoria-de-conjuntos"><i class="fa fa-check"></i><b>2.2</b> Teoria de Conjuntos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#definiciones"><i class="fa fa-check"></i><b>2.2.1</b> Definiciones</a></li>
+<li class="chapter" data-level="2.2.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#conjuntos-disjuntos"><i class="fa fa-check"></i><b>2.2.2</b> Conjuntos Disjuntos</a></li>
+<li class="chapter" data-level="2.2.3" data-path="conceptos-generales.html"><a href="conceptos-generales.html#particion"><i class="fa fa-check"></i><b>2.2.3</b> Partición:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="conceptos-generales.html"><a href="conceptos-generales.html#diagramas-de-venn"><i class="fa fa-check"></i><b>2.3</b> Diagramas de Venn</a></li>
+<li class="chapter" data-level="2.4" data-path="conceptos-generales.html"><a href="conceptos-generales.html#algebra-de-conjuntos"><i class="fa fa-check"></i><b>2.4</b> Algebra de Conjuntos</a></li>
+<li class="chapter" data-level="2.5" data-path="conceptos-generales.html"><a href="conceptos-generales.html#leyes-de-morgan"><i class="fa fa-check"></i><b>2.5</b> Leyes de Morgan</a></li>
+<li class="chapter" data-level="2.6" data-path="conceptos-generales.html"><a href="conceptos-generales.html#modelos-de-probabilidad"><i class="fa fa-check"></i><b>2.6</b> Modelos De Probabilidad</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#elementos-de-un-modelo-de-probabilidad"><i class="fa fa-check"></i><b>2.6.1</b> Elementos de un Modelo de Probabilidad</a></li>
+<li class="chapter" data-level="2.6.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#axiomas-de-probabilidad"><i class="fa fa-check"></i><b>2.6.2</b> Axiomas de Probabilidad</a></li>
+<li class="chapter" data-level="2.6.3" data-path="conceptos-generales.html"><a href="conceptos-generales.html#ley-de-probabilidad-discreta"><i class="fa fa-check"></i><b>2.6.3</b> Ley de Probabilidad Discreta</a></li>
+<li class="chapter" data-level="2.6.4" data-path="conceptos-generales.html"><a href="conceptos-generales.html#ley-de-probabilidad-discreta-uniforme"><i class="fa fa-check"></i><b>2.6.4</b> Ley de Probabilidad Discreta Uniforme</a></li>
+<li class="chapter" data-level="2.6.5" data-path="conceptos-generales.html"><a href="conceptos-generales.html#funcion-densidad-de-probabilidad"><i class="fa fa-check"></i><b>2.6.5</b> Función <em>Densidad de Probabilidad</em></a></li>
+<li class="chapter" data-level="2.6.6" data-path="conceptos-generales.html"><a href="conceptos-generales.html#acumulativa-pdf-comulative-pdf"><i class="fa fa-check"></i><b>2.6.6</b> Acumulativa pdf (<em>Comulative pdf</em>)</a></li>
+<li class="chapter" data-level="2.6.7" data-path="conceptos-generales.html"><a href="conceptos-generales.html#funcion-de-distribucion"><i class="fa fa-check"></i><b>2.6.7</b> Función de Distribución</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="conceptos-generales.html"><a href="conceptos-generales.html#probabilidad-condicional"><i class="fa fa-check"></i><b>2.7</b> Probabilidad Condicional</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#repaso-de-combinaciones-y-permutaciones"><i class="fa fa-check"></i><b>2.7.1</b> Repaso de combinaciones y permutaciones</a></li>
+<li class="chapter" data-level="2.7.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#independencia"><i class="fa fa-check"></i><b>2.7.2</b> Independencia</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="conceptos-generales.html"><a href="conceptos-generales.html#modelos-de-distribucion-probabilistica-y-variables-aleatorias."><i class="fa fa-check"></i><b>2.8</b> Modelos de Distribución Probabilística y variables aleatorias.</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="conceptos-generales.html"><a href="conceptos-generales.html#distribucion-de-bernoulli-malagabioest"><i class="fa fa-check"></i><b>2.8.1</b> Distribución de Bernoulli <span class="citation">(López <a href="#ref-malagabioest">2013</a>)</span></a></li>
+<li class="chapter" data-level="2.8.2" data-path="conceptos-generales.html"><a href="conceptos-generales.html#distribucion-binomial-malagabioest"><i class="fa fa-check"></i><b>2.8.2</b> Distribución binomial <span class="citation">(López <a href="#ref-malagabioest">2013</a>)</span></a></li>
+<li class="chapter" data-level="2.8.3" data-path="conceptos-generales.html"><a href="conceptos-generales.html#distribucion-binomial-malagabioest-1"><i class="fa fa-check"></i><b>2.8.3</b> Distribución Binomial <span class="citation">(López <a href="#ref-malagabioest">2013</a>)</span></a></li>
+<li class="chapter" data-level="2.8.4" data-path="conceptos-generales.html"><a href="conceptos-generales.html#distribucion-normal-de-gauss-malagabioest"><i class="fa fa-check"></i><b>2.8.4</b> Distribución normal de Gauss <span class="citation">(López <a href="#ref-malagabioest">2013</a>)</span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html"><i class="fa fa-check"></i><b>3</b> Recolección de Datos</a><ul>
+<li class="chapter" data-level="3.1" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#definiciones-1"><i class="fa fa-check"></i><b>3.1</b> Definiciones</a></li>
+<li class="chapter" data-level="3.2" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#tipos-de-muestreo"><i class="fa fa-check"></i><b>3.2</b> Tipos de Muestreo</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#resumen-de-muestreos"><i class="fa fa-check"></i><b>3.2.1</b> Resumen de Muestreos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="recoleccion-de-datos.html"><a href="recoleccion-de-datos.html#tipos-de-estudios"><i class="fa fa-check"></i><b>3.3</b> Tipos de Estudios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-preparation.html"><a href="data-preparation.html"><i class="fa fa-check"></i><b>4</b> Data Preparation</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-preparation.html"><a href="data-preparation.html#data-transformation"><i class="fa fa-check"></i><b>4.1</b> Data Transformation</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html"><i class="fa fa-check"></i><b>5</b> Exploración de Datos y Visualización</a><ul>
+<li class="chapter" data-level="5.1" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#general-concetps"><i class="fa fa-check"></i><b>5.1</b> General Concetps</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#key-points-to-explore-in-cuantitative-data-to-begin-with"><i class="fa fa-check"></i><b>5.1.1</b> Key points to explore in cuantitative data to begin with:</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>5.2</b> Medidas de Tendencia Central</a></li>
+<li class="chapter" data-level="5.3" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#medidas-de-variabilidad-o-dispersion"><i class="fa fa-check"></i><b>5.3</b> Medidas de Variabilidad o Dispersión</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#varianza"><i class="fa fa-check"></i><b>5.3.1</b> Varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#desviacion-estandar-o-tipica"><i class="fa fa-check"></i><b>5.4</b> Desviación Estándar o Típica</a></li>
+<li class="chapter" data-level="5.5" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#propiedades-de-la-media-y-varianza"><i class="fa fa-check"></i><b>5.5</b> Propiedades de la Media y Varianza</a></li>
+<li class="chapter" data-level="5.6" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#curtosis"><i class="fa fa-check"></i><b>5.6</b> Curtosis</a></li>
+<li class="chapter" data-level="5.7" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#indice-de-asimetria"><i class="fa fa-check"></i><b>5.7</b> Índice de Asimetría</a></li>
+<li class="chapter" data-level="5.8" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#quantile-quantile-plot-q-q-plot"><i class="fa fa-check"></i><b>5.8</b> Quantile-Quantile Plot (Q-Q plot)</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#q-q-plot-of-a-uniform-distribution"><i class="fa fa-check"></i><b>5.8.1</b> Q-Q plot of a uniform distribution</a></li>
+<li class="chapter" data-level="5.8.2" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#q-q-plot-of-a-poisson-distribution"><i class="fa fa-check"></i><b>5.8.2</b> Q-Q plot of a Poisson distribution</a></li>
+<li class="chapter" data-level="5.8.3" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#understanding-type-of-distribution-through-q-q-plots"><i class="fa fa-check"></i><b>5.8.3</b> Understanding type of distribution through Q-Q plots</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#boxplots"><i class="fa fa-check"></i><b>5.9</b> Boxplots</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#more-elaborate-boxplots"><i class="fa fa-check"></i><b>5.9.1</b> More elaborate Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#using-different-graphics-in-the-same-exploration"><i class="fa fa-check"></i><b>5.10</b> Using different graphics in the same exploration</a></li>
+<li class="chapter" data-level="5.11" data-path="exploracion-de-datos-y-visualizacion.html"><a href="exploracion-de-datos-y-visualizacion.html#other-kinds-of-distributions"><i class="fa fa-check"></i><b>5.11</b> Other kinds of distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="analisis-de-los-datos.html"><a href="analisis-de-los-datos.html"><i class="fa fa-check"></i><b>6</b> Análisis de los Datos</a><ul>
+<li class="chapter" data-level="6.1" data-path="analisis-de-los-datos.html"><a href="analisis-de-los-datos.html#analisis-univariante"><i class="fa fa-check"></i><b>6.1</b> Análisis Univariante</a></li>
+<li class="chapter" data-level="6.2" data-path="analisis-de-los-datos.html"><a href="analisis-de-los-datos.html#analisis-vibariante"><i class="fa fa-check"></i><b>6.2</b> Análisis Vibariante</a></li>
+<li class="chapter" data-level="6.3" data-path="analisis-de-los-datos.html"><a href="analisis-de-los-datos.html#analisis-multivariante"><i class="fa fa-check"></i><b>6.3</b> Análisis Multivariante</a></li>
+<li class="chapter" data-level="6.4" data-path="analisis-de-los-datos.html"><a href="analisis-de-los-datos.html#pruebas-de-hipotesis"><i class="fa fa-check"></i><b>6.4</b> Pruebas de Hipótesis</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="analisis-de-los-datos.html"><a href="analisis-de-los-datos.html#generalidades"><i class="fa fa-check"></i><b>6.4.1</b> Generalidades</a></li>
+<li class="chapter" data-level="6.4.2" data-path="analisis-de-los-datos.html"><a href="analisis-de-los-datos.html#errores-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>6.4.2</b> Errores Tipo I y Tipo II</a></li>
+<li class="chapter" data-level="6.4.3" data-path="analisis-de-los-datos.html"><a href="analisis-de-los-datos.html#prueba-de-una-cola"><i class="fa fa-check"></i><b>6.4.3</b> Prueba de una cola</a></li>
+<li class="chapter" data-level="6.4.4" data-path="analisis-de-los-datos.html"><a href="analisis-de-los-datos.html#dos-colas"><i class="fa fa-check"></i><b>6.4.4</b> Dos colas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html"><i class="fa fa-check"></i><b>7</b> Bayesian Statistics</a><ul>
+<li class="chapter" data-level="7.1" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#math-for-understanding-the-bayesian-approach"><i class="fa fa-check"></i><b>7.1</b> Math for understanding the Bayesian approach</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#ejercicio"><i class="fa fa-check"></i><b>7.1.1</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#conceptos-sueltos-que-debo-cubrir"><i class="fa fa-check"></i><b>7.2</b> Conceptos sueltos que debo cubrir</a></li>
+<li class="chapter" data-level="7.3" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#entropy-and-information-gain"><i class="fa fa-check"></i><b>7.3</b> Entropy and Information Gain</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#key-definitios"><i class="fa fa-check"></i><b>7.3.1</b> Key definitios</a></li>
+<li class="chapter" data-level="7.3.2" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#examples"><i class="fa fa-check"></i><b>7.3.2</b> Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#bayesian-linear-regression"><i class="fa fa-check"></i><b>7.4</b> Bayesian Linear Regression</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#linear-regression"><i class="fa fa-check"></i><b>7.4.1</b> Linear Regression</a></li>
+<li class="chapter" data-level="7.4.2" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#logistic-regression"><i class="fa fa-check"></i><b>7.4.2</b> Logistic Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#examples-of-bayesian-models"><i class="fa fa-check"></i><b>7.5</b> Examples of Bayesian models</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#bayesian-a-testing-for-swedish-fish-incorporated"><i class="fa fa-check"></i><b>7.5.1</b> Bayesian A testing for Swedish Fish Incorporated</a></li>
+<li class="chapter" data-level="7.5.2" data-path="bayesian-statistics.html"><a href="bayesian-statistics.html#calculating-probabilies-for-a-new-marketing-idea."><i class="fa fa-check"></i><b>7.5.2</b> Calculating probabilies for a new marketing idea.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="taller-r.html"><a href="taller-r.html"><i class="fa fa-check"></i><b>8</b> Taller R</a><ul>
+<li class="chapter" data-level="8.1" data-path="taller-r.html"><a href="taller-r.html#como-instalar-las-herramientas"><i class="fa fa-check"></i><b>8.1</b> ¿Cómo instalar las herramientas?</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="taller-r.html"><a href="taller-r.html#instalando-r"><i class="fa fa-check"></i><b>8.1.1</b> Instalando R</a></li>
+<li class="chapter" data-level="8.1.2" data-path="taller-r.html"><a href="taller-r.html#instalando-rstudio-integrated-development-environment-para-r"><i class="fa fa-check"></i><b>8.1.2</b> Instalando RStudio (<strong>I</strong>ntegrated <strong>D</strong>evelopment <strong>E</strong>nvironment para R)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="taller-r.html"><a href="taller-r.html#que-es-r"><i class="fa fa-check"></i><b>8.2</b> ¿Qué es R?</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="taller-r.html"><a href="taller-r.html#historia"><i class="fa fa-check"></i><b>8.2.1</b> Historia</a></li>
+<li class="chapter" data-level="8.2.2" data-path="taller-r.html"><a href="taller-r.html#generalidades-1"><i class="fa fa-check"></i><b>8.2.2</b> Generalidades</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="taller-r.html"><a href="taller-r.html#como-obtener-ayuda"><i class="fa fa-check"></i><b>8.3</b> ¿Cómo obtener ayuda?</a></li>
+<li class="chapter" data-level="8.4" data-path="taller-r.html"><a href="taller-r.html#entrada-de-datos-y-su-evaluacion-en-la-consola"><i class="fa fa-check"></i><b>8.4</b> Entrada de datos y su evaluación en la consola</a></li>
+<li class="chapter" data-level="8.5" data-path="taller-r.html"><a href="taller-r.html#estructuras-de-datos-en-r"><i class="fa fa-check"></i><b>8.5</b> Estructuras de datos en R</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="taller-r.html"><a href="taller-r.html#clases-basicas-de-objetos"><i class="fa fa-check"></i><b>8.5.1</b> Clases básicas de objetos</a></li>
+<li class="chapter" data-level="8.5.2" data-path="taller-r.html"><a href="taller-r.html#atributos"><i class="fa fa-check"></i><b>8.5.2</b> Atributos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="taller-r.html"><a href="taller-r.html#utilizando-r-y-rstudio"><i class="fa fa-check"></i><b>8.6</b> Utilizando R y RStudio</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="taller-r.html"><a href="taller-r.html#componentes-rstudio"><i class="fa fa-check"></i><b>8.6.1</b> Componentes RStudio</a></li>
+<li class="chapter" data-level="8.6.2" data-path="taller-r.html"><a href="taller-r.html#iniciando-un-proyecto"><i class="fa fa-check"></i><b>8.6.2</b> Iniciando un proyecto</a></li>
+<li class="chapter" data-level="8.6.3" data-path="taller-r.html"><a href="taller-r.html#cargando-los-datos"><i class="fa fa-check"></i><b>8.6.3</b> Cargando los datos</a></li>
+<li class="chapter" data-level="8.6.4" data-path="taller-r.html"><a href="taller-r.html#preparando-la-base-de-datos"><i class="fa fa-check"></i><b>8.6.4</b> Preparando la base de datos</a></li>
+<li class="chapter" data-level="8.6.5" data-path="taller-r.html"><a href="taller-r.html#visualizacion-de-datos-para-analisis-exploratorios"><i class="fa fa-check"></i><b>8.6.5</b> Visualización de datos para análisis exploratorios</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="taller-r.html"><a href="taller-r.html#como-compartir-datos-y-analisis-con-estadisticos-o-cientificos-de-datos"><i class="fa fa-check"></i><b>8.7</b> ¿Cómo compartir datos y análisis con estadísticos o científicos de datos?</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tareas.html"><a href="tareas.html"><i class="fa fa-check"></i><b>9</b> Tareas</a><ul>
+<li class="chapter" data-level="9.1" data-path="tareas.html"><a href="tareas.html#point-chart"><i class="fa fa-check"></i><b>9.1</b> Point Chart</a></li>
+<li class="chapter" data-level="9.2" data-path="tareas.html"><a href="tareas.html#stratified-sampling"><i class="fa fa-check"></i><b>9.2</b> Stratified Sampling</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="tareas.html"><a href="tareas.html#what-is-stratified-sampling"><i class="fa fa-check"></i><b>9.2.1</b> What is Stratified Sampling?</a></li>
+<li class="chapter" data-level="9.2.2" data-path="tareas.html"><a href="tareas.html#why-use-stratified-sampling"><i class="fa fa-check"></i><b>9.2.2</b> Why use Stratified Sampling?</a></li>
+<li class="chapter" data-level="9.2.3" data-path="tareas.html"><a href="tareas.html#example"><i class="fa fa-check"></i><b>9.2.3</b> Example</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/generaviles" target="blank">Biblioteca de Gener Avilés R</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística para el Análisis de Datos</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bayesian-statistics" class="section level1">
+<h1><span class="header-section-number">Capítulo 7</span> Bayesian Statistics</h1>
+<div id="math-for-understanding-the-bayesian-approach" class="section level2">
+<h2><span class="header-section-number">7.1</span> Math for understanding the Bayesian approach</h2>
+<p><span class="math display">\[P(A_k|B)=\frac{P(A_k\cap B)}{P(B)}\]</span></p>
+<p><span class="math display">\[P(B|A_k)=\frac{P(B\cap A_k)}{P(A_k)} \therefore P(A_k|B)=\frac{}{}\]</span></p>
+<div id="ejercicio" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> Ejercicio</h3>
+<p>Morgan asks Smith to pick a number between 20 and 50, Smith tells Morgan a characteristic of the number he picked (it is a multiple of 5). With this information, determine the probability of Smith’s pick being also a multiple of 3 using ven diagrams and conditional probability.</p>
+<p>Población total de 1000, una enfermedad se presenta en la población con prevalencia del 10%. Para poder</p>
+</div>
+</div>
+<div id="conceptos-sueltos-que-debo-cubrir" class="section level2">
+<h2><span class="header-section-number">7.2</span> Conceptos sueltos que debo cubrir</h2>
+<ul>
+<li>Tamaño Muestral Equivalente.</li>
+<li>Ajuste de Laplace.
+<ul>
+<li>Laplace sugiere sumar un 1 (<span class="math inline">\(\frac{n_1+1}{n_1+n_0+2}\)</span>)</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[\frac{n_1+\alpha}{n_1+n_0+(\alpha + \beta)}\]</span></p>
+<ul>
+<li>Redes bayesianas, escribir sobre ésto.</li>
+</ul>
+<p><span class="math display">\[p(p|D) \sim \beta (\alpha + n_1, \beta +n_0)\]</span></p>
+<p><span class="math display">\[p(p) \sim \beta(\alpha, \beta)\]</span></p>
+<ul>
+<li>Regresión Bayesiana.</li>
+</ul>
+</div>
+<div id="entropy-and-information-gain" class="section level2">
+<h2><span class="header-section-number">7.3</span> Entropy and Information Gain</h2>
+<div id="key-definitios" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Key definitios</h3>
+<p><strong>Formula for Entropy</strong></p>
+<p><span class="math display">\[H(x) = -\sum_{i=1}^{n}P(x_i)*log_2P(x_i)\]</span></p>
+<p><strong>Information Gain</strong> tells us how important a given attribute of the feature vectors is for predicting that characteristic. Mathematically it is expressed as follows:</p>
+<p><span class="math display">\[Gain(x,y) = H(x)-\sum_{v\in Values(A_i)}P(A_i=v)H(S_v)\]</span></p>
+</div>
+<div id="examples" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> Examples</h3>
+<div id="example-1" class="section level4">
+<h4><span class="header-section-number">7.3.2.1</span> Example 1</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Creating matrix</span>
+test&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">346</span>,<span class="dv">74</span>,<span class="dv">124</span>,<span class="dv">26</span>,<span class="dv">470</span>,<span class="dv">100</span>), <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
+<span class="kw">colnames</span>(test) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;count&quot;</span>, <span class="st">&quot;%&quot;</span>)
+<span class="kw">rownames</span>(test) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Yes&quot;</span>, <span class="st">&quot;No&quot;</span>, <span class="st">&quot;Overall&quot;</span>)
+
+test</code></pre></div>
+<pre><code>##         count   %
+## Yes       346  74
+## No        124  26
+## Overall   470 100</code></pre>
+<p>Following the formula for entropy shown in the previous section we can obtain the <strong>entropy</strong> value for this dataset:</p>
+<p><span class="math display">\[H(dataset) = -[\{P(yes)*log_2P(yes)+P(no)*log_2P(no)\}] = [(0.74*log_2(0.74))+(0.26*log_2(0.26))]\]</span></p>
+<p>This operation gives the following result:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Entropy for the node</span>
+H &lt;-<span class="st"> </span>-((<span class="fl">0.74</span>*<span class="kw">log</span>(<span class="fl">0.74</span>, <span class="dt">base =</span> <span class="dv">2</span>))+(<span class="fl">0.26</span>*<span class="kw">log</span>(<span class="fl">0.26</span>, <span class="dt">base =</span> <span class="dv">2</span>)))
+H</code></pre></div>
+<pre><code>## [1] 0.8267464</code></pre>
+<p>We can, therefore, conclude that the entropy in this node is <strong>0.827</strong></p>
+</div>
+<div id="example-2.-usig-entropy-and-information-gain-to-classify" class="section level4">
+<h4><span class="header-section-number">7.3.2.2</span> Example 2. Usig Entropy and Information Gain to classify</h4>
+<p>We will use a very simple dataset:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">test2 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="st">&quot;I&quot;</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="st">&quot;I&quot;</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="st">&quot;II&quot;</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="st">&quot;II&quot;</span>), <span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
+<span class="kw">colnames</span>(test2) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>, <span class="st">&quot;Z&quot;</span>, <span class="st">&quot;Class&quot;</span>)
+test2 &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(test2)
+test2</code></pre></div>
+<pre><code>##   X Y Z Class
+## 1 1 1 1     I
+## 2 1 1 0     I
+## 3 0 0 1    II
+## 4 1 0 0    II</code></pre>
+<p>The challenge is presented to use only one attribute to predict which <code>Class</code> each value belongs to. The approximation is done following these steps:</p>
+<ol style="list-style-type: decimal">
+<li>Calculate entropy values for each attribute.</li>
+<li>Calculate information gain.</li>
+<li>Select the attribute with higher information gain result.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X1 &lt;-<span class="st"> </span><span class="kw">table</span>(test2$X ==<span class="st"> </span><span class="dv">1</span>)
+X0 &lt;-<span class="st"> </span><span class="kw">table</span>(test2$X ==<span class="st"> </span><span class="dv">0</span>)
+<span class="kw">data.frame</span>(X1, X0)</code></pre></div>
+<pre><code>##    Var1 Freq Var1.1 Freq.1
+## 1 FALSE    1  FALSE      3
+## 2  TRUE    3   TRUE      1</code></pre>
+<p><strong>Step 1</strong></p>
+<ul>
+<li>Entropy for attribute <code>X</code></li>
+</ul>
+<p><span class="math display">\[H(X_1) = -\left[ \frac{2}{3}*log_2\frac{2}{3} + \frac{1}{3}*log_2\frac{1}{3} \right] = 0.9183 \]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#X1 &lt;- -((2/3*log(2/3, base = 2))+(1/3*log(1/3, base = 2)))</span>
+<span class="co">#X0 &lt;- -((1/1*log(1/1, base = 2)))</span>
+<span class="co">#Hx &lt;- </span></code></pre></div>
+<ul>
+<li>Information Gain for attribute <code>X</code></li>
+</ul>
+<p><span class="math display">\[I = 1-P(Y=1)*H(Y=1)-P(X=0)*H(X=0)=1-\left( \frac{3}{4}*0.9183\right)-\left(\frac{1}{4}*0\right)=1-0.688725-0\]</span> <span class="math display">\[= \boldsymbol{0.311275}\]</span></p>
+<p><strong>Step 2</strong></p>
+<ul>
+<li>Entropy for attribute <code>Y</code></li>
+</ul>
+<p><span class="math display">\[H(X_1) = -\left[ \frac{2}{2}*log_2\frac{2}{2} \right] = 0 \]</span></p>
+<ul>
+<li>Information Gain for attribute <code>Y</code></li>
+</ul>
+<p><span class="math display">\[I = 1-P(Y=1)*H(Y=1)-P(Y=0)*H(Y=0)=1- 0-0= \boldsymbol{1}\]</span></p>
+<p><strong>Step 3</strong></p>
+<ul>
+<li>Entropy for attribute <code>Z</code></li>
+</ul>
+<p><span class="math display">\[H(Z_1) = -\left[ \frac{1}{2}*log_2\frac{1}{2}\right] = 0.5 \]</span></p>
+<ul>
+<li>Information Gain for attribute <code>Z</code></li>
+</ul>
+<p><span class="math display">\[I = 1-P(Z=1)*H(Z=1)-P(Z=0)*H(Z=0)=1- 0.5-0.5= \boldsymbol{0}\]</span></p>
+<p>According to the results these are the corresponding <strong>information gain</strong> results for each attribute:</p>
+<ul>
+<li><code>X</code>: 0.311275</li>
+<li><code>Y</code>: 1</li>
+<li><code>Z</code>: 0</li>
+</ul>
+<p>We can then safely state that using attribute <code>Y</code> to predict the target variable <code>Class</code> is the best option based on information gain.</p>
+</div>
+</div>
+</div>
+<div id="bayesian-linear-regression" class="section level2">
+<h2><span class="header-section-number">7.4</span> Bayesian Linear Regression</h2>
+<p>Before exploring the Bayesian approach to regressions, it is important to refresh our memory and review the traditional approach to regressions.</p>
+<div id="linear-regression" class="section level3">
+<h3><span class="header-section-number">7.4.1</span> Linear Regression</h3>
+<p>For this we will use the example of the <em>cereals</em> data set <span class="citation">(Data and Library, n.d.)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+cereals &lt;-<span class="st"> </span><span class="kw">read_delim</span>(<span class="st">&quot;D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/datasets/cereals.csv&quot;</span>, 
+    <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">escape_double =</span> <span class="ot">FALSE</span>, <span class="dt">trim_ws =</span> <span class="ot">TRUE</span>)
+<span class="kw">str</span>(cereals)</code></pre></div>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    77 obs. of  16 variables:
+##  $ name    : chr  &quot;100%_Bran&quot; &quot;100%_Natural_Bran&quot; &quot;All-Bran&quot; &quot;All-Bran_with_Extra_Fiber&quot; ...
+##  $ mfr     : chr  &quot;N&quot; &quot;Q&quot; &quot;K&quot; &quot;K&quot; ...
+##  $ type    : chr  &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; ...
+##  $ calories: int  70 120 70 50 110 110 110 130 90 90 ...
+##  $ protein : int  4 3 4 4 2 2 2 3 2 3 ...
+##  $ fat     : int  1 5 1 0 2 2 0 2 1 0 ...
+##  $ sodium  : int  130 15 260 140 200 180 125 210 200 210 ...
+##  $ fiber   : num  10 2 9 14 1 1.5 1 2 4 5 ...
+##  $ carbo   : num  5 8 7 8 14 10.5 11 18 15 13 ...
+##  $ sugars  : int  6 8 5 0 8 10 14 8 6 5 ...
+##  $ potass  : int  280 135 320 330 -1 70 30 100 125 190 ...
+##  $ vitamins: int  25 0 25 25 25 25 25 25 25 25 ...
+##  $ shelf   : int  3 3 3 3 3 1 2 3 1 3 ...
+##  $ weight  : num  1 1 1 1 1 1 1 1.33 1 1 ...
+##  $ cups    : num  0.33 1 0.33 0.5 0.75 0.75 1 0.75 0.67 0.67 ...
+##  $ rating  : num  68.4 34 59.4 93.7 34.4 ...
+##  - attr(*, &quot;spec&quot;)=List of 2
+##   ..$ cols   :List of 16
+##   .. ..$ name    : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ mfr     : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ type    : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ calories: list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ protein : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ fat     : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ sodium  : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ fiber   : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ carbo   : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ sugars  : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ potass  : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ vitamins: list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ shelf   : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ weight  : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ cups    : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ rating  : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
+##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;</code></pre>
+<div id="data-preparation-1" class="section level4">
+<h4><span class="header-section-number">7.4.1.1</span> Data Preparation</h4>
+<p>As we can see, this dataset needs som data preparation before a linear regression model can be generated.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Converting to numeric data those variables that need to be read as such&gt;</span>
+
+cereals$calories &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$calories)
+cereals$protein &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$protein)
+cereals$fat &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$fat)
+cereals$sodium &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$sodium)
+cereals$fiber &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$fiber)
+cereals$carbo &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$carbo)
+cereals$sugars &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$sugars)
+cereals$potass &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$potass)
+cereals$vitamins &lt;-<span class="st"> </span><span class="kw">as.character</span>(cereals$vitamins)
+cereals$weight &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$weight)
+cereals$cups &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$cups)
+cereals$rating &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(cereals$rating)
+
+<span class="kw">str</span>(cereals)</code></pre></div>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    77 obs. of  16 variables:
+##  $ name    : chr  &quot;100%_Bran&quot; &quot;100%_Natural_Bran&quot; &quot;All-Bran&quot; &quot;All-Bran_with_Extra_Fiber&quot; ...
+##  $ mfr     : chr  &quot;N&quot; &quot;Q&quot; &quot;K&quot; &quot;K&quot; ...
+##  $ type    : chr  &quot;C&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot; ...
+##  $ calories: num  70 120 70 50 110 110 110 130 90 90 ...
+##  $ protein : num  4 3 4 4 2 2 2 3 2 3 ...
+##  $ fat     : num  1 5 1 0 2 2 0 2 1 0 ...
+##  $ sodium  : num  130 15 260 140 200 180 125 210 200 210 ...
+##  $ fiber   : num  10 2 9 14 1 1.5 1 2 4 5 ...
+##  $ carbo   : num  5 8 7 8 14 10.5 11 18 15 13 ...
+##  $ sugars  : num  6 8 5 0 8 10 14 8 6 5 ...
+##  $ potass  : num  280 135 320 330 -1 70 30 100 125 190 ...
+##  $ vitamins: chr  &quot;25&quot; &quot;0&quot; &quot;25&quot; &quot;25&quot; ...
+##  $ shelf   : int  3 3 3 3 3 1 2 3 1 3 ...
+##  $ weight  : num  1 1 1 1 1 1 1 1.33 1 1 ...
+##  $ cups    : num  0.33 1 0.33 0.5 0.75 0.75 1 0.75 0.67 0.67 ...
+##  $ rating  : num  68.4 34 59.4 93.7 34.4 ...
+##  - attr(*, &quot;spec&quot;)=List of 2
+##   ..$ cols   :List of 16
+##   .. ..$ name    : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ mfr     : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ type    : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_character&quot; &quot;collector&quot;
+##   .. ..$ calories: list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ protein : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ fat     : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ sodium  : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ fiber   : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ carbo   : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ sugars  : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ potass  : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ vitamins: list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ shelf   : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_integer&quot; &quot;collector&quot;
+##   .. ..$ weight  : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ cups    : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   .. ..$ rating  : list()
+##   .. .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_double&quot; &quot;collector&quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
+##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;</code></pre>
+</div>
+<div id="data-quality-report-for-categorical-variables" class="section level4">
+<h4><span class="header-section-number">7.4.1.2</span> Data Quality Report for Categorical Variables</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus&quot;</span>)
+<span class="kw">source</span>(<span class="st">&#39;QOfCategoricalF.R&#39;</span>)
+
+DQRcat &lt;-<span class="st"> </span><span class="kw">QOfCategoricalF</span>(cereals[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">12</span>,<span class="dv">13</span>)])
+
+DQRcat</code></pre></div>
+<pre><code>##          Count Miss Card      Mode ModeFrec ModePerc             Mode2
+## name        77    0   77 100%_Bran        1     1.3% 100%_Natural_Bran
+## mfr         77    0    7         K       23   29.87%                 G
+## type        77    0    2         C       74    96.1%                 H
+## vitamins    77    0    3        25       63   81.82%                 0
+## shelf       77    0    3         3       36   46.75%                 2
+##          Mode2Frec Mode2Perc
+## name             1      1.3%
+## mfr             22    28.57%
+## type             3      3.9%
+## vitamins         8    10.39%
+## shelf           21    27.27%</code></pre>
+</div>
+<div id="data-quality-report-for-continuous-variables" class="section level4">
+<h4><span class="header-section-number">7.4.1.3</span> Data Quality Report for Continuous Variables</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">source</span>(<span class="st">&#39;QOfContinuousF.R&#39;</span>)
+
+DQRcont &lt;-<span class="st"> </span><span class="kw">QOfContinuousF</span>(cereals[,<span class="kw">c</span>(<span class="dv">4</span>:<span class="dv">11</span>, <span class="dv">14</span>:<span class="dv">16</span>)])
+
+DQRcont</code></pre></div>
+<pre><code>##          Count Miss Card      Min   Qrt1 Median   Qrt3       Max   Mean
+## calories    77    0   11 50.00000 100.00 110.00 110.00 160.00000 106.88
+## protein     77    0    6  1.00000   2.00   3.00   3.00   6.00000   2.55
+## fat         77    0    5  0.00000   0.00   1.00   2.00   5.00000   1.01
+## sodium      77    0   27  0.00000 130.00 180.00 210.00 320.00000 159.68
+## fiber       77    0   13  0.00000   1.00   2.00   3.00  14.00000   2.15
+## carbo       77    0   22 -1.00000  12.00  14.00  17.00  23.00000  14.60
+## sugars      77    0   17 -1.00000   3.00   7.00  11.00  15.00000   6.92
+## potass      77    0   36 -1.00000  40.00  90.00 120.00 330.00000  96.08
+## weight      77    0    7  0.50000   1.00   1.00   1.00   1.50000   1.03
+## cups        77    0   12  0.25000   0.67   0.75   1.00   1.50000   0.82
+## rating      77    0   77 18.04285  33.17  40.40  50.83  93.70491  42.67
+##           Sdev
+## calories 19.48
+## protein   1.09
+## fat       1.01
+## sodium   83.83
+## fiber     2.38
+## carbo     4.28
+## sugars    4.44
+## potass   71.29
+## weight    0.15
+## cups      0.23
+## rating   14.05</code></pre>
+</div>
+</div>
+<div id="logistic-regression" class="section level3">
+<h3><span class="header-section-number">7.4.2</span> Logistic Regression</h3>
+<div id="splitting-train-and-test-dataset" class="section level4">
+<h4><span class="header-section-number">7.4.2.1</span> Splitting train and test dataset</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Spliting inot trainning and test datasets</span>
+
+<span class="kw">library</span>(caTools)
+<span class="kw">set.seed</span>(<span class="dv">123</span>)
+split =<span class="st"> </span><span class="kw">sample.split</span>(cereals$rating, <span class="dt">SplitRatio =</span> <span class="dv">2</span>/<span class="dv">3</span>)
+training_set =<span class="st"> </span><span class="kw">subset</span>(cereals, split ==<span class="st"> </span><span class="ot">TRUE</span>)
+test_set =<span class="st"> </span><span class="kw">subset</span>(cereals, split ==<span class="st"> </span><span class="ot">FALSE</span>)
+
+<span class="co"># Feature Scaling</span>
+<span class="co">#training_set[, c(4:11,14:16)] = scale(training_set[, c(4:11,14:16)])</span>
+<span class="co"># test_set[, 2:3] = scale(test_set[, 2:3])</span></code></pre></div>
+</div>
+<div id="fitting-slr-to-training-set" class="section level4">
+<h4><span class="header-section-number">7.4.2.2</span> Fitting SLR to training set</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">regressor &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="dt">formula =</span> rating ~<span class="st"> </span>sugars,
+                <span class="dt">data =</span> cereals)
+
+<span class="kw">summary</span>(regressor)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = rating ~ sugars, data = cereals)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -17.853  -5.677  -1.439   5.160  34.421 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  59.2844     1.9485   30.43  &lt; 2e-16 ***
+## sugars       -2.4008     0.2373  -10.12 1.15e-15 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 9.196 on 75 degrees of freedom
+## Multiple R-squared:  0.5771, Adjusted R-squared:  0.5715 
+## F-statistic: 102.3 on 1 and 75 DF,  p-value: 1.153e-15</code></pre>
+</div>
+<div id="visualizing-slr-on-the-copmlete-cereals-dataset" class="section level4">
+<h4><span class="header-section-number">7.4.2.3</span> Visualizing SLR on the copmlete <code>cereals</code> dataset</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">ggplot</span>() +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> cereals$sugars, <span class="dt">y =</span> cereals$rating),
+             <span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>) +
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="kw">aes</span>(<span class="dt">x =</span> cereals$sugars, <span class="dt">y =</span> <span class="kw">predict</span>(regressor, <span class="dt">newdata =</span> cereals)),
+            <span class="dt">colour =</span> <span class="st">&quot;blue&quot;</span>) +
+<span class="st">            </span><span class="kw">ggtitle</span>(<span class="st">&quot;Sugar vs Prediction of Rating variables&quot;</span>) +
+<span class="st">            </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">hjust =</span> <span class="fl">0.5</span>)) +
+<span class="st">            </span><span class="kw">xlab</span>(<span class="st">&quot;Amount of Sugars&quot;</span>) +
+<span class="st">            </span><span class="kw">ylab</span>(<span class="st">&quot;Raiting&quot;</span>)</code></pre></div>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="examples-of-bayesian-models" class="section level2">
+<h2><span class="header-section-number">7.5</span> Examples of Bayesian models</h2>
+<p>Taken from <a href="http://sumsar.net/blog/2017/02/introduction-to-bayesian-data-analysis-part-one/">Rasmus Bååth´s blog.</a></p>
+<div id="bayesian-a-testing-for-swedish-fish-incorporated" class="section level3">
+<h3><span class="header-section-number">7.5.1</span> Bayesian A testing for Swedish Fish Incorporated</h3>
+<p>Swedish Fish Incorporated is the largest Swedish company delivering fish by mail order. They are now trying to get into the lucrative Danish market by selling one year Salmon subscriptions. The marketing department have done a pilot study and tried the following marketing method:</p>
+<p><strong>A</strong>: Sending a mail with a colorful brochure that invites people to sign up for a one year salmon subscription.</p>
+<p>The marketing department sent out 16 mails of type A. Six Danes that received a mail signed up for one year of salmon and marketing now wants to know, how good is method A?</p>
+<div id="question-i-build-a-bayesian-model-that-answers-the-question-what-would-the-rate-of-sign-up-be-if-method-a-was-used-on-a-larger-number-of-people" class="section level4">
+<h4><span class="header-section-number">7.5.1.1</span> Question I: Build a Bayesian model that answers the question: What would the rate of sign-up be if method A was used on a larger number of people?</h4>
+<p><strong>Hint 1</strong>: The answer is not a single number but a distribution over probable rates of sign-up.</p>
+<p><strong>Hint 2</strong>: As part of you generative model you’ll want to use the binomial distribution, which you can sample from in R using the rbinom(n, size, prob). The binomial distribution simulates the following process n times: The number of “successes” when performing size trials, where the probability of “success” is prob.</p>
+<p><strong>Hint 3</strong>: A commonly used prior for the unknown probability of success in a binomial distribution is a uniform distribution from 0 to 1. You can draw from this distribution by running runif(1, min = 0, max = 1)</p>
+<p><strong>Hint 4</strong>: Here is a code scaffold that you can build upon.</p>
+<ul>
+<li>First of all we need to declare the amount of draws our model will make and the <em>prior</em> distribution.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Number of random draws from the prior</span>
+<span class="kw">set.seed</span>(<span class="dv">123</span>)
+n_draw &lt;-<span class="st"> </span><span class="dv">100000</span>
+
+prior &lt;-<span class="st"> </span><span class="kw">runif</span>(n_draw,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Here you sample n_draws draws from the prior  </span>
+<span class="kw">hist</span>(prior,
+     <span class="dt">col =</span> <span class="st">&quot;pink&quot;</span>,
+     <span class="dt">main =</span> <span class="st">&quot;Hisogram of Prior Distribution for Strategy A&quot;</span>) <span class="co"># It&#39;s always good to eyeball the prior to make sure it looks ok.</span></code></pre></div>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<ul>
+<li>Once this is finished we declare a generative model and simulate data with the parameters from the priors and the model.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Here you define the generative model</span>
+generative_model &lt;-<span class="st"> </span>function(rate) {
+  subscribers &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dv">1</span>, <span class="dt">size =</span> <span class="dv">16</span>, <span class="dt">prob =</span> rate)
+  subscribers
+}
+
+<span class="co"># Here you simulate data using the parameters from the prior and the </span>
+<span class="co"># generative model</span>
+subscribers &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="ot">NA</span>, n_draw)
+for(i in <span class="dv">1</span>:n_draw) {
+  subscribers[i] &lt;-<span class="st"> </span><span class="kw">generative_model</span>(prior[i])
+}</code></pre></div>
+<ul>
+<li>Next we work on filtering the draws that mached the data and generate a histogram of it, this will be the visualization of the <strong>Posterior Distribution</strong>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Here you filter off all draws that do not match the data.</span>
+posteriorA &lt;-<span class="st"> </span>prior[subscribers ==<span class="st"> </span><span class="dv">6</span>] 
+
+<span class="kw">hist</span>(posteriorA,
+     <span class="dt">col =</span> <span class="st">&quot;coral2&quot;</span>) <span class="co"># Eyeball the posterior</span></code></pre></div>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(posteriorA) <span class="co"># See that we got enought draws left after the filtering.</span></code></pre></div>
+<pre><code>## [1] 5897</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># There are no rules here, but you probably want to aim</span>
+<span class="co"># for &gt;1000 draws.</span>
+
+<span class="co"># Now you can summarize the posterior, where a common summary is to take the mean</span>
+<span class="co"># or the median posterior, and perhaps a 95% quantile interval.</span>
+<span class="kw">summary</span>(posteriorA)</code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+## 0.06941 0.30650 0.38480 0.38860 0.46120 0.83220</code></pre>
+<p>As we can see from the previous calculations, if strategy A was used in a larger population we could expect a sign up rate from <strong>20%</strong> to <strong>60%</strong>, this result shows a considerable amount of <strong>uncertanty</strong>.</p>
+</div>
+<div id="question-ii-whats-the-probability-that-method-a-is-better-than-telemarketing" class="section level4">
+<h4><span class="header-section-number">7.5.1.2</span> Question II: What’s the probability that method A is better than telemarketing?</h4>
+<p>So marketing just told us that the rate of sign-up would be 20% if salmon subscribers were snared by a telemarketing campaign instead (to us it’s very unclear where marketing got this very precise number from). So given the model and the data that we developed in the last question, what’s the probability that method A has a higher rate of sign-up than telemarketing?</p>
+<p><strong>Hint 1</strong>: If you have a vector of samples representing a probability distribution, which you should have from the last question, calculating the amount of probability above a certain value is done by simply counting the number of samples above that value and dividing by the total number of samples.</p>
+<p><strong>Hint 2</strong>: The answer to this question is a one-liner.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(posteriorA &gt;<span class="st"> </span><span class="fl">0.2</span>)/<span class="kw">length</span>(posteriorA)</code></pre></div>
+<pre><code>## [1] 0.9659149</code></pre>
+<p>As we can see, it is more likely that strategy <strong>A</strong> will produce higher sign up rattings than telemarketing.</p>
+</div>
+<div id="question-iii-if-method-a-was-used-on-100-people-what-would-be-the-number-of-sign-ups" class="section level4">
+<h4><span class="header-section-number">7.5.1.3</span> Question III: If method A was used on 100 people what would be the number of sign-ups?</h4>
+<p><strong>Hint 1</strong>: The answer is again not a single number but a distribution over probable numbers of sign-ups.</p>
+<p><strong>Hint 2</strong>: As before, the binomial distribution is a good candidate for how many people that sign up out of the 100 possible.</p>
+<p><strong>Hint 3</strong>: Make sure you don’t “throw away” uncertainty, for example by using a summary of the posterior distribution calculated in the first question. Use the full original posterior sample!</p>
+<p><strong>Hint 4</strong>: The general patter when calculating “derivatives” of posterior samples is to go through the values one-by-one, and perform a transformation (say, plugging in the value in a binomial distribution), and collect the new values in a vector.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># But since rbinom is vectorized we can simply write it like this:</span>
+signupsA &lt;-<span class="st"> </span><span class="kw">rbinom</span>(<span class="dt">n =</span> <span class="kw">length</span>(posteriorA), <span class="dt">size =</span> <span class="dv">100</span>, <span class="dt">prob =</span> posteriorA)
+
+<span class="kw">hist</span>(signupsA, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),
+     <span class="dt">col =</span> <span class="st">&quot;pink&quot;</span>,
+     <span class="dt">main =</span> <span class="st">&quot;Histograms of Signups Projected in 100</span>
+<span class="st">     Potential Clients With Strategy A&quot;</span>)</code></pre></div>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>The probable number of signups if strategy A were to be used is between <strong>20</strong> and <strong>60</strong>.</p>
+</div>
+</div>
+<div id="calculating-probabilies-for-a-new-marketing-idea." class="section level3">
+<h3><span class="header-section-number">7.5.2</span> Calculating probabilies for a new marketing idea.</h3>
+<p>The CEO of Swedish Fish Incorporated came with the “greatest idea” for marketing: along with the colorful brochure he wants to send a frozen salmon to the potential costumers. He has learned on or two things from marketing and had his idea already tested with <strong>16</strong> danes, out of these <strong>10</strong> sigend up for the service. </br> What’s the probability of this strategy to generate signups in a larger population? </br></p>
+<ul>
+<li>First we need to generate the analysis for the new strategy:
+<ul>
+<li>A prior distribution to start from, we’ll go with a uniform distribution:</li>
+</ul></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n_draw &lt;-<span class="st"> </span><span class="dv">100000</span>
+
+prior &lt;-<span class="st"> </span><span class="kw">runif</span>(n_draw,<span class="dv">0</span>,<span class="dv">1</span>) <span class="co"># Here you sample n_draws draws from the prior  </span>
+<span class="kw">hist</span>(prior,
+     <span class="dt">col =</span> <span class="st">&quot;dodgerblue&quot;</span>,
+     <span class="dt">main =</span> <span class="st">&quot;Hisogram of Prior Distribution for Strategy B&quot;</span>) <span class="co"># It&#39;s always good to eyeball the prior to make sure it looks ok.</span></code></pre></div>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>- The regenerative model and all the calculations will be done the same as strategy A, but instead of selecting those who resulted in 6, we will select those draws who resulted in 10.</code></pre>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<pre><code>## $breaks
+##  [1] 0.20 0.25 0.30 0.35 0.40 0.45 0.50 0.55 0.60 0.65 0.70 0.75 0.80 0.85
+## [15] 0.90 0.95
+## 
+## $counts
+##  [1]    1   25   67  143  299  483  727  920 1000  882  681  407  185   48
+## [15]    3
+## 
+## $density
+##  [1] 0.003406575 0.085164367 0.228240504 0.487140181 1.018565832
+##  [6] 1.645375575 2.476579799 3.134048714 3.406574689 3.004598876
+## [11] 2.319877363 1.386475898 0.630216317 0.163515585 0.010219724
+## 
+## $mids
+##  [1] 0.225 0.275 0.325 0.375 0.425 0.475 0.525 0.575 0.625 0.675 0.725
+## [12] 0.775 0.825 0.875 0.925
+## 
+## $xname
+## [1] &quot;posteriorB&quot;
+## 
+## $equidist
+## [1] TRUE
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;histogram&quot;</code></pre>
+<pre><code>## [1] 5871</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.2237  0.5323  0.6127  0.6091  0.6913  0.9103</code></pre>
+<ul>
+<li>It is time to compare these two aproximations:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>))
+<span class="kw">hist</span>(signupsA, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),
+     <span class="dt">col =</span> <span class="st">&quot;pink&quot;</span>,
+     <span class="dt">main =</span> <span class="st">&quot;Histograms of Signups Projected in 100</span>
+<span class="st">     Potential Clients With Strategy A&quot;</span>)
+<span class="kw">hist</span>(signupsB, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),
+     <span class="dt">col =</span> <span class="st">&quot;dodgerblue4&quot;</span>,
+     <span class="dt">main =</span> <span class="st">&quot;Histograms of Signups Projected in 100</span>
+<span class="st">     Potential Clients With Strategy B&quot;</span>)</code></pre></div>
+<p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ul>
+<li>It appears that Strategy <strong>B</strong> is more likely to yield higher signups. In order to check if it is so we will generate a table of rate differences:</li>
+</ul>
+<p>Where the variable <code>rate_diff</code> is calculated as follows, since we are interested in variable <strong>B</strong>:</p>
+<p><span class="math display">\[rate\_diff = \text{rateB}-\text{rateA}\]</span></p>
+<p>The next table is a representation of the first values obtained:</p>
+<pre><code>##       PostA     PostB  rate_diff
+## 1 0.4145463 0.4686832 0.05413691
+## 2 0.2659726 0.6099820 0.34400938
+## 3 0.4348927 0.6927303 0.25783757
+## 4 0.3694889 0.6500233 0.28053442
+## 5 0.4394315 0.4623911 0.02295960
+## 6 0.3117022 0.7195024 0.40780021</code></pre>
+<p>A histogram of the values recorded in <code>rate_diff</code> is usefull to visualize the probability of strategy B yelding more signups than strategy A. <img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>It becomes obvious that the greater part of the probability is beyond 0, meaning that strategy B is more likely to bring mor signups to the company. </br> If the CEO wanted to know how much likely the probability of strategy B is to be sucessful (more signups) than strategy A, this could be computated as well with the followin lines of code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>((rate$rate_diff &gt;<span class="st"> </span><span class="dv">0</span>)/<span class="kw">length</span>(rate$rate_diff))</code></pre></div>
+<pre><code>## [1] 0.9143246</code></pre>
+<p><strong>Strategy <em>B</em> is 91.4% more likely to bring more signups than strategy A.</strong></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analisis-de-los-datos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taller-r.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/generaviles/estadistica-syllabus06-bayesianStats.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
