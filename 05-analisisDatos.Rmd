@@ -9,7 +9,7 @@
     1. **Variables métricas**. Para el análisis de la tendencia central se utiliza por lo general la media, si bien es aconsejable utilizar la mediana cuando nos encontramos con unos pocos valores extremos cuya magnitud difiere ampliamente del resto (son mucho mayores o mucho menores que la mayoría). Para estudiar el grado de dispersión recurrimos a la desviación típica o la varianza. Es posible estudiar además del momento de primer orden de la distribución (tendencia central) y el momento de segundo orden (dispersión), el momento de tercer orden (simetría) y el de cuarto orden (achatamiento). No es frecuente estudiar momentos de orden superior. 
 
 
-##Análisis Vibariante
+##Análisis Bivariante
 
   1. Distribución normal de las variables.
     - Para llevar a cabo pruebas de estadística paramétrica se asume que la variable estudiada de la población sigue una dsitribución normal.
