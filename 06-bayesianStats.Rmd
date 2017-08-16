@@ -301,7 +301,8 @@ for(i in 1:n_draw) {
 posteriorA <- prior[subscribers == 6] 
 
 hist(posteriorA,
-     col = "coral2") # Eyeball the posterior
+     col = "coral2",
+     xlim = c(0,1)) # Eyeball the posterior
 length(posteriorA) # See that we got enought draws left after the filtering.
 # There are no rules here, but you probably want to aim
 # for >1000 draws.

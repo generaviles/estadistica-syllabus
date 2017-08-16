@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Estadística para el Análisis de Datos</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Notas y ejercicios de clase.">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
   <meta property="og:title" content="Estadística para el Análisis de Datos" />
   <meta property="og:type" content="book" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Gener Avilés R">
 
 
-<meta name="date" content="2017-05-12">
+<meta name="date" content="2017-08-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="analisis-de-los-datos.html">
 <link rel="next" href="taller-r.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -93,6 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 
 <body>
+
 
 
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
@@ -673,7 +672,8 @@ for(i in <span class="dv">1</span>:n_draw) {
 posteriorA &lt;-<span class="st"> </span>prior[subscribers ==<span class="st"> </span><span class="dv">6</span>] 
 
 <span class="kw">hist</span>(posteriorA,
-     <span class="dt">col =</span> <span class="st">&quot;coral2&quot;</span>) <span class="co"># Eyeball the posterior</span></code></pre></div>
+     <span class="dt">col =</span> <span class="st">&quot;coral2&quot;</span>,
+     <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>)) <span class="co"># Eyeball the posterior</span></code></pre></div>
 <p><img src="Estadística-para-el-Análisis-de-Datos_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(posteriorA) <span class="co"># See that we got enought draws left after the filtering.</span></code></pre></div>
 <pre><code>## [1] 5897</code></pre>
@@ -684,7 +684,7 @@ posteriorA &lt;-<span class="st"> </span>prior[subscribers ==<span class="st"> <
 <span class="co"># or the median posterior, and perhaps a 95% quantile interval.</span>
 <span class="kw">summary</span>(posteriorA)</code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-## 0.06941 0.30650 0.38480 0.38860 0.46120 0.83220</code></pre>
+## 0.06941 0.30652 0.38475 0.38865 0.46124 0.83222</code></pre>
 <p>As we can see from the previous calculations, if strategy A was used in a larger population we could expect a sign up rate from <strong>20%</strong> to <strong>60%</strong>, this result shows a considerable amount of <strong>uncertanty</strong>.</p>
 </div>
 <div id="question-ii-whats-the-probability-that-method-a-is-better-than-telemarketing" class="section level4">
@@ -800,8 +800,9 @@ prior &lt;-<span class="st"> </span><span class="kw">runif</span>(n_draw,<span c
         </div>
       </div>
 <a href="analisis-de-los-datos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="taller-r.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="taller-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -844,7 +845,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

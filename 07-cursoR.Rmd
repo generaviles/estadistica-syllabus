@@ -1,12 +1,13 @@
 #Taller R
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## ¿Cómo instalar las herramientas?
 ###Instalando R
-Las herramientas que utilizaremos será la última versión liberada del software (al momento de hacer éste taller la versión actual es R 3.3.3):
+Las herramientas que utilizaremos será la última versión liberada del software (al momento de hacer éste taller la versión actual es R 3.4.1):
 
   - [Para usuarios Windows.](https://cran.r-project.org/bin/windows/base/)
   - [Para usuarios MacOS](https://cran.r-project.org/bin/macosx/)

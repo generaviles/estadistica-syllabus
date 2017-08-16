@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Estadística para el Análisis de Datos</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Notas y ejercicios de clase.">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.4 and GitBook 2.6.7">
 
   <meta property="og:title" content="Estadística para el Análisis de Datos" />
   <meta property="og:type" content="book" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Gener Avilés R">
 
 
-<meta name="date" content="2017-05-12">
+<meta name="date" content="2017-08-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="bayesian-statistics.html">
 <link rel="next" href="tareas.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -93,6 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 
 <body>
+
 
 
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
@@ -255,7 +254,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">8.1</span> ¿Cómo instalar las herramientas?</h2>
 <div id="instalando-r" class="section level3">
 <h3><span class="header-section-number">8.1.1</span> Instalando R</h3>
-<p>Las herramientas que utilizaremos será la última versión liberada del software (al momento de hacer éste taller la versión actual es R 3.3.3):</p>
+<p>Las herramientas que utilizaremos será la última versión liberada del software (al momento de hacer éste taller la versión actual es R 3.4.1):</p>
 <ul>
 <li><a href="https://cran.r-project.org/bin/windows/base/">Para usuarios Windows.</a></li>
 <li><a href="https://cran.r-project.org/bin/macosx/">Para usuarios MacOS</a></li>
@@ -482,8 +481,8 @@ msg  <span class="co">#auto-impresión</span></code></pre></div>
 example &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;D:/Dropbox/MsC UABC/2o Semestre/Clases/Estadistica/estadistica-syllabus/datasets/example.csv&quot;</span>)
 
 <span class="kw">head</span>(example)</code></pre></div>
-<pre><code>## # A tibble: 6 × 17
-##      X1 `A&lt;d1&gt;O`   EST   ENT ENERO FEBRERO MARZO  ABRIL  MAYO  JUNIO
+<pre><code>## # A tibble: 6 x 17
+##      X1 `A\xd1O`   EST   ENT ENERO FEBRERO MARZO  ABRIL  MAYO  JUNIO
 ##   &lt;int&gt;    &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
 ## 1    NA       NA    NA    NA    NA      NA    NA     NA    NA     NA
 ## 2    NA       NA    NA    NA    NA      NA    NA     NA    NA     NA
@@ -502,7 +501,7 @@ example &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span cla
 <span class="kw">colnames</span>(example)[<span class="dv">1</span>]&lt;-<span class="st">&quot;Año&quot;</span> <span class="co">#Arregla el problema de caracter en la variable &quot;Año&quot;</span>
 
 <span class="kw">head</span>(example)</code></pre></div>
-<pre><code>## # A tibble: 6 × 16
+<pre><code>## # A tibble: 6 x 16
 ##     Año   EST   ENT  ENERO FEBRERO  MARZO  ABRIL  MAYO  JUNIO  JULIO
 ##   &lt;dbl&gt; &lt;int&gt; &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
 ## 1  1965     4     7  18.83   10.02  36.22 102.36 159.6 149.47 154.37
@@ -698,8 +697,9 @@ example &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span cla
         </div>
       </div>
 <a href="bayesian-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tareas.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="tareas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -742,7 +742,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);
